@@ -1,3 +1,4 @@
+import React from "react";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import I18nProvider from "./I18nProvider";
@@ -9,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider attribute="class" defaultTheme="light">
           <I18nProvider>

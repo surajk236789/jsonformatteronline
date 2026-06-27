@@ -1,12 +1,18 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useTranslation } from "react-i18next";
 
 export default function HomePage() {
+  const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900 p-8">
@@ -33,7 +39,11 @@ export default function HomePage() {
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
         >
-          {theme === "light" ? t("darkMode", { defaultValue: "Dark Mode" }) : t("lightMode", { defaultValue: "Light Mode" })}
+          {!mounted
+            ? t("theme", { defaultValue: "Theme" })
+            : theme === "light"
+            ? t("darkMode", { defaultValue: "Dark Mode" })
+            : t("lightMode", { defaultValue: "Light Mode" })}
         </button>
       </div>
 
