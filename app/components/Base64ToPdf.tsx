@@ -160,23 +160,29 @@ export default function Base64ToPdf() {
       )}
 
       {/* Operations */}
-      <div className="flex flex-wrap items-center justify-end gap-3 mt-6 pt-4 border-t border-slate-100 dark:border-slate-800">
+      <div className="flex flex-wrap items-center justify-end gap-3 mt-6 pt-6 border-t border-slate-200 dark:border-slate-700/50">
         <button
           onClick={handleClear}
-          className="px-4 py-2 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 text-xs font-bold rounded-lg transition-colors cursor-pointer"
+          className="px-5 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 text-sm font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-2"
         >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
           {t("clear", { defaultValue: "Clear" })}
         </button>
         <button
           onClick={handleConvert}
-          className="glow-button px-5 py-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 dark:bg-indigo-950/40 dark:hover:bg-indigo-900/30 dark:text-indigo-400 text-xs font-bold rounded-lg transition shadow-sm cursor-pointer"
+          className="px-6 py-2.5 bg-indigo-100/50 hover:bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:hover:bg-indigo-800/40 dark:text-indigo-300 text-sm font-semibold rounded-lg transition shadow-sm cursor-pointer flex items-center gap-2"
         >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+          </svg>
           {t("convert", { defaultValue: "Convert Base64" })}
         </button>
         {pdfUrl && (
           <button
             onClick={downloadPdf}
-            className="glow-button px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition shadow-md cursor-pointer flex items-center gap-1.5"
+            className="glow-button px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold rounded-lg transition shadow-md cursor-pointer flex items-center gap-2"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

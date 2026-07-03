@@ -42,7 +42,15 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
   * Embeds a live sandboxed PDF preview iframe for instant validation.
   * Proper hook-based cleanups utilizing `URL.revokeObjectURL(pdfUrl)` on source changes or unmounting to avoid memory leaks.
 
-### 5. AdSense Container
+### 5. JSON Compare
+* **File Reference**: [app/components/JsonCompare.tsx](file:///d:/Project/jsonformatteronline/app/components/JsonCompare.tsx)
+* **Description**: Visually compares two JSON objects with a side-by-side Monaco DiffEditor.
+* **Features**:
+  * VSCode-like editor experience with native line numbers.
+  * Collapsible object and array nodes for easier navigation.
+  * Live differences highlighting and editable panes.
+
+### 6. AdSense Container
 * **File Reference**: [app/components/AdSenseContainer.tsx](file:///d:/Project/jsonformatteronline/app/components/AdSenseContainer.tsx)
 * **Description**: Wraps advertisement script loaders or renders responsive visual mock ads during development/testing. Includes a dynamic shimmer loading overlay.
 
