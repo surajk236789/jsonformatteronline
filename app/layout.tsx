@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import I18nProvider from "./I18nProvider";
 import { Outfit } from "next/font/google";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -40,6 +41,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2678573850280758"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="font-sans antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
         <ThemeProvider attribute="class" defaultTheme="light">
           <I18nProvider>
