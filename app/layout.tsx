@@ -41,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-2678573850280758"></meta>
         {/* Using a standard HTML script tag ensures Google's bot can read it in the raw HTML for verification */}
         <script
           async
