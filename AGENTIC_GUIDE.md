@@ -14,7 +14,7 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
 * **Layout**:
   * **Header**: Contains the dynamic brand identity, dark mode toggles, and language switching button.
   * **Ad Slots**: Renders [AdSenseContainer.tsx](file:///d:/Project/jsonformatteronline/app/components/AdSenseContainer.tsx) banners above and below the main workspace.
-  * **Tab Control**: Buttons toggle the `activeTab` state between `"json"`, `"html"`, and `"pdf"`.
+  * **Tab Control**: Buttons toggle the `activeTab` state between `"json"`, `"html"`, `"pdf"`, `"json-compare"`, and `"json-to-xml"`.
   * **JSON Beautifier** is open/rendered by default.
 
 ### 2. JSON Beautifier
@@ -50,7 +50,19 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
   * Collapsible object and array nodes for easier navigation.
   * Live differences highlighting and editable panes.
 
-### 6. AdSense Container
+### 7. JSON to XML Converter
+* **File Reference**: [app/components/JsonToXml.tsx](file:///d:/Project/jsonformatteronline/app/components/JsonToXml.tsx)
+* **Route**: `/json-to-xml` → [app/json-to-xml/page.tsx](file:///d:/Project/jsonformatteronline/app/json-to-xml/page.tsx)
+* **Description**: Converts valid JSON data into well-formed, pretty-printed XML — entirely client-side with no external libraries.
+* **Features**:
+  * Pure recursive converter handles nested objects, arrays, `null`, booleans, numbers, and strings.
+  * Automatic XML tag sanitization (invalid characters replaced; names starting with non-letters prefixed with `_`).
+  * XML declaration `<?xml version="1.0" encoding="UTF-8"?>` always prepended.
+  * Arrays are wrapped in `<root>` with `<item>` children; objects are wrapped in `<root>` using the key names as tag names.
+  * Copy-to-clipboard button and **Download as `.xml`** button with visual confirmation states.
+  * Accent colour: **orange** (`bg-orange-500/600`) — consistent with the tab indicator in `MainLayout.tsx`.
+
+### 8. AdSense Container
 * **File Reference**: [app/components/AdSenseContainer.tsx](file:///d:/Project/jsonformatteronline/app/components/AdSenseContainer.tsx)
 * **Description**: Wraps advertisement script loaders or renders responsive visual mock ads during development/testing. Includes a dynamic shimmer loading overlay.
 

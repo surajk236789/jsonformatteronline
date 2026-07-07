@@ -174,6 +174,21 @@ export default function MainLayout({ children }: MainLayoutProps) {
               ></span>
               {t("jsonCompare", { defaultValue: "JSON Compare" })}
             </Link>
+
+            {/* JSON to XML Tab Button */}
+            <Link
+              href="/json-to-xml"
+              className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                pathname === "/json-to-xml"
+                  ? "bg-white dark:bg-slate-800 text-orange-600 dark:text-orange-400 shadow-md"
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200"
+              }`}
+            >
+              <span
+                className={`w-2 h-2 rounded-full ${pathname === "/json-to-xml" ? "bg-orange-500" : "bg-slate-400"}`}
+              ></span>
+              {t("jsonToXml", { defaultValue: "JSON → XML" })}
+            </Link>
           </div>
         </nav>
 
@@ -213,6 +228,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <Link href="/html-beautifier">HTML Beautifier</Link>
             <Link href="/base64-to-pdf">Base64 → PDF</Link>
             <Link href="/json-compare">JSON Compare</Link>
+            <Link href="/json-to-xml">JSON → XML</Link>
           </nav>
 
           {/* External link for authority */}
@@ -251,8 +267,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <p>
               Alongside JSON Beautifier, we also provide:
               <Link href="/html-beautifier"> HTML Beautifier</Link>,
-              <Link href="/base64-to-pdf"> Base64 to PDF Converter</Link>, and
-              <Link href="/json-compare"> JSON Compare Tool</Link>. These tools
+              <Link href="/base64-to-pdf"> Base64 to PDF Converter</Link>,
+              <Link href="/json-compare"> JSON Compare Tool</Link>, and
+              <Link href="/json-to-xml"> JSON to XML Converter</Link>. These tools
               help developers streamline workflows and improve productivity.
             </p>
 
