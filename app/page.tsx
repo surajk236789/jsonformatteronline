@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "JSON Parser",
     "Format JSON Online",
     "JSON Validator",
+    "JSON Compare"
   ],
   alternates: {
     canonical: "https://jsonformatteronline.com/",
