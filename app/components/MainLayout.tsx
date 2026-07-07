@@ -49,7 +49,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             </div>
             <div>
               <span className="text-lg font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 dark:from-white dark:via-indigo-200 dark:to-white bg-clip-text text-transparent">
-                DevTools Hub
+                Devloper Tools
               </span>
             </div>
           </Link>
@@ -171,7 +171,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       <footer className="mt-16 border-t border-slate-200/50 dark:border-slate-800/40 py-8 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            &copy; {new Date().getFullYear()} DevTools Hub. {t("footerText", { defaultValue: "All conversion, parsing and formatting occurs client-side for absolute privacy and security." })}
+            &copy; {new Date().getFullYear()} Devloper Tools. {t("footerText", { defaultValue: "All conversion, parsing and formatting occurs client-side for absolute privacy and security." })}
           </p>
         </div>
       </footer>

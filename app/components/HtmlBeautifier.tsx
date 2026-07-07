@@ -14,7 +14,7 @@ export default function HtmlBeautifier() {
 
   const sampleHtml = `<div class="container" id="main-panel">
 <h1>Hello World</h1>
-<p>Welcome to <strong>DevTools Hub</strong>. We hope you love formatting code here!</p>
+<p>Welcome to <strong>Devloper Tools</strong>. We hope you love formatting code here!</p>
 <ul><li>JSON Beautifier</li><li>HTML Beautifier</li><li>Base64 to PDF</li></ul>
 <!-- Inline Advertisement Placement -->
 <div class="google-ad-scene"><p>Ad Space</p></div>
