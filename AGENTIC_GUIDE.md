@@ -6,19 +6,20 @@ Welcome! This guide outlines the core architecture and features of the **Develop
 
 ## 🚀 Application Overview & Features
 
-The Developer Tools Hub is a single-page utility dashboard designed for developers. It supports internationalization (i18n), automatic light/dark theme switching, and responsive simulated Google Ads.
+The Developer Tools Hub is a multi-page utility dashboard designed for developers. It supports internationalization (i18n), persistent light/dark theme switching, a header with Tools and Blogs dropdowns, and responsive simulated Google Ads.
 
 ### 1. Main Workspace Portal
 * **File Reference**: [app/page.tsx](file:///d:/Project/jsonformatteronline/app/page.tsx)
-* **Description**: Serves as the landing page and implements a state-driven tab switcher.
+* **Description**: Serves as the landing page and renders the JSON Beautifier inside MainLayout.
 * **Layout**:
-  * **Header**: Contains the dynamic brand identity, dark mode toggles, and language switching button.
+  * **Header**: Contains brand logo, **Tools dropdown** (all 5 tools), **Blogs dropdown**, language switcher, and theme toggle.
   * **Ad Slots**: Renders [AdSenseContainer.tsx](file:///d:/Project/jsonformatteronline/app/components/AdSenseContainer.tsx) banners above and below the main workspace.
-  * **Tab Control**: Buttons toggle the `activeTab` state between `"json"`, `"html"`, `"pdf"`, `"json-compare"`, and `"json-to-xml"`.
-  * **JSON Beautifier** is open/rendered by default.
+  * **Tab Navigation**: A segmented pill nav (`/`, `/html-beautifier`, `/base64-to-pdf`, `/json-compare`, `/json-to-xml`) rendered below the title block.
+  * **JSON Beautifier** is the default tool rendered on `/`.
 
 ### 2. JSON Beautifier
 * **File Reference**: [app/components/JsonBeautifier.tsx](file:///d:/Project/jsonformatteronline/app/components/JsonBeautifier.tsx)
+* **Route**: `/`
 * **Description**: Parses, validates, minifies, and formats raw JSON data.
 * **Features**:
   * Action buttons for **Format & Beautify** and **Minify JSON**.
@@ -28,6 +29,7 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
 
 ### 3. HTML Beautifier
 * **File Reference**: [app/components/HtmlBeautifier.tsx](file:///d:/Project/jsonformatteronline/app/components/HtmlBeautifier.tsx)
+* **Route**: `/html-beautifier` → [app/html-beautifier/page.tsx](file:///d:/Project/jsonformatteronline/app/html-beautifier/page.tsx)
 * **Description**: Reformats and cleans messy HTML markup using the `js-beautify` library.
 * **Features**:
   * Beautifies inputs with custom indent configurations (`indent_size: 2`).
@@ -36,6 +38,7 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
 
 ### 4. Base64 to PDF Converter
 * **File Reference**: [app/components/Base64ToPdf.tsx](file:///d:/Project/jsonformatteronline/app/components/Base64ToPdf.tsx)
+* **Route**: `/base64-to-pdf` → [app/base64-to-pdf/page.tsx](file:///d:/Project/jsonformatteronline/app/base64-to-pdf/page.tsx)
 * **Description**: Decodes Base64-encoded strings back into readable PDF documents.
 * **Features**:
   * Automatically strips Data URI headers (e.g., `data:application/pdf;base64,...`) and spacing.
@@ -44,13 +47,14 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
 
 ### 5. JSON Compare
 * **File Reference**: [app/components/JsonCompare.tsx](file:///d:/Project/jsonformatteronline/app/components/JsonCompare.tsx)
+* **Route**: `/json-compare` → [app/json-compare/page.tsx](file:///d:/Project/jsonformatteronline/app/json-compare/page.tsx)
 * **Description**: Visually compares two JSON objects with a side-by-side Monaco DiffEditor.
 * **Features**:
   * VSCode-like editor experience with native line numbers.
   * Collapsible object and array nodes for easier navigation.
   * Live differences highlighting and editable panes.
 
-### 7. JSON to XML Converter
+### 6. JSON to XML Converter
 * **File Reference**: [app/components/JsonToXml.tsx](file:///d:/Project/jsonformatteronline/app/components/JsonToXml.tsx)
 * **Route**: `/json-to-xml` → [app/json-to-xml/page.tsx](file:///d:/Project/jsonformatteronline/app/json-to-xml/page.tsx)
 * **Description**: Converts valid JSON data into well-formed, pretty-printed XML — entirely client-side with no external libraries.
@@ -62,9 +66,54 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
   * Copy-to-clipboard button and **Download as `.xml`** button with visual confirmation states.
   * Accent colour: **orange** (`bg-orange-500/600`) — consistent with the tab indicator in `MainLayout.tsx`.
 
+### 7. Blog System
+* **Listing page**: [app/blogs/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/page.tsx) — Route: `/blogs`
+* **Dynamic post page**: [app/blogs/[slug]/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/[slug]/page.tsx) — Route: `/blogs/[slug]`
+* **Description**: A static blog system with 6 articles covering JSON formatting, HTML beautification, Base64 encoding, JSON vs XML, JSON comparison, and API debugging tips.
+* **Articles** (slugs):
+  * `json-formatting-best-practices`
+  * `html-beautifier-guide`
+  * `base64-encoding-explained`
+  * `json-vs-xml`
+  * `comparing-json-objects`
+  * `api-debugging-tips`
+* **Implementation note**: Blog content is co-located in the dynamic `[slug]/page.tsx` file. All content renders via a lightweight custom markdown renderer (no external library). `generateStaticParams` pre-generates all slugs at build time.
+
 ### 8. AdSense Container
 * **File Reference**: [app/components/AdSenseContainer.tsx](file:///d:/Project/jsonformatteronline/app/components/AdSenseContainer.tsx)
 * **Description**: Wraps advertisement script loaders or renders responsive visual mock ads during development/testing. Includes a dynamic shimmer loading overlay.
+
+---
+
+## 🎨 Header Navigation Architecture
+
+The header is implemented in [MainLayout.tsx](file:///d:/Project/jsonformatteronline/app/components/MainLayout.tsx) and includes:
+
+* **Brand logo** (left) — links to `/`
+* **Tools dropdown** (desktop nav) — shows all 5 developer tools with emoji, label, and description
+* **Blogs dropdown** (desktop nav) — shows 6 recent articles + "View all" link to `/blogs`
+* **Language toggle** — switches between `en` and `hi` via react-i18next
+* **Theme toggle** — persists dark/light mode using `next-themes` with `storageKey="devtools-theme"`
+* **Mobile hamburger** — collapses tools and blogs into a single slide-down menu on small screens
+
+### Dropdown behaviour:
+* Clicking one dropdown closes the other (mutual exclusion)
+* Outside clicks close all dropdowns (via `mousedown` listener on `document`)
+* Route changes auto-close all dropdowns and the mobile menu
+
+---
+
+## 🌗 Theme System
+
+* **Provider**: `next-themes` `ThemeProvider` in [app/layout.tsx](file:///d:/Project/jsonformatteronline/app/layout.tsx)
+* **Config**:
+  ```tsx
+  <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
+  ```
+* **`enableSystem={false}`** — Critical. Prevents the OS system theme from overriding the user's explicit choice.
+* **`storageKey="devtools-theme"`** — Stores the user preference in `localStorage` under this key for persistence across page loads and routes.
+* **`attribute="class"`** — Adds/removes the `dark` class on `<html>` to activate `dark:` Tailwind variants.
+* **Hydration guard**: `MainLayout` defers all rendering until `mounted === true` (via `useEffect`) to prevent SSR/client hydration mismatches.
 
 ---
 
@@ -72,6 +121,7 @@ The Developer Tools Hub is a single-page utility dashboard designed for develope
 
 * **Fonts**: `layout.tsx` imports the premium Google Font `Outfit` via `next/font/google`. Custom variables in `globals.css` map `font-sans` to `--font-outfit`.
 * **Metadata**: Optimized in [app/layout.tsx](file:///d:/Project/jsonformatteronline/app/layout.tsx) with comprehensive descriptive title, keywords, index settings, OpenGraph site configurations, and Twitter card protocols.
+* **Blog SEO**: Each blog page exports `generateMetadata` for dynamic per-post titles and descriptions, plus canonical URLs.
 
 ---
 
@@ -98,3 +148,9 @@ When an AI coding agent is editing or extending this codebase, the following pra
 
 ### 5. Hydration Safeguards
 * **Action**: To avoid mismatch errors with theme providers or client-side storage states, ensure that server-rendered HTML matches the first client paint by wrapping layout controls in a `mounted` check hook or utilizing `suppressHydrationWarning` on root tags where appropriate.
+
+### 6. Adding New Blog Posts
+* **Action**: Add new slugs to the `blogContent` registry in [app/blogs/[slug]/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/%5Bslug%5D/page.tsx) and to the `blogs` array in [app/blogs/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/page.tsx). Also update the dropdown list in `MainLayout.tsx`.
+
+### 7. Adding New Tools
+* **Action**: Create a new route directory under `app/`, update the `tools` array in [MainLayout.tsx](file:///d:/Project/jsonformatteronline/app/components/MainLayout.tsx), and add a new tab `<Link>` to the segmented nav. Assign a consistent accent color.
