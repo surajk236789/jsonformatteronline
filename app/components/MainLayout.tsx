@@ -50,7 +50,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             </div>
             <div>
               <span className="text-lg font-extrabold tracking-tight bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 dark:from-white dark:via-indigo-200 dark:to-white bg-clip-text text-transparent">
-                Devloper Tools
+                Developer Tools
               </span>
             </div>
           </Link>
@@ -206,7 +206,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <div className="max-w-7xl mx-auto px-4 text-center space-y-6">
           {/* Copyright */}
           <p className="text-xs text-slate-500 dark:text-slate-400">
-            &copy; {new Date().getFullYear()} Devloper Tools.{" "}
+            &copy; {new Date().getFullYear()} Developer Tools.{" "}
             {t("footerText", {
               defaultValue:
                 "All conversion, parsing and formatting occurs client-side for absolute privacy and security.",
@@ -215,7 +215,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
           {/* SEO-rich description */}
           <p className="text-sm text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-            Devloper Tools offers free online utilities for developers and IT
+            Developer Tools offers free online utilities for developers and IT
             professionals. Instantly format and beautify JSON, clean and
             validate HTML, convert Base64 strings into secure downloadable PDF
             files, and compare JSON data side by side. All tools run directly in
@@ -247,9 +247,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
           {/* Hidden SEO Article Block */}
           <article className="hidden">
-            <h1>Devloper Tools Formatter & Beautifier</h1>
+            <h1>Developer Tools Formatter & Beautifier</h1>
             <p>
-              Welcome to Devloper Tools — your one‑stop solution for formatting,
+              Welcome to Developer Tools — your one‑stop solution for formatting,
               validating, and beautifying JSON data online. Our JSON Formatter
               instantly parses and structures your JSON, making it easier to
               debug APIs, share data, and improve readability.
