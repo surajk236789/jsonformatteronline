@@ -1,13 +1,42 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-sans: var(--font-outfit), sans-serif;
+  
+  /* Dynamic Theme Variables */
+  --color-background: var(--bg-background);
+  --color-panel: var(--bg-panel);
+  --color-panel-border: var(--border-panel);
+  --color-primary: var(--text-primary);
+  --color-secondary: var(--text-secondary);
+}
+
+@layer base {
+  :root {
+    --bg-background: #f8fafc; /* slate-50 */
+    --bg-panel: #ffffff; /* white */
+    --border-panel: rgba(226, 232, 240, 0.6); /* slate-200/60 */
+    --text-primary: #0f172a; /* slate-900 */
+    --text-secondary: #64748b; /* slate-500 */
+  }
+
+  .dark {
+    --bg-background: #020617; /* slate-950 */
+    --bg-panel: #0f172a; /* slate-900 */
+    --border-panel: rgba(30, 41, 59, 0.6); /* slate-800/60 */
+    --text-primary: #f8fafc; /* slate-50 */
+    --text-secondary: #94a3b8; /* slate-400 */
+  }
 }
 
 /* Base styling overrides */
 body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
+  background-color: var(--bg-background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar for modern UI appearance */

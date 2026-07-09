@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Best Online JSON Formatter, HTML Beautifier & Base64 to PDF | Developer Tools",
     description: "Format, validate, and minify JSON; clean HTML; and convert Base64 to PDF instantly with our modern, secure developer utility workspace.",
     url: "https://jsonformatteronline.com",
-    siteName: "Devleoper Tools",
+    siteName: "Developer Tools",
     locale: "en_US",
     type: "website",
   },
@@ -42,14 +42,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-2678573850280758"></meta>
-        {/* Using a standard HTML script tag ensures Google's bot can read it in the raw HTML for verification */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2678573850280758"
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body className="font-sans antialiased bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
+      <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
           <I18nProvider>
             {children}

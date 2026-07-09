@@ -29,7 +29,7 @@ export default function AdSenseContainer({
 
   return (
     <div className="w-full my-6 flex flex-col items-center justify-center">
-      <span className="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1.5 font-medium">
+      <span className="text-[10px] uppercase tracking-wider text-secondary mb-1.5 font-medium">
         Advertisement
       </span>
       <div className="w-full max-w-4xl flex items-center justify-center relative overflow-hidden min-h-[90px]">

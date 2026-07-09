@@ -121,19 +121,6 @@ export default function BlogsPage() {
   return (
     <MainLayout>
       <div className="max-w-5xl mx-auto">
-        {/* Hero */}
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 mb-4">
-            📚 Developer Blog
-          </span>
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white mb-3">
-            Tips, Guides &amp; Best Practices
-          </h1>
-          <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto text-sm md:text-base">
-            Expert articles to help you work smarter with JSON, HTML, APIs, and developer tools.
-          </p>
-        </div>
-
         {/* Blog Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog) => {

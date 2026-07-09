@@ -66,7 +66,26 @@ The Developer Tools Hub is a multi-page utility dashboard designed for developer
   * Copy-to-clipboard button and **Download as `.xml`** button with visual confirmation states.
   * Accent colour: **orange** (`bg-orange-500/600`) — consistent with the tab indicator in `MainLayout.tsx`.
 
-### 7. Blog System
+### 7. Additional Tools Suite
+* **Directory**: `app/tools/*` and `app/components/*`
+* **Description**: A collection of 14 secondary utility tools available from the "Tools" dropdown.
+* **Included Tools**:
+  * **JSON to CSV** (`/tools/json-to-csv`) - Converts JSON arrays to CSV format.
+  * **CSV to JSON** (`/tools/csv-to-json`) - Converts CSV text to JSON array format.
+  * **JSON Schema Validator** (`/tools/json-schema-validator`) - Validates JSON against JSON Schema.
+  * **CSS Minifier** (`/tools/css-minifier`) - Minifies CSS code.
+  * **CSS Gradient Generator** (`/tools/css-gradient-generator`) - Generates CSS linear/radial gradients.
+  * **HTML to JSX** (`/tools/html-to-jsx`) - Converts HTML elements to React JSX.
+  * **HTML Entity Encoder** (`/tools/html-entity-encoder`) - Encodes/decodes HTML entities.
+  * **Base64 Encode/Decode** (`/tools/base64-encode-decode`) - Encodes and decodes Base64 string formats.
+  * **URL Encode/Decode** (`/tools/url-encode-decode`) - Encodes and decodes URL strings.
+  * **Hash Generator** (`/tools/hash-generator`) - Generates MD5, SHA-1, SHA-256 hashes online.
+  * **Cron Parser** (`/tools/cron-parser`) - Parses and explains cron expressions.
+  * **Password Generator** (`/tools/password-generator`) - Generates random secure passwords.
+  * **Git Command Generator** (`/tools/git-command-generator`) - GUI for building common git commands.
+  * **HTTP Status Codes** (`/tools/http-status-codes`) - Reference list for standard HTTP status codes.
+
+### 8. Blog System
 * **Listing page**: [app/blogs/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/page.tsx) — Route: `/blogs`
 * **Dynamic post page**: [app/blogs/[slug]/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/[slug]/page.tsx) — Route: `/blogs/[slug]`
 * **Description**: A static blog system with 6 articles covering JSON formatting, HTML beautification, Base64 encoding, JSON vs XML, JSON comparison, and API debugging tips.
@@ -79,7 +98,7 @@ The Developer Tools Hub is a multi-page utility dashboard designed for developer
   * `api-debugging-tips`
 * **Implementation note**: Blog content is co-located in the dynamic `[slug]/page.tsx` file. All content renders via a lightweight custom markdown renderer (no external library). `generateStaticParams` pre-generates all slugs at build time.
 
-### 8. AdSense Container
+### 9. AdSense Container
 * **File Reference**: [app/components/AdSenseContainer.tsx](file:///d:/Project/jsonformatteronline/app/components/AdSenseContainer.tsx)
 * **Description**: Wraps advertisement script loaders or renders responsive visual mock ads during development/testing. Includes a dynamic shimmer loading overlay.
 

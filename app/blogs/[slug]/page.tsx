@@ -512,7 +512,7 @@ function renderMarkdown(md: string) {
               {rows.map((row, ri) => (
                 <tr
                   key={ri}
-                  className="even:bg-slate-50 dark:even:bg-slate-800/50"
+                  className="even:bg-slate-100 dark:even:bg-slate-800/50"
                 >
                   {row.map((cell, ci) => (
                     <td
