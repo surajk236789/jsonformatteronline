@@ -1,25 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 
 export default function GitCommandGenerator() {
-  const [workflow, setWorkflow] = useState("commit");
-  const [branch, setBranch] = useState("main");
-  const [message, setMessage] = useState("Update files");
-  const [remote, setRemote] = useState("origin");
+  const [workflow, setWorkflow] = useState<"commit" | "branch" | "undo" | "sync">("commit");
+  const [branch, setBranch] = useState<string>("main");
+  const [message, setMessage] = useState<string>("Update files");
+  const [remote, setRemote] = useState<string>("origin");
 
-  const getCommand = () => {
+  const getCommand = (): string => {
     switch (workflow) {
       case "commit":
-        return \`git add .\\ngit commit -m "\${message}"\\ngit push \${remote} \${branch}\`;
+        return `git add .\ngit commit -m "${message}"\ngit push ${remote} ${branch}`;
       case "branch":
-        return \`git checkout -b \${branch}\\ngit push -u \${remote} \${branch}\`;
+        return `git checkout -b ${branch}\ngit push -u ${remote} ${branch}`;
       case "undo":
-        return \`git reset --soft HEAD~1\`;
+        return `git reset --soft HEAD~1`;
       case "sync":
-        return \`git fetch \${remote}\\ngit pull \${remote} \${branch}\`;
+        return `git fetch ${remote}\ngit pull ${remote} ${branch}`;
       default:
         return "git status";
     }
+  };
+
+  const copyToClipboard = () => {
+    const command = getCommand();
+    navigator.clipboard.writeText(command).then(
+      () => alert("Copied to clipboard!"),
+      (err) => console.error("Failed to copy:", err)
+    );
   };
 
   return (
@@ -37,10 +45,15 @@ export default function GitCommandGenerator() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">Workflow</label>
-            <select 
+            <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">
+              Workflow
+            </label>
+            <select
               className="w-full p-3 bg-background border border-panel-border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
-              value={workflow} onChange={(e) => setWorkflow(e.target.value)}
+              value={workflow}
+              onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+                setWorkflow(e.target.value as "commit" | "branch" | "undo" | "sync")
+              }
             >
               <option value="commit">Add, Commit & Push</option>
               <option value="branch">Create & Push Branch</option>
@@ -51,9 +64,13 @@ export default function GitCommandGenerator() {
 
           {(workflow === "commit" || workflow === "branch" || workflow === "sync") && (
             <div>
-              <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">Branch Name</label>
-              <input 
-                type="text" value={branch} onChange={(e) => setBranch(e.target.value)}
+              <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">
+                Branch Name
+              </label>
+              <input
+                type="text"
+                value={branch}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setBranch(e.target.value)}
                 className="w-full p-3 bg-background border border-panel-border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
@@ -61,9 +78,13 @@ export default function GitCommandGenerator() {
 
           {(workflow === "commit" || workflow === "branch" || workflow === "sync") && (
             <div>
-              <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">Remote</label>
-              <input 
-                type="text" value={remote} onChange={(e) => setRemote(e.target.value)}
+              <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">
+                Remote
+              </label>
+              <input
+                type="text"
+                value={remote}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setRemote(e.target.value)}
                 className="w-full p-3 bg-background border border-panel-border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
@@ -71,9 +92,13 @@ export default function GitCommandGenerator() {
 
           {workflow === "commit" && (
             <div>
-              <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">Commit Message</label>
-              <input 
-                type="text" value={message} onChange={(e) => setMessage(e.target.value)}
+              <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">
+                Commit Message
+              </label>
+              <input
+                type="text"
+                value={message}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setMessage(e.target.value)}
                 className="w-full p-3 bg-background border border-panel-border rounded-xl text-sm outline-none focus:ring-2 focus:ring-indigo-500"
               />
             </div>
@@ -81,15 +106,17 @@ export default function GitCommandGenerator() {
         </div>
 
         <div>
-          <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">Generated Command</label>
+          <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">
+            Generated Command
+          </label>
           <div className="relative">
-            <textarea 
+            <textarea
               className="w-full h-48 p-4 bg-slate-900 text-green-400 border border-slate-800 rounded-xl font-mono text-sm outline-none resize-none"
               value={getCommand()}
               readOnly
             />
-            <button 
-              onClick={() => navigator.clipboard.writeText(getCommand())}
+            <button
+              onClick={copyToClipboard}
               className="absolute right-3 top-3 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold rounded-lg transition-colors"
             >
               Copy

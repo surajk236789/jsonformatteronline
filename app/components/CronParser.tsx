@@ -1,18 +1,41 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
+
+type CronParts = {
+  min: string;
+  hour: string;
+  dom: string;
+  month: string;
+  dow: string;
+};
 
 export default function CronParser() {
-  const [cron, setCron] = useState("*/5 * * * *");
-  const [description, setDescription] = useState("");
-  const [parts, setParts] = useState({ min: "", hour: "", dom: "", month: "", dow: "" });
+  const [cron, setCron] = useState<string>("*/5 * * * *");
+  const [description, setDescription] = useState<string>("");
+  const [parts, setParts] = useState<CronParts>({
+    min: "",
+    hour: "",
+    dom: "",
+    month: "",
+    dow: "",
+  });
 
   useEffect(() => {
     const parse = () => {
-      const p = cron.trim().split(/\\s+/);
+      const p = cron.trim().split(/\s+/);
       if (p.length === 5) {
-        setParts({ min: p[0], hour: p[1], dom: p[2], month: p[3], dow: p[4] });
-        // Very naive basic description logic (for full description, we'd use cronstrue library, but doing basic for zero-deps)
-        setDescription(\`Runs at minute \${p[0]}, hour \${p[1]}, day of month \${p[2]}, month \${p[3]}, day of week \${p[4]}\`.replace(/\\*/g, 'every'));
+        const newParts: CronParts = {
+          min: p[0],
+          hour: p[1],
+          dom: p[2],
+          month: p[3],
+          dow: p[4],
+        };
+        setParts(newParts);
+
+        // Very naive description logic
+        const desc = `Runs at minute ${p[0]}, hour ${p[1]}, day of month ${p[2]}, month ${p[3]}, day of week ${p[4]}`;
+        setDescription(desc.replace(/\*/g, "every"));
       } else {
         setParts({ min: "-", hour: "-", dom: "-", month: "-", dow: "-" });
         setDescription("Invalid cron expression format (needs exactly 5 parts)");
@@ -34,12 +57,14 @@ export default function CronParser() {
       </div>
 
       <div>
-        <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">Cron Expression</label>
-        <input 
+        <label className="block text-xs font-bold text-secondary mb-2 uppercase tracking-wider">
+          Cron Expression
+        </label>
+        <input
           type="text"
           className="w-full p-4 bg-background border border-panel-border rounded-xl text-xl font-mono focus:ring-2 focus:ring-indigo-500 outline-none text-center tracking-widest"
           value={cron}
-          onChange={(e) => setCron(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setCron(e.target.value)}
         />
       </div>
 
@@ -47,7 +72,7 @@ export default function CronParser() {
         <div className="text-center font-semibold text-lg text-indigo-600 dark:text-indigo-400 mb-8 bg-indigo-50 dark:bg-indigo-900/20 p-4 rounded-xl">
           "{description}"
         </div>
-        
+
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           <div className="bg-background border border-panel-border p-4 rounded-xl text-center">
             <div className="text-xs text-slate-400 font-bold mb-1 uppercase tracking-wider">Minute</div>
