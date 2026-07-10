@@ -43,17 +43,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-2678573850280758" />
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2678573850280758"
           crossOrigin="anonymous"
-        />
+        ></script>
+
+      </head>
+      <body className="font-sans antialiased">
         {/* Google Analytics */}
         <Script
+          id="gtag-script"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-7X1Q9VXQ1R"
+          strategy="afterInteractive"
         />
-        <Script id="google-analytics">
+        <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -61,8 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-7X1Q9VXQ1R');
           `}
         </Script>
-      </head>
-      <body className="font-sans antialiased">
+
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
           <I18nProvider>
             {children}
