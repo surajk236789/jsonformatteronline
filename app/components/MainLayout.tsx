@@ -75,12 +75,12 @@ const colorMap: Record<string, string> = {
 };
 
 const blogLinks = [
-  { slug: "json-formatting-best-practices", label: "JSON Formatting Best Practices", emoji: "🗂️" },
-  { slug: "html-beautifier-guide", label: "HTML Beautification Guide", emoji: "🎨" },
-  { slug: "base64-encoding-explained", label: "Base64 Encoding Explained", emoji: "🔐" },
-  { slug: "json-vs-xml", label: "JSON vs XML: Full Comparison", emoji: "⚖️" },
-  { slug: "comparing-json-objects", label: "Comparing JSON Objects Like a Pro", emoji: "🔍" },
-  { slug: "api-debugging-tips", label: "10 Pro API Debugging Tips", emoji: "🚀" },
+  { slug: "json-formatting-best-practices", label: "JSON Formatting Best Practices", emoji: "🗂️", description: "Learn how to structure, format, and organize your JSON data for maximum readability and team collaboration." },
+  { slug: "html-beautifier-guide", label: "HTML Beautification Guide", emoji: "🎨", description: "A comprehensive guide on maintaining clean, indented, and professional HTML code in modern web development." },
+  { slug: "base64-encoding-explained", label: "Base64 Encoding Explained", emoji: "🔐", description: "Demystifying Base64 encoding: what it is, how it works, and when to use it securely in your applications." },
+  { slug: "json-vs-xml", label: "JSON vs XML: Full Comparison", emoji: "⚖️", description: "An in-depth look at the differences between JSON and XML, and how to choose the right format for your API." },
+  { slug: "comparing-json-objects", label: "Comparing JSON Objects Like a Pro", emoji: "🔍", description: "Techniques and tools for diffing JSON objects efficiently, finding nested changes, and debugging payloads." },
+  { slug: "api-debugging-tips", label: "10 Pro API Debugging Tips", emoji: "🚀", description: "Boost your productivity with these 10 expert tips for testing, debugging, and resolving REST API issues." },
 ];
 
 /* The 5 main tool tabs shown in the sub-navigation */
@@ -417,6 +417,44 @@ export default function MainLayout({ children }: MainLayoutProps) {
         {/* Bottom Ads — only on tool pages */}
         {!isBlogPage && <AdSenseContainer slot="bottom-banner" />}
       </section>
+
+      {/* ── Latest Blogs Section ── */}
+      {!isBlogPage && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
+              📚 Latest Articles
+            </h2>
+            <Link
+              href="/blogs"
+              className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1"
+            >
+              See more <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {blogLinks.slice(0, 3).map((blog) => (
+              <Link
+                key={blog.slug}
+                href={`/blogs/${blog.slug}`}
+                className="group flex flex-col justify-between bg-panel border border-panel-border rounded-2xl p-6 hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-900/20 transition-all duration-300"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-900/40 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {blog.emoji}
+                  </div>
+                  <h3 className="text-lg font-bold text-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2 mb-2">
+                    {blog.label}
+                  </h3>
+                  <p className="text-sm text-secondary line-clamp-3">
+                    {blog.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ── SEO Footer ── */}
       <footer className="mt-16 border-t border-panel-border py-16 bg-panel">

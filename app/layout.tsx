@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import I18nProvider from "./I18nProvider";
 import { Outfit } from "next/font/google";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -41,12 +42,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-2678573850280758"></meta>
-        <script
+        <meta name="google-adsense-account" content="ca-pub-2678573850280758" />
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2678573850280758"
           crossOrigin="anonymous"
-        ></script>
+        />
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7X1Q9VXQ1R"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-7X1Q9VXQ1R');
+          `}
+        </Script>
       </head>
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
