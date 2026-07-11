@@ -99,14 +99,23 @@ export default function MainLayout({ children }: MainLayoutProps) {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [blogsOpen, setBlogsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navRef = useRef<HTMLDivElement>(null);
   const blogsRef = useRef<HTMLDivElement>(null);
 
   const isBlogPage = pathname.startsWith("/blogs");
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     setMounted(true);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    // Initialize scroll state
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   /* Close dropdowns on outside click */
@@ -144,7 +153,13 @@ export default function MainLayout({ children }: MainLayoutProps) {
   return (
     <main className="min-h-screen bg-background text-primary pb-12 transition-colors duration-300">
       {/* ── Sticky Header ── */}
-      <header className="sticky top-0 z-50 w-full bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none">
+      <header
+        className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${
+          isHomePage && !scrolled
+            ? "bg-transparent border-transparent shadow-none"
+            : "bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
           {/* Brand */}
@@ -268,7 +283,11 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <button
               id="header-theme-toggle"
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 border border-panel-border text-secondary rounded-lg transition-all cursor-pointer"
+              className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${
+                theme === "dark"
+                  ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                  : "bg-slate-800 text-slate-100 hover:bg-slate-700"
+              }`}
               title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
             >
               {theme === "dark" ? (
