@@ -4,12 +4,12 @@ import React, { useEffect } from "react";
 
 interface AdSenseContainerProps {
   slot?: string;
-  format?: "auto" | "rectangle" | "horizontal" | "vertical";
-  responsive?: "true" | "false";
+  format?: string;
+  responsive?: string;
 }
 
 export default function AdSenseContainer({
-  slot = "", // Leave blank if using Auto Ads, or enter numerical slot ID
+  slot = "5523061044",
   format = "auto",
   responsive = "true",
 }: AdSenseContainerProps) {
@@ -32,11 +32,11 @@ export default function AdSenseContainer({
       <span className="text-[10px] uppercase tracking-wider text-secondary mb-1.5 font-medium">
         Advertisement
       </span>
-      <div className="w-full max-w-4xl flex items-center justify-center relative overflow-hidden min-h-[90px]">
+      <div className="w-full flex items-center justify-center relative overflow-hidden min-h-[90px]">
         <ins
           ref={adRef}
-          className="adsbygoogle w-full"
-          style={{ display: "block" }}
+          className="adsbygoogle"
+          style={{ display: "block", width: "100%" }}
           data-ad-client="ca-pub-2678573850280758"
           data-ad-slot={slot}
           data-ad-format={format}

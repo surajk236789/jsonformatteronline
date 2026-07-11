@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import AdSenseContainer from "./AdSenseContainer";
 import Brand from "./Brand";
 
@@ -95,6 +95,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
+  const router = useRouter();
 
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [blogsOpen, setBlogsOpen] = useState(false);
@@ -181,7 +182,16 @@ export default function MainLayout({ children }: MainLayoutProps) {
               return (
                 <div className="relative" key={group.category}>
                   <button
-                    onClick={() => { setOpenMenu(isOpen ? null : group.category); setBlogsOpen(false); }}
+                    onClick={() => {
+                      if (isOpen) {
+                        setOpenMenu(null);
+                      } else {
+                        setOpenMenu(group.category);
+                        setBlogsOpen(false);
+                        // Prefetch all tool pages in this group
+                        group.tools.forEach((tool) => router.prefetch(tool.href));
+                      }
+                    }}
                     className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${isOpen
                       ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
                       : "text-secondary hover:text-indigo-600 hover:bg-slate-100 dark:hover:text-indigo-400 dark:hover:bg-slate-800"
@@ -204,6 +214,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                           <Link
                             key={tool.href}
                             href={tool.href}
+                            prefetch={true}
                             className={`flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group ${pathname === tool.href ? "bg-slate-100 dark:bg-slate-800" : ""}`}
                           >
                             <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm flex-shrink-0 ${colorMap[tool.color] ?? colorMap.slate}`}>
@@ -375,38 +386,9 @@ export default function MainLayout({ children }: MainLayoutProps) {
             </p>
           </div>
         ) : (
-          /* Tool hub hero + tab nav — shown on all tool pages */
+          /* Tool hub hero — subtitle only, H1 comes from each page */
           <>
-            <div className="text-center mb-8">
-              <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-                The Ultimate Developer Utility Workspace
-              </h1>
-              <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-                Format, validate, parse, clean, and convert your data instantly in a single secure window.
-              </p>
-            </div>
-
-            {/* Top Google Ads Slot */}
-            <AdSenseContainer slot="top-banner" />
-
-            {/* Segmented Tab Navigation */}
-            {/* <nav aria-label="Tool Navigation" className="flex justify-center mb-8">
-              <div className="inline-flex flex-wrap justify-center p-1.5 bg-slate-200/60 dark:bg-slate-900 border border-panel-border rounded-2xl shadow-sm gap-1">
-                {mainTabs.map((tab) => (
-                  <Link
-                    key={tab.href}
-                    href={tab.href}
-                    className={`px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 flex items-center gap-2 cursor-pointer ${pathname === tab.href
-                        ? `bg-white dark:bg-slate-800 ${tab.activeColor} shadow-md`
-                        : "text-secondary hover:text-primary"
-                      }`}
-                  >
-                    <span className={`w-2 h-2 rounded-full ${pathname === tab.href ? tab.dotColor : "bg-slate-400"}`} />
-                    {tab.label}
-                  </Link>
-                ))}
-              </div>
-            </nav> */}
+            <AdSenseContainer slot="5523061044" />
           </>
         )}
 
@@ -416,7 +398,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         </div>
 
         {/* Bottom Ads — only on tool pages */}
-        {!isBlogPage && <AdSenseContainer slot="bottom-banner" />}
+        {!isBlogPage && <AdSenseContainer slot="5523061044" />}
       </section>
 
       {/* ── Latest Blogs Section ── */}
@@ -503,7 +485,10 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 <ul className="space-y-3">
                   {group.tools.map((tool) => (
                     <li key={tool.href}>
-                      <Link href={tool.href} className="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                      <Link 
+                        href={tool.href} 
+                        className={`inline-block px-2 py-1 -ml-2 rounded-lg text-sm transition-colors ${pathname === tool.href ? "bg-slate-100 dark:bg-slate-800/50 text-indigo-600 dark:text-indigo-400 font-bold" : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-400"}`}
+                      >
                         {tool.label}
                       </Link>
                     </li>
@@ -512,31 +497,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
               </div>
             ))}
           </div>
-
-          {/* Hidden SEO Article Block */}
-          <article className="hidden">
-            <h1>Developer Tools Formatter &amp; Beautifier</h1>
-            <p>
-              Welcome to Developer Tools — your one‑stop solution for formatting, validating, and beautifying JSON data
-              online. Our JSON Formatter instantly parses and structures your JSON, making it easier to debug APIs, share
-              data, and improve readability.
-            </p>
-            <h2>Why Choose Our JSON Formatter?</h2>
-            <ul>
-              <li>✅ Instant JSON validation and error detection</li>
-              <li>✅ Beautify messy JSON into clean, readable format</li>
-              <li>✅ Minify JSON for faster performance</li>
-              <li>✅ Secure, browser‑based — no data leaves your device</li>
-            </ul>
-            <h2>Other Developer Tools You&apos;ll Love</h2>
-            <p>
-              Alongside JSON Beautifier, we also provide:
-              <Link href="/html-beautifier"> HTML Beautifier</Link>,
-              <Link href="/base64-to-pdf"> Base64 to PDF Converter</Link>,
-              <Link href="/json-compare"> JSON Compare Tool</Link>, and
-              <Link href="/json-to-xml"> JSON to XML Converter</Link>.
-            </p>
-          </article>
         </div>
       </footer>
     </main>

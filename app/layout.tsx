@@ -40,21 +40,24 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  other: {
+    "google-adsense-account": "ca-pub-2678573850280758",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-2678573850280758" />
-        <script
+      </head>
+      <body className="font-sans antialiased">
+        <Script
+          id="adsense-script"
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2678573850280758"
           crossOrigin="anonymous"
-        ></script>
-
-      </head>
-      <body className="font-sans antialiased">
+          strategy="afterInteractive"
+        />
         {/* Google Analytics */}
         <Script
           id="gtag-script"
