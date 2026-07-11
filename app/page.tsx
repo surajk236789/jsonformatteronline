@@ -4,9 +4,8 @@ import MainLayout from "./components/MainLayout";
 import JsonBeautifier from "./components/JsonBeautifier";
 
 export const metadata: Metadata = {
-  title: "JSON Formatter & Beautifier Online — Free, Fast & Secure | jsondiff.space",
-  description:
-    "Free online JSON Formatter and Beautifier. Format, parse, validate, and minify your JSON data instantly and securely in your browser. No data leaves your device.",
+  title: "JSON Formatter & Beautifier Online",
+  description: "Free JSON Formatter and Beautifier. Format, validate, and minify JSON data instantly in your browser. Secure and private — no data leaves your device.",
   keywords: [
     "JSON Formatter",
     "JSON Beautifier",
