@@ -140,16 +140,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  if (!mounted) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full border-4 border-indigo-500 border-t-transparent animate-spin mb-4" />
-          <span className="text-sm font-semibold text-secondary">Loading DevTools...</span>
-        </div>
-      </div>
-    );
-  }
+
 
   return (
     <main className="min-h-screen bg-background text-primary pb-12 transition-colors duration-300">
@@ -295,13 +286,15 @@ export default function MainLayout({ children }: MainLayoutProps) {
               id="header-theme-toggle"
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
               className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${
-                theme === "dark"
-                  ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                  : "bg-slate-800 text-slate-100 hover:bg-slate-700"
+                mounted 
+                  ? theme === "dark"
+                    ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                    : "bg-slate-800 text-slate-100 hover:bg-slate-700"
+                  : "bg-transparent text-transparent"
               }`}
-              title={theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+              title={mounted && theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
             >
-              {theme === "dark" ? (
+              {mounted && theme === "dark" ? (
                 <svg className="w-4 h-4 fill-none stroke-current" viewBox="0 0 24 24" strokeWidth={2}>
                   <path
                     strokeLinecap="round"
@@ -309,10 +302,12 @@ export default function MainLayout({ children }: MainLayoutProps) {
                     d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"
                   />
                 </svg>
-              ) : (
+              ) : mounted ? (
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
                 </svg>
+              ) : (
+                <div className="w-4 h-4" />
               )}
             </button>
 
