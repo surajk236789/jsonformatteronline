@@ -124,7 +124,7 @@ tools.forEach(tool => {
   }
 
   const pagePath = path.join(routeDir, 'page.tsx');
-  const pageContent = `import React from "react";\nimport type { Metadata } from "next";\nimport MainLayout from "../../components/MainLayout";\nimport ${tool.name} from "../../components/${tool.name}";\n\nexport const metadata: Metadata = {\n  title: "${tool.title} | Developer Tools",\n  description: "${tool.desc}",\n  alternates: { canonical: "https://jsonformatteronline.com/tools/${tool.route}" },\n};\n\nexport default function ${tool.name}Page() {\n  return (\n    <MainLayout>\n      <${tool.name} />\n    </MainLayout>\n  );\n}\n`;
+  const pageContent = `import React from "react";\nimport type { Metadata } from "next";\nimport MainLayout from "../../components/MainLayout";\nimport ${tool.name} from "../../components/${tool.name}";\n\nexport const metadata: Metadata = {\n  title: "${tool.title} | Developer Tools",\n  description: "${tool.desc}",\n  alternates: { canonical: "https://www.jsondiff.space/tools/${tool.route}" },\n};\n\nexport default function ${tool.name}Page() {\n  return (\n    <MainLayout>\n      <${tool.name} />\n    </MainLayout>\n  );\n}\n`;
 
   if (!fs.existsSync(pagePath)) {
     fs.writeFileSync(pagePath, pageContent);

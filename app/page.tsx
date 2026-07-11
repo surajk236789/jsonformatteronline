@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "JSON Compare"
   ],
   alternates: {
-    canonical: "https://jsonformatteronline.com/",
+    canonical: "https://www.jsondiff.space/",
   },
 };
 

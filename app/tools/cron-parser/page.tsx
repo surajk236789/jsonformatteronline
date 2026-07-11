@@ -6,7 +6,7 @@ import CronParser from "../../components/CronParser";
 export const metadata: Metadata = {
   title: "Cron Expression Parser | Developer Tools",
   description: "Parse and explain crontab expressions.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/cron-parser" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/cron-parser" },
 };
 
 export default function CronParserPage() {

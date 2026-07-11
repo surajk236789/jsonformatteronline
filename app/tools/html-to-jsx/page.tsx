@@ -6,7 +6,7 @@ import HtmlToJsx from "../../components/HtmlToJsx";
 export const metadata: Metadata = {
   title: "HTML to JSX Converter | Developer Tools",
   description: "Convert standard HTML to React JSX syntax.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/html-to-jsx" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/html-to-jsx" },
 };
 
 export default function HtmlToJsxPage() {

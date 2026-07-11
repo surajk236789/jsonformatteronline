@@ -6,7 +6,7 @@ import CssMinifier from "../../components/CssMinifier";
 export const metadata: Metadata = {
   title: "CSS Minifier | Developer Tools",
   description: "Minify CSS code and reduce file size.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/css-minifier" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/css-minifier" },
 };
 
 export default function CssMinifierPage() {

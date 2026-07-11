@@ -19,10 +19,14 @@ export const metadata: Metadata = {
   keywords: ["JSON Formatter", "JSON Beautifier", "HTML Beautifier", "Base64 to PDF", "Developer Tools", "JSON Parser", "Format JSON Online", "HTML Formatter"],
   authors: [{ name: "Developer Tools Team" }],
   creator: "Developer Tools",
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   openGraph: {
     title: "Best Online JSON Formatter, HTML Beautifier & Base64 to PDF | Developer Tools",
     description: "Format, validate, and minify JSON; clean HTML; and convert Base64 to PDF instantly with our modern, secure developer utility workspace.",
-    url: "https://jsonformatteronline.com",
+    url: "https://www.jsondiff.space",
     siteName: "Developer Tools",
     locale: "en_US",
     type: "website",

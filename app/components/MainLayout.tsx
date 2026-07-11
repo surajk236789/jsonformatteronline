@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
-import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AdSenseContainer from "./AdSenseContainer";
@@ -95,7 +94,6 @@ const mainTabs = [
 export default function MainLayout({ children }: MainLayoutProps) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const { t, i18n } = useTranslation();
   const pathname = usePathname();
 
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -131,11 +129,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
     setBlogsOpen(false);
     setMobileMenuOpen(false);
   }, [pathname]);
-
-  const toggleLanguage = () => {
-    const nextLang = i18n.language === "en" ? "hi" : "en";
-    i18n.changeLanguage(nextLang);
-  };
 
   if (!mounted) {
     return (
@@ -271,15 +264,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
           {/* Right actions */}
           <div className="flex items-center gap-2">
-            {/* Language Selector */}
-            <button
-              id="header-lang-toggle"
-              onClick={toggleLanguage}
-              className="px-3 py-1.5 hover:bg-slate-100 dark:hover:bg-slate-800 border border-panel-border text-secondary text-xs font-bold rounded-lg transition-all flex items-center gap-1.5 cursor-pointer"
-            >
-              🌐 {i18n.language === "en" ? "हिन्दी" : "English"}
-            </button>
-
             {/* Theme Toggle */}
             <button
               id="header-theme-toggle"
@@ -376,12 +360,10 @@ export default function MainLayout({ children }: MainLayoutProps) {
           <>
             <div className="text-center mb-8">
               <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-                {t("hubTitle", { defaultValue: "The Ultimate Developer Utility Workspace" })}
+                The Ultimate Developer Utility Workspace
               </h1>
               <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-                {t("hubSubtitle", {
-                  defaultValue: "Format, validate, parse, clean, and convert your data instantly in a single secure window.",
-                })}
+                Format, validate, parse, clean, and convert your data instantly in a single secure window.
               </p>
             </div>
 
@@ -488,9 +470,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
                   &copy; {new Date().getFullYear()} Developer Tools.
                 </p>
                 <p className="text-[11px] text-secondary">
-                  {t("footerText", {
-                    defaultValue: "All conversion, parsing and formatting occurs client-side for absolute privacy and security.",
-                  })}
+                  All conversion, parsing and formatting occurs client-side for absolute privacy and security.
                 </p>
               </div>
             </div>

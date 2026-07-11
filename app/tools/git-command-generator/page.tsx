@@ -6,7 +6,7 @@ import GitCommandGenerator from "../../components/GitCommandGenerator";
 export const metadata: Metadata = {
   title: "Git Command Generator | Developer Tools",
   description: "Generate common git commands easily.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/git-command-generator" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/git-command-generator" },
 };
 
 export default function GitCommandGeneratorPage() {

@@ -420,7 +420,7 @@ export async function generateMetadata({
   return {
     title: `${blog.title} | Developer Tools Blog`,
     description: blog.description,
-    alternates: { canonical: `https://jsonformatteronline.com/blogs/${slug}` },
+    alternates: { canonical: `https://www.jsondiff.space/blogs/${slug}` },
   };
 }
 

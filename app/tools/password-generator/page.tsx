@@ -6,7 +6,7 @@ import PasswordGenerator from "../../components/PasswordGenerator";
 export const metadata: Metadata = {
   title: "Secure Password Generator | Developer Tools",
   description: "Generate strong, random passwords securely.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/password-generator" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/password-generator" },
 };
 
 export default function PasswordGeneratorPage() {

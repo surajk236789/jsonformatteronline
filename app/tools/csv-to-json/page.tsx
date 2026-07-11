@@ -6,7 +6,7 @@ import CsvToJson from "../../components/CsvToJson";
 export const metadata: Metadata = {
   title: "CSV to JSON Converter | Developer Tools",
   description: "Convert CSV files to JSON array format instantly.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/csv-to-json" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/csv-to-json" },
 };
 
 export default function CsvToJsonPage() {

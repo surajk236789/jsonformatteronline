@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Free online HTML Beautifier and Formatter. Clean, format, and indent your messy HTML code instantly in your browser.",
   keywords: ["HTML Beautifier", "HTML Formatter", "Clean HTML Online", "Format HTML Code", "HTML Parser"],
   alternates: {
-    canonical: "https://jsonformatteronline.com/html-beautifier",
+    canonical: "https://www.jsondiff.space/html-beautifier",
   },
 };
 

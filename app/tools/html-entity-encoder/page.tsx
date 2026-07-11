@@ -6,7 +6,7 @@ import HtmlEntityEncoder from "../../components/HtmlEntityEncoder";
 export const metadata: Metadata = {
   title: "HTML Entity Encoder / Decoder | Developer Tools",
   description: "Encode or decode HTML entities safely.",
-  alternates: { canonical: "https://jsonformatteronline.com/tools/html-entity-encoder" },
+  alternates: { canonical: "https://www.jsondiff.space/tools/html-entity-encoder" },
 };
 
 export default function HtmlEntityEncoderPage() {

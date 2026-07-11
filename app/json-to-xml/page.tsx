@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "Free JSON Converter",
   ],
   alternates: {
-    canonical: "https://jsonformatteronline.com/json-to-xml",
+    canonical: "https://www.jsondiff.space/json-to-xml",
   },
 };
 
