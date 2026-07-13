@@ -32,7 +32,9 @@ export default function AdSenseContainer({
       <span className="text-[10px] uppercase tracking-wider text-secondary mb-1.5 font-medium">
         Advertisement
       </span>
-      <div className="w-full flex items-center justify-center relative overflow-hidden min-h-[90px]">
+      {/* Reserve space to prevent Cumulative Layout Shift (CLS). 
+          Auto ads usually load as 280px tall rectangles on mobile, and 90px tall leaderboards on desktop. */}
+      <div className="w-full flex items-center justify-center relative overflow-hidden min-h-[280px] md:min-h-[90px]">
         <ins
           ref={adRef}
           className="adsbygoogle"
