@@ -142,6 +142,28 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
 
 
+  /* Find current tool for JSON-LD SEO */
+  const currentTool = toolGroups.flatMap(g => g.tools).find(t => t.href === pathname);
+
+  const jsonLd = currentTool && !isBlogPage ? {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": currentTool.label + " - Developer Tools",
+    "url": `https://www.jsondiff.space${currentTool.href}`,
+    "description": currentTool.description,
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Developer Tools"
+    }
+  } : null;
+
   return (
     <main className="min-h-screen bg-background text-primary pb-12 transition-colors duration-300">
       {/* ── Sticky Header ── */}
@@ -494,6 +516,14 @@ export default function MainLayout({ children }: MainLayoutProps) {
           </div>
         </div>
       </footer>
+
+      {/* Dynamic JSON-LD Schema for Tools */}
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
     </main>
   );
 }

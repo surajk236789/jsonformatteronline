@@ -1,8 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
-import { DiffEditor } from "@monaco-editor/react";
+import React from "react";
+import dynamic from "next/dynamic";
 import { useTheme } from "next-themes";
+
+const DiffEditor = dynamic(() => import("@monaco-editor/react").then((mod) => mod.DiffEditor), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center text-sm text-secondary bg-background/50 animate-pulse">
+      Loading Editor...
+    </div>
+  ),
+});
 
 export default function JsonCompare() {
   const { resolvedTheme } = useTheme();
