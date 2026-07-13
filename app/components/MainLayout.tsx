@@ -152,7 +152,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
             : "bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 h-16 flex items-center justify-between">
 
           {/* Brand */}
           {/* <Link href="/" className="flex items-center gap-3 flex-shrink-0">
@@ -364,7 +364,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
       </header>
 
       {/* ── Main Container ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+      <section className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 mt-8">
 
         {/* Context-aware hero: show blog hero on blog pages, tool hub on tool pages */}
         {isBlogPage ? (
@@ -398,7 +398,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
       {/* ── Latest Blogs Section ── */}
       {!isBlogPage && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+        <section className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 mt-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
               📚 Latest Articles
@@ -436,7 +436,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
       {/* ── SEO Footer ── */}
       <footer className="mt-16 border-t border-panel-border py-16 bg-panel">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-10">
 
             {/* Left Panel: Brand & Copyright */}

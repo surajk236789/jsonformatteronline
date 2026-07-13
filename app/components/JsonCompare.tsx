@@ -12,8 +12,8 @@ export default function JsonCompare() {
   const defaultRight = "{\n  \"example\": \"new data\",\n  \"nested\": {\n    \"value\": 2\n  }\n}";
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-6 rounded-2xl glass-panel shadow-lg border border-slate-200/40 dark:border-slate-800/40 transition-all duration-300 flex flex-col h-[80vh]">
-      <div className="mb-6">
+    <div className="w-full p-2 md:p-4 lg:p-6 rounded-2xl glass-panel shadow-lg border border-slate-200/40 dark:border-slate-800/40 transition-all duration-300 flex flex-col h-[80vh]">
+      <div className="flex items-center justify-between mb-4 flex-shrink-0">
         <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
           <span className="w-2.5 h-6 bg-indigo-500 rounded-full inline-block"></span>
           JSON Compare Tool
@@ -36,8 +36,22 @@ export default function JsonCompare() {
             wordWrap: "on",
             lineNumbers: "on",
             folding: true,
+            showFoldingControls: "always",
+            foldingStrategy: "indentation",
             originalEditable: true,
             readOnly: false,
+          }}
+          onMount={(editor: any) => {
+            editor.getOriginalEditor().updateOptions({
+              folding: true,
+              showFoldingControls: "always",
+              foldingStrategy: "indentation",
+            });
+            editor.getModifiedEditor().updateOptions({
+              folding: true,
+              showFoldingControls: "always",
+              foldingStrategy: "indentation",
+            });
           }}
         />
       </div>
