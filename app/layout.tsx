@@ -14,9 +14,50 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Best Online JSON Formatter, HTML Beautifier & Base64 to PDF | Developer Tools",
-  description: "Free online developer tools: Format, parse, validate, and minify JSON; beautify HTML code; and convert Base64 strings to downloadable PDF files. Fast, secure, and user-friendly.",
-  keywords: ["JSON Formatter", "JSON Beautifier", "HTML Beautifier", "Base64 to PDF", "Developer Tools", "JSON Parser", "Format JSON Online", "HTML Formatter"],
+  title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
+  description: "Free online developer tools: Format and validate JSON, convert YAML to JSON, decode JWTs, beautify HTML, minify CSS, generate hashes, encode Base64, and more. Fast, secure, and browser-based.",
+  keywords: [
+    // JSON
+    "JSON Formatter",
+    "JSON Beautifier",
+    "JSON Parser Online",
+    "JSON Validator",
+    "Format JSON Online",
+    "JSON Minifier",
+    "JSON Compare",
+    "JSON to XML",
+    "JSON to CSV",
+    "CSV to JSON",
+    "JSON Schema Validator",
+    // YAML
+    "YAML to JSON",
+    "YAML converter online",
+    // JWT
+    "JWT Decoder",
+    "decode JWT online",
+    "JSON Web Token inspector",
+    // HTML / CSS
+    "HTML Beautifier",
+    "HTML Formatter",
+    "CSS Minifier",
+    "CSS Gradient Generator",
+    "HTML to JSX",
+    // Encode / Decode
+    "Base64 to PDF",
+    "Base64 Encode Decode",
+    "URL Encode Decode",
+    "Hash Generator",
+    "MD5 SHA256 online",
+    // Utilities
+    "Cron Parser",
+    "Password Generator",
+    "Git Command Generator",
+    "HTTP Status Codes",
+    // General
+    "Developer Tools Online",
+    "Free Developer Utilities",
+    "browser based dev tools",
+  ],
   authors: [{ name: "Developer Tools Team" }],
   creator: "Developer Tools",
   icons: {
@@ -24,8 +65,8 @@ export const metadata: Metadata = {
     apple: '/favicon.ico',
   },
   openGraph: {
-    title: "Best Online JSON Formatter, HTML Beautifier & Base64 to PDF | Developer Tools",
-    description: "Format, validate, and minify JSON; clean HTML; and convert Base64 to PDF instantly with our modern, secure developer utility workspace.",
+    title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
+    description: "Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and browser-based.",
     url: "https://www.jsondiff.space",
     siteName: "Developer Tools",
     locale: "en_US",
@@ -33,8 +74,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Online JSON Formatter, HTML Beautifier & Base64 to PDF | Developer Tools",
-    description: "Format, validate, and minify JSON; clean HTML; and convert Base64 to PDF instantly with our modern, secure developer utility workspace.",
+    title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
+    description: "Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and browser-based.",
   },
   robots: {
     index: true,
