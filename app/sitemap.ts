@@ -1,32 +1,67 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.jsondiff.space';
+  // Set SITE_URL=https://www.allformatter.com in your new deployment env
+  // Keep SITE_URL=https://www.jsondiff.space (or unset) for the old domain
+  const baseUrl = process.env.SITE_URL || 'https://www.jsondiff.space';
 
-  const routes = [
-    '',
-    '/html-beautifier',
-    '/json-compare',
-    '/json-to-xml',
-    '/base64-to-pdf',
+  const mainRoutes = [
+    { path: '',                   priority: 1.0 },
+    { path: '/html-beautifier',   priority: 0.9 },
+    { path: '/json-compare',      priority: 0.9 },
+    { path: '/json-to-xml',       priority: 0.9 },
+    { path: '/base64-to-pdf',     priority: 0.9 },
+  ];
+
+  const toolRoutes = [
     '/tools/json-to-csv',
     '/tools/csv-to-json',
+    '/tools/yaml-to-json',
+    '/tools/jwt-decoder',
+    '/tools/json-schema-validator',
     '/tools/base64-encode-decode',
     '/tools/url-encode-decode',
     '/tools/hash-generator',
     '/tools/password-generator',
-    '/tools/json-schema-validator',
+    '/tools/cron-parser',
     '/tools/css-minifier',
     '/tools/css-gradient-generator',
+    '/tools/html-to-jsx',
+    '/tools/html-entity-encoder',
     '/tools/http-status-codes',
     '/tools/git-command-generator',
-    '/tools/html-entity-encoder'
   ];
 
-  return routes.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1 : 0.8,
-  }));
+  const blogRoutes = [
+    '/blogs',
+    '/blogs/json-formatting-best-practices',
+    '/blogs/html-beautifier-guide',
+    '/blogs/base64-encoding-explained',
+    '/blogs/json-vs-xml',
+    '/blogs/comparing-json-objects',
+    '/blogs/api-debugging-tips',
+  ];
+
+  const now = new Date();
+
+  return [
+    ...mainRoutes.map(({ path, priority }) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority,
+    })),
+    ...toolRoutes.map((path) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
+    ...blogRoutes.map((path) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ];
 }
