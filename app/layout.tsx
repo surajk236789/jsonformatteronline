@@ -90,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
+        <meta name="google-adsense-account" content="ca-pub-2678573850280758" />
       </head>
       <body className="font-sans antialiased">
         <Script
