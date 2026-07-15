@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
   keywords: ["JSON Compare", "JSON Diff", "Compare JSON Online", "JSON Visualizer", "Diff Editor"],
   alternates: {
-    canonical: "https://www.jsondiff.space/json-compare",
+    canonical: "https://www.allformatter.com/json-compare",
   },
 };
 

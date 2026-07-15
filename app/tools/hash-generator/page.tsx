@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Hash Generator Online — MD5, SHA-1, SHA-256 & More | Developer Tools",
   description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
   keywords: ["Hash Generator", "MD5 Generator", "SHA256 Online", "SHA-1 Hash", "Cryptographic Hash Tool"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/hash-generator" },
+  alternates: { canonical: "https://www.allformatter.com/tools/hash-generator" },
 };
 
 const features = [

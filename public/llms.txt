@@ -1,9 +1,9 @@
-# jsondiff.space
+# allformatter.com
 
 > A fast, secure, client-side JSON formatting and developer utility tool.
 
 ## About
-jsondiff.space provides developers with completely free and private tools to manipulate, format, and convert data. All operations happen client-side in the browser.
+allformatter.com provides developers with completely free and private tools to manipulate, format, and convert data. All operations happen client-side in the browser.
 
 ## Features & Tools
 
@@ -39,4 +39,4 @@ jsondiff.space provides developers with completely free and private tools to man
 - Data Privacy: 100% client-side processing, no data leaves the browser.
 - External dependencies: Monaco Editor for advanced code editing views.
 
-For further information, please visit the specific tool pages on https://www.jsondiff.space.
+For further information, please visit the specific tool pages on https://www.allformatter.com.

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Git Command Generator Online — Build Git Commands Visually | Developer Tools",
   description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
   keywords: ["Git Command Generator", "Git Commands Online", "Generate Git Commands", "Git Helper Tool", "Git Cheat Sheet"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/git-command-generator" },
+  alternates: { canonical: "https://www.allformatter.com/tools/git-command-generator" },
 };
 
 const features = [

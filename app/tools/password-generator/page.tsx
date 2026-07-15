@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Password Generator Online — Secure & Random | Developer Tools",
   description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
   keywords: ["Password Generator", "Secure Password", "Random Password", "Strong Password Generator", "Online Password Tool"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/password-generator" },
+  alternates: { canonical: "https://www.allformatter.com/tools/password-generator" },
 };
 
 const features = [

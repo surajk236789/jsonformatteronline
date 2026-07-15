@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
   keywords: ["JSON to XML", "Convert JSON to XML", "JSON XML Converter", "JSON to XML Online", "Free JSON Converter"],
   alternates: {
-    canonical: "https://www.jsondiff.space/json-to-xml",
+    canonical: "https://www.allformatter.com/json-to-xml",
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Base64 Encode & Decode Online — Free Tool | Developer Tools",
   description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
   keywords: ["Base64 Encode", "Base64 Decode", "Base64 Converter", "Encode to Base64", "Decode Base64 Online"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/base64-encode-decode" },
+  alternates: { canonical: "https://www.allformatter.com/tools/base64-encode-decode" },
 };
 
 const features = [

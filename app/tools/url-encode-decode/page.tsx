@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "URL Encode & Decode Online — Free Tool | Developer Tools",
   description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
   keywords: ["URL Encode", "URL Decode", "Percent Encode", "URI Encode Online", "URL Encoder Decoder"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/url-encode-decode" },
+  alternates: { canonical: "https://www.allformatter.com/tools/url-encode-decode" },
 };
 
 const features = [

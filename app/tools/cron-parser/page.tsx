@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Cron Expression Parser & Generator Online | Developer Tools",
   description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times. Free, browser-based cron parser.",
   keywords: ["Cron Parser", "Cron Expression", "Cron Generator", "Cron Schedule", "Parse Cron Online"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/cron-parser" },
+  alternates: { canonical: "https://www.allformatter.com/tools/cron-parser" },
 };
 
 const features = [

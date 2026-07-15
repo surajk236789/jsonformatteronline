@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "CSS Gradient Generator Online — Build Beautiful Gradients | Developer Tools",
   description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
   keywords: ["CSS Gradient Generator", "Linear Gradient CSS", "Radial Gradient Tool", "CSS Background Generator", "Gradient Builder Online"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/css-gradient-generator" },
+  alternates: { canonical: "https://www.allformatter.com/tools/css-gradient-generator" },
 };
 
 const features = [

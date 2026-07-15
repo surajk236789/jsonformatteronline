@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "YAML syntax checker",
     "devops YAML tools",
   ],
-  alternates: { canonical: "https://www.jsondiff.space/tools/yaml-to-json" },
+  alternates: { canonical: "https://www.allformatter.com/tools/yaml-to-json" },
 };
 
 const features = [

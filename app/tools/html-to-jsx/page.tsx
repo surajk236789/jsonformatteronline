@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "HTML to JSX Converter Online — Free React Tool | Developer Tools",
   description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
   keywords: ["HTML to JSX", "Convert HTML to React", "HTML JSX Converter", "React Component HTML", "JSX Syntax Converter"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/html-to-jsx" },
+  alternates: { canonical: "https://www.allformatter.com/tools/html-to-jsx" },
 };
 
 const features = [

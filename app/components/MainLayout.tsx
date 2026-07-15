@@ -151,7 +151,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": currentTool.label + " - Developer Tools",
-    "url": `https://www.jsondiff.space${currentTool.href}`,
+    "url": `https://www.allformatter.com${currentTool.href}`,
     "description": currentTool.description,
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "All",
@@ -170,11 +170,10 @@ export default function MainLayout({ children }: MainLayoutProps) {
     <main className="min-h-screen bg-background text-primary pb-12 transition-colors duration-300">
       {/* ── Sticky Header ── */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${
-          isHomePage && !scrolled
-            ? "bg-transparent border-transparent shadow-none"
-            : "bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none"
-        }`}
+        className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out ${isHomePage && !scrolled
+          ? "bg-transparent border-transparent shadow-none"
+          : "bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 h-16 flex items-center justify-between">
 
@@ -309,13 +308,12 @@ export default function MainLayout({ children }: MainLayoutProps) {
             <button
               id="header-theme-toggle"
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${
-                mounted 
-                  ? theme === "dark"
-                    ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                    : "bg-slate-800 text-slate-100 hover:bg-slate-700"
-                  : "bg-transparent text-transparent"
-              }`}
+              className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${mounted
+                ? theme === "dark"
+                  ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                  : "bg-slate-800 text-slate-100 hover:bg-slate-700"
+                : "bg-transparent text-transparent"
+                }`}
               title={mounted && theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
             >
               {mounted && theme === "dark" ? (
@@ -504,8 +502,8 @@ export default function MainLayout({ children }: MainLayoutProps) {
                 <ul className="space-y-3">
                   {group.tools.map((tool) => (
                     <li key={tool.href}>
-                      <Link 
-                        href={tool.href} 
+                      <Link
+                        href={tool.href}
                         className={`inline-block px-2 py-1 -ml-2 rounded-lg text-sm transition-colors ${pathname === tool.href ? "bg-slate-100 dark:bg-slate-800/50 text-indigo-600 dark:text-indigo-400 font-bold" : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-400"}`}
                       >
                         {tool.label}

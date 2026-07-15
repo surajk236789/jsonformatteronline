@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "JSON to CSV Converter Online — Free & Instant | Developer Tools",
   description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
   keywords: ["JSON to CSV", "Convert JSON to CSV", "JSON CSV Converter", "Export JSON as CSV", "JSON Table"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/json-to-csv" },
+  alternates: { canonical: "https://www.allformatter.com/tools/json-to-csv" },
 };
 
 const features = [

@@ -2,15 +2,15 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Set SITE_URL=https://www.allformatter.com in your new deployment env
-  // Keep SITE_URL=https://www.jsondiff.space (or unset) for the old domain
-  const baseUrl = process.env.SITE_URL || 'https://www.jsondiff.space';
+  // Keep SITE_URL=https://www.allformatter.com (or unset) for the old domain
+  const baseUrl = process.env.SITE_URL || 'https://www.allformatter.com/';
 
   const mainRoutes = [
-    { path: '',                   priority: 1.0 },
-    { path: '/html-beautifier',   priority: 0.9 },
-    { path: '/json-compare',      priority: 0.9 },
-    { path: '/json-to-xml',       priority: 0.9 },
-    { path: '/base64-to-pdf',     priority: 0.9 },
+    { path: '', priority: 1.0 },
+    { path: '/html-beautifier', priority: 0.9 },
+    { path: '/json-compare', priority: 0.9 },
+    { path: '/json-to-xml', priority: 0.9 },
+    { path: '/base64-to-pdf', priority: 0.9 },
   ];
 
   const toolRoutes = [

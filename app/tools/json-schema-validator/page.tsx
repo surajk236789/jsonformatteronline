@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "JSON Schema Validator Online — Free Tool | Developer Tools",
   description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
   keywords: ["JSON Schema Validator", "Validate JSON Schema", "JSON Validation Online", "JSON Draft-07", "Schema Checker"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/json-schema-validator" },
+  alternates: { canonical: "https://www.allformatter.com/tools/json-schema-validator" },
 };
 
 const features = [

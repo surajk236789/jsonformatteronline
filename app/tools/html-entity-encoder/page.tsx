@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "HTML Entity Encoder & Decoder Online | Developer Tools",
   description: "Encode special characters to HTML entities or decode HTML entities back to readable text. Free, browser-based HTML entity converter.",
   keywords: ["HTML Entity Encoder", "HTML Encode", "HTML Decode", "Escape HTML", "HTML Special Characters"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/html-entity-encoder" },
+  alternates: { canonical: "https://www.allformatter.com/tools/html-entity-encoder" },
 };
 
 const features = [

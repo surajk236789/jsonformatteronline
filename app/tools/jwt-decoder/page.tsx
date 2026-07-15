@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "JWT debugger",
     "read JWT token online",
   ],
-  alternates: { canonical: "https://www.jsondiff.space/tools/jwt-decoder" },
+  alternates: { canonical: "https://www.allformatter.com/tools/jwt-decoder" },
 };
 
 const features = [

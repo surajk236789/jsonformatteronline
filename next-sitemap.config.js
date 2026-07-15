@@ -1,5 +1,5 @@
 /** @type {import('next-sitemap').IConfig} */
-const siteUrl = process.env.SITE_URL || 'https://www.jsondiff.space';
+const siteUrl = process.env.SITE_URL || 'https://www.allformatter.com';
 
 module.exports = {
   siteUrl,

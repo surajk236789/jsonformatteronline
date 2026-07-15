@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Base64 encoding guide",
   ],
   alternates: {
-    canonical: "https://www.jsondiff.space/blogs",
+    canonical: "https://www.allformatter.com/blogs",
   },
 };
 

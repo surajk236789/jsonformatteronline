@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "HTTP Status Codes Reference — Complete Guide | Developer Tools",
   description: "Complete HTTP status code reference with descriptions and use cases. Look up any 1xx, 2xx, 3xx, 4xx, or 5xx status code instantly.",
   keywords: ["HTTP Status Codes", "HTTP Response Codes", "404 Meaning", "500 Error Code", "HTTP Reference"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/http-status-codes" },
+  alternates: { canonical: "https://www.allformatter.com/tools/http-status-codes" },
 };
 
 const features = [

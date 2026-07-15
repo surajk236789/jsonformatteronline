@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "CSS Minifier Online — Compress & Optimize CSS | Developer Tools",
   description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
   keywords: ["CSS Minifier", "Compress CSS", "Minify CSS Online", "CSS Optimizer", "Reduce CSS Size"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/css-minifier" },
+  alternates: { canonical: "https://www.allformatter.com/tools/css-minifier" },
 };
 
 const features = [

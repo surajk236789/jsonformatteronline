@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "CSV to JSON Converter Online — Free & Instant | Developer Tools",
   description: "Convert CSV files and text to JSON format instantly. Free, browser-based CSV to JSON converter — auto-detects headers, no uploads required.",
   keywords: ["CSV to JSON", "Convert CSV to JSON", "CSV JSON Converter", "Import CSV as JSON", "Parse CSV Online"],
-  alternates: { canonical: "https://www.jsondiff.space/tools/csv-to-json" },
+  alternates: { canonical: "https://www.allformatter.com/tools/csv-to-json" },
 };
 
 const features = [

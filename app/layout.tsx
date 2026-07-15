@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
     description: "Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and browser-based.",
-    url: "https://www.jsondiff.space",
+    url: "https://www.allformatter.com",
     siteName: "Developer Tools",
     locale: "en_US",
     type: "website",

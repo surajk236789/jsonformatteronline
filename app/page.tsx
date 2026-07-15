@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "Online JSON Tool",
   ],
   alternates: {
-    canonical: "https://www.jsondiff.space/",
+    canonical: "https://www.allformatter.com/",
   },
 };
 
