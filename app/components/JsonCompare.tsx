@@ -20,6 +20,17 @@ export default function JsonCompare() {
   const defaultLeft = "{\n  \"example\": \"old data\",\n  \"nested\": {\n    \"value\": 1\n  }\n}";
   const defaultRight = "{\n  \"example\": \"new data\",\n  \"nested\": {\n    \"value\": 2\n  }\n}";
 
+  const diffEditorRef = React.useRef<any>(null);
+
+  React.useEffect(() => {
+    return () => {
+      if (diffEditorRef.current) {
+        // Prevents: TextModel got disposed before DiffEditorWidget model got reset
+        diffEditorRef.current.setModel(null);
+      }
+    };
+  }, []);
+
   return (
     <div className="w-full p-2 md:p-4 lg:p-6 rounded-2xl glass-panel shadow-lg border border-slate-200/40 dark:border-slate-800/40 transition-all duration-300 flex flex-col h-[80vh]">
       <div className="flex items-center justify-between mb-4 flex-shrink-0">
@@ -51,6 +62,7 @@ export default function JsonCompare() {
             readOnly: false,
           }}
           onMount={(editor: any) => {
+            diffEditorRef.current = editor;
             editor.getOriginalEditor().updateOptions({
               folding: true,
               showFoldingControls: "always",

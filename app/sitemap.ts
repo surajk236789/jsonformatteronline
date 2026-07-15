@@ -5,9 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const mainRoutes = [
     { path: '', priority: 1.0 },
-    { path: '/html-beautifier', priority: 0.9 },
-    { path: '/json-compare', priority: 0.9 },
-    { path: '/json-to-xml', priority: 0.9 },
+    { path: '/tools/html-beautifier', priority: 0.9 },
+    { path: '/tools/json-compare', priority: 0.9 },
+    { path: '/tools/json-to-xml', priority: 0.9 },
     { path: '/tools/base64-to-pdf', priority: 0.9 },
   ];
 

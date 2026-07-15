@@ -67,10 +67,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "AllFormatter" }],
   creator: "AllFormatter",
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.ico',
-  },
+
   openGraph: {
     title: "AllFormatter — Free Online JSON Formatter, YAML, JWT, HTML & CSS Tools",
     description: "AllFormatter: Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and 100% browser-based at allformatter.com.",
@@ -103,6 +100,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="AllFormatter" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
       <body className="font-sans antialiased">
         <Script
@@ -110,16 +109,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2678573850280758"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {/* Google Analytics */}
         <Script
           id="gtag-script"
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-7X1Q9VXQ1R"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

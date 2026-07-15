@@ -9,14 +9,14 @@ allformatter.com provides developers with completely free and private tools to m
 
 **JSON Tools**
 - **JSON Beautifier** (/): Format, minify, and validate JSON data.
-- **JSON Compare** (/json-compare): Visually diff two JSON objects.
-- **JSON to XML** (/json-to-xml): Convert JSON strings to XML format.
+- **JSON Compare** (/tools/json-compare): Visually diff two JSON objects.
+- **JSON to XML** (/tools/json-to-xml): Convert JSON strings to XML format.
 - **JSON to CSV** (/tools/json-to-csv): Export JSON arrays as CSV files.
 - **CSV to JSON** (/tools/csv-to-json): Import CSV and convert to JSON.
 - **JSON Schema Validator** (/tools/json-schema-validator): Validate JSON against a schema.
 
 **HTML & CSS Tools**
-- **HTML Beautifier** (/html-beautifier): Clean and indent HTML.
+- **HTML Beautifier** (/tools/html-beautifier): Clean and indent HTML.
 - **CSS Minifier** (/tools/css-minifier): Compress CSS code.
 - **CSS Gradient Generator** (/tools/css-gradient-generator): Build beautiful CSS gradients.
 - **HTML to JSX** (/tools/html-to-jsx): Convert HTML into React JSX.

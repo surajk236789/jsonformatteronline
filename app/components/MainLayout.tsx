@@ -17,8 +17,8 @@ const toolGroups = [
     emoji: "🗂️",
     tools: [
       { href: "/", label: "JSON Beautifier", description: "Format & validate JSON", emoji: "🗂️", color: "emerald" },
-      { href: "/json-compare", label: "JSON Compare", description: "Diff two JSON objects", emoji: "🔍", color: "violet" },
-      { href: "/json-to-xml", label: "JSON → XML", description: "Convert JSON to XML", emoji: "🔄", color: "orange" },
+      { href: "/tools/json-compare", label: "JSON Compare", description: "Diff two JSON objects", emoji: "🔍", color: "violet" },
+      { href: "/tools/json-to-xml", label: "JSON → XML", description: "Convert JSON to XML", emoji: "🔄", color: "orange" },
       { href: "/tools/json-to-csv", label: "JSON → CSV", description: "Export JSON as CSV", emoji: "📊", color: "teal" },
       { href: "/tools/csv-to-json", label: "CSV → JSON", description: "Import CSV as JSON", emoji: "📥", color: "teal" },
       { href: "/tools/yaml-to-json", label: "YAML → JSON", description: "Convert YAML to JSON", emoji: "🔄", color: "orange" },
@@ -29,7 +29,7 @@ const toolGroups = [
     category: "HTML / CSS Tools",
     emoji: "🎨",
     tools: [
-      { href: "/html-beautifier", label: "HTML Beautifier", description: "Clean & indent HTML", emoji: "🎨", color: "blue" },
+      { href: "/tools/html-beautifier", label: "HTML Beautifier", description: "Clean & indent HTML", emoji: "🎨", color: "blue" },
       { href: "/tools/css-minifier", label: "CSS Minifier", description: "Minify CSS code", emoji: "💨", color: "blue" },
       { href: "/tools/css-gradient-generator", label: "CSS Gradient Generator", description: "Build CSS gradients", emoji: "🌈", color: "purple" },
       { href: "/tools/html-to-jsx", label: "HTML → JSX", description: "Convert HTML to React JSX", emoji: "⚛️", color: "blue" },

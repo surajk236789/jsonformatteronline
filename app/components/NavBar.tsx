@@ -110,7 +110,6 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
                     } else {
                       setOpenMenu(group.category);
                       setBlogsOpen(false);
-                      group.tools.forEach((tool) => router.prefetch(tool.href));
                     }
                   }}
                   aria-expanded={isOpen}
@@ -138,7 +137,7 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
                         <Link
                           key={tool.href}
                           href={tool.href}
-                          prefetch={true}
+                          prefetch={false}
                           className={`flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group ${
                             pathname === tool.href ? "bg-slate-100 dark:bg-slate-800" : ""
                           }`}
