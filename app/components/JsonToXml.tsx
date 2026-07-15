@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { useTranslation } from "react-i18next";
 
 // ---------------------------------------------------------------------------
 // Pure JSON → XML conversion (no external dependencies)
@@ -105,7 +104,6 @@ const SAMPLE_JSON = `{
 }`;
 
 export default function JsonToXml() {
-  const { t } = useTranslation();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -114,7 +112,7 @@ export default function JsonToXml() {
 
   const handleConvert = useCallback(() => {
     if (!input.trim()) {
-      setError(t("jsonEmpty", { defaultValue: "JSON input is empty" }));
+      setError("JSON input is empty");
       setOutput("");
       return;
     }
@@ -124,10 +122,10 @@ export default function JsonToXml() {
       setError("");
     } catch (e: unknown) {
       const msg = e instanceof Error ? e.message : String(e);
-      setError(msg || t("jsonInvalid", { defaultValue: "Invalid JSON input" }));
+      setError(msg || "Invalid JSON input");
       setOutput("");
     }
-  }, [input, t]);
+  }, [input]);
 
   const handleCopy = useCallback(() => {
     if (!output) return;
@@ -169,20 +167,17 @@ export default function JsonToXml() {
         <div>
           <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
             <span className="w-2.5 h-6 bg-orange-500 rounded-full inline-block" />
-            {t("jsonToXmlTitle", { defaultValue: "JSON → XML Converter" })}
+            {"JSON → XML Converter"}
           </h2>
           <p className="text-xs text-secondary mt-1">
-            {t("jsonToXmlDesc", {
-              defaultValue:
-                "Convert JSON data into well-formed XML instantly. All conversion happens in your browser.",
-            })}
+            {"Convert JSON data into well-formed XML instantly. All conversion happens in your browser."}
           </p>
         </div>
         <button
           onClick={loadSample}
           className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary text-xs font-semibold rounded-lg transition-colors cursor-pointer"
         >
-          {t("loadSample", { defaultValue: "Paste Sample JSON" })}
+          {"Paste Sample JSON"}
         </button>
       </div>
 
@@ -191,7 +186,7 @@ export default function JsonToXml() {
         {/* Input Panel */}
         <div className="flex flex-col">
           <label className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 flex items-center justify-between">
-            <span>{t("inputLabel", { defaultValue: "Raw JSON Input" })}</span>
+            <span>{"Raw JSON Input"}</span>
             <span className="text-[10px] text-slate-400 normal-case">
               {input.length} chars
             </span>
@@ -209,7 +204,7 @@ export default function JsonToXml() {
         {/* Output Panel */}
         <div className="flex flex-col">
           <label className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 flex items-center justify-between">
-            <span>{t("xmlOutput", { defaultValue: "XML Output" })}</span>
+            <span>{"XML Output"}</span>
             {output && (
               <span className="text-[10px] text-slate-400 normal-case">
                 {output.length} chars
@@ -236,9 +231,7 @@ export default function JsonToXml() {
                   />
                 </svg>
                 <p className="text-sm font-medium">
-                  {t("xmlOutputPlaceholder", {
-                    defaultValue: "Converted XML will appear here.",
-                  })}
+                  {"Converted XML will appear here."}
                 </p>
               </div>
             )}
@@ -258,14 +251,14 @@ export default function JsonToXml() {
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                       </svg>
-                      {t("copied", { defaultValue: "Copied!" })}
+                      {"Copied!"}
                     </>
                   ) : (
                     <>
                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                       </svg>
-                      {t("copy", { defaultValue: "Copy" })}
+                      {"Copy"}
                     </>
                   )}
                 </button>
@@ -321,7 +314,7 @@ export default function JsonToXml() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          {t("clear", { defaultValue: "Clear" })}
+          {"Clear"}
         </button>
 
         <button
@@ -332,7 +325,7 @@ export default function JsonToXml() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
-          {t("convertToXml", { defaultValue: "Convert to XML" })}
+          {"Convert to XML"}
         </button>
       </div>
     </div>

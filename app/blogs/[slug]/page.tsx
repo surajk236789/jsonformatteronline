@@ -179,7 +179,7 @@ When a backend API returns a PDF as a Base64 string, you'll see something like:
 JVBERi0xLjQKJcfsj6IKNSAwIG9iago8PC9MZW5ndGggNiAwIFIvRmlsdGVyIC9GbGF0...
 \`\`\`
 
-To view it, you need to decode this string back to binary and render it as a PDF. Our [Base64 → PDF Converter](/base64-to-pdf) does exactly this — paste the string, and get an instant PDF preview.
+To view it, you need to decode this string back to binary and render it as a PDF. Our [Base64 → PDF Converter](/tools/base64-to-pdf) does exactly this — paste the string, and get an instant PDF preview.
 
 ## Data URI Format
 
@@ -197,7 +197,7 @@ Base64 is **encoding, not encryption**. Anyone can decode a Base64 string trivia
 
 ---
 
-Understanding Base64 unlocks a whole class of API integrations that return binary data. Try our [Base64 → PDF tool](/base64-to-pdf) to convert any PDF Base64 string instantly.
+Understanding Base64 unlocks a whole class of API integrations that return binary data. Try our [Base64 → PDF tool](/tools/base64-to-pdf) to convert any PDF Base64 string instantly.
     `,
   },
 
@@ -375,7 +375,7 @@ APIs frequently return \`"123"\` (string) instead of \`123\` (number), or \`null
 Never assume the request is correct. Log the serialized request JSON before sending. Format it with the beautifier to verify all fields are present and properly structured.
 
 ## Tip 6: Use Base64 Decoding for File APIs
-If an API returns a Base64-encoded file, use our [Base64 → PDF converter](/base64-to-pdf) to instantly preview the decoded content. This verifies the file wasn't corrupted in transit.
+If an API returns a Base64-encoded file, use our [Base64 → PDF converter](/tools/base64-to-pdf) to instantly preview the decoded content. This verifies the file wasn't corrupted in transit.
 
 ## Tip 7: Convert JSON → XML for Legacy Systems
 Integrating with SOAP APIs or legacy enterprise systems? Use our [JSON → XML converter](/json-to-xml) to transform JSON payloads into the XML format these systems expect.

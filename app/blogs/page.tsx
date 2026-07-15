@@ -4,10 +4,11 @@ import MainLayout from "../components/MainLayout";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Developer Tools Blog | JSON, HTML & API Tips",
+  title: "Developer Blog | JSON, HTML & API Tips | AllFormatter",
   description:
-    "Explore expert articles on JSON formatting, HTML beautification, Base64 encoding, API development tips, and more. Level up your developer workflow.",
+    "Explore expert articles on JSON formatting, HTML beautification, Base64 encoding, API development tips, and more on AllFormatter. Level up your developer workflow.",
   keywords: [
+    "AllFormatter blog",
     "JSON blog",
     "HTML beautifier tips",
     "API development",
@@ -119,7 +120,7 @@ const colorMap: Record<string, { badge: string; dot: string; hover: string }> = 
 
 export default function BlogsPage() {
   return (
-    <MainLayout>
+    <MainLayout variant="blog">
       <div className="max-w-5xl mx-auto">
         {/* Blog Grid */}
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

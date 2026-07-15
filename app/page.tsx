@@ -4,8 +4,8 @@ import MainLayout from "./components/MainLayout";
 import JsonBeautifier from "./components/JsonBeautifier";
 
 export const metadata: Metadata = {
-  title: "JSON Formatter & Beautifier Online",
-  description: "Free JSON Formatter and Beautifier. Format, validate, and minify JSON data instantly in your browser. Secure and private — no data leaves your device.",
+  title: "JSON Formatter & Beautifier Online — Free JSON Parser & Validator | AllFormatter",
+  description: "Free JSON Formatter and Beautifier on AllFormatter. Instantly format, validate, minify, and pretty-print JSON data in your browser. Secure and private — no data leaves your device.",
   keywords: [
     "JSON Formatter",
     "JSON Beautifier",
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     "JSON Compare",
     "JSON Minifier",
     "Online JSON Tool",
+    "AllFormatter",
+    "pretty print JSON",
+    "JSON pretty printer",
   ],
   alternates: {
     canonical: "https://www.allformatter.com/",
@@ -75,7 +78,7 @@ export default function JsonBeautifierPage() {
           JSON Formatter &amp; Beautifier
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Instantly format, validate, and minify JSON — free, fast, and fully private. Your data never leaves your browser.
+          AllFormatter&apos;s free JSON Formatter instantly formats, validates, and minifies JSON — fast, and fully private. Your data never leaves your browser.
         </p>
       </div>
 
@@ -125,6 +128,14 @@ export default function JsonBeautifierPage() {
             </details>
           ))}
         </div>
+      </section>
+
+      {/* Static SEO paragraph */}
+      <section className="mt-16 max-w-3xl mx-auto rounded-2xl border border-panel-border bg-panel p-8" aria-label="About AllFormatter JSON Tools">
+        <h2 className="text-lg font-bold text-primary mb-3">About AllFormatter&apos;s JSON Formatter</h2>
+        <p className="text-sm text-secondary leading-relaxed">
+          <strong className="text-primary">AllFormatter</strong> is a free online toolkit for developers at <strong className="text-primary">allformatter.com</strong>. Our JSON Formatter and Beautifier is the fastest way to pretty-print, validate, and minify JSON data directly in your browser. Whether you need a <strong className="text-primary">JSON parser</strong>, a <strong className="text-primary">JSON validator</strong>, or a quick <strong className="text-primary">JSON minifier</strong>, AllFormatter handles it all — with no server uploads and no data retention. Beyond JSON, AllFormatter provides tools for YAML conversion, JWT decoding, HTML beautification, CSS minification, Base64 encoding, hash generation, and more.
+        </p>
       </section>
     </MainLayout>
   );

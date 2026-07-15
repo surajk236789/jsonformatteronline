@@ -23,7 +23,7 @@ allformatter.com provides developers with completely free and private tools to m
 - **HTML Entity Encoder** (/tools/html-entity-encoder): Encode/decode HTML entities.
 
 **Encoding & Decoding**
-- **Base64 to PDF** (/base64-to-pdf): Decode Base64 strings into PDF documents.
+- **Base64 to PDF** (/tools/base64-to-pdf): Decode Base64 strings into PDF documents.
 - **Base64 Encode/Decode** (/tools/base64-encode-decode): Encode or decode standard strings.
 - **URL Encode/Decode** (/tools/url-encode-decode): Safely encode or decode URLs.
 - **Hash Generator** (/tools/hash-generator): Generate MD5, SHA-256, SHA-512, and other hashes.

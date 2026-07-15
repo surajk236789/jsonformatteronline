@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { useTranslation } from "react-i18next";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface BatchItem {
@@ -199,7 +198,6 @@ function BatchItemRow({ item, onDownload, onRemove }: { item: BatchItem; onDownl
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function Base64ToPdf() {
-  const { t } = useTranslation();
 
   const [input, setInput] = useState("");
   const [error, setError] = useState<{ msg: string; hint?: string } | null>(null);
@@ -349,10 +347,10 @@ export default function Base64ToPdf() {
         <div>
           <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
             <span className="w-2.5 h-6 bg-indigo-500 rounded-full inline-block" />
-            {t("base64PdfTitle", { defaultValue: "Base64 to PDF Converter" })}
+            {"Base64 to PDF Converter"}
           </h2>
           <p className="text-xs text-secondary mt-1">
-            {t("base64PdfDesc", { defaultValue: "Convert Base64-encoded strings back into readable PDF documents." })}
+            {"Convert Base64-encoded strings back into readable PDF documents."}
           </p>
         </div>
         {/* Security badge */}
@@ -412,7 +410,7 @@ export default function Base64ToPdf() {
             {/* Input Panel */}
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-secondary uppercase tracking-wider flex items-center justify-between">
-                <span>{t("base64InputLabel", { defaultValue: "Base64 String" })}</span>
+                <span>{"Base64 String"}</span>
                 <span className="text-[10px] text-slate-400 normal-case">{input.length.toLocaleString()} chars</span>
               </label>
               <textarea
@@ -428,7 +426,7 @@ export default function Base64ToPdf() {
             {/* Preview Panel */}
             <div className="flex flex-col gap-2">
               <label className="text-xs font-bold text-secondary uppercase tracking-wider flex items-center justify-between">
-                <span>{t("pdfPreviewLabel", { defaultValue: "PDF Document Preview" })}</span>
+                <span>{"PDF Document Preview"}</span>
                 {pdfUrl && <span className="text-[10px] normal-case text-emerald-600 dark:text-emerald-400 font-semibold">✓ Ready</span>}
               </label>
               <div className="w-full h-72 md:h-[380px] border border-panel-border rounded-xl bg-background overflow-hidden shadow-inner flex flex-col">
@@ -448,7 +446,7 @@ export default function Base64ToPdf() {
                         <svg className="w-12 h-12 mb-3 stroke-current" fill="none" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                         </svg>
-                        <p className="text-sm font-medium">{t("pdfPreviewPlaceholder", { defaultValue: "Convert a valid Base64 string to preview the PDF here." })}</p>
+                        <p className="text-sm font-medium">{"Convert a valid Base64 string to preview the PDF here."}</p>
                         <p className="text-[11px] mt-1 text-slate-300 dark:text-slate-700">Zoom · Rotate · controls appear after conversion</p>
                       </>
                     )}
@@ -477,7 +475,7 @@ export default function Base64ToPdf() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
               </svg>
-              {t("clear", { defaultValue: "Clear" })}
+              {"Clear"}
             </button>
 
             <button
@@ -493,7 +491,7 @@ export default function Base64ToPdf() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                 </svg>
               )}
-              {converting ? "Converting…" : t("convert", { defaultValue: "Convert Base64" })}
+              {converting ? "Converting…" : "Convert Base64"}
             </button>
 
             {pdfUrl && (
@@ -501,7 +499,7 @@ export default function Base64ToPdf() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                {t("downloadPdf", { defaultValue: "Download PDF" })}
+                {"Download PDF"}
               </button>
             )}
           </div>

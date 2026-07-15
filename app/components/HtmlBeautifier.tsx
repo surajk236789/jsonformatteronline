@@ -1,12 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
 // @ts-expect-error: js-beautify has no typescript declaration file
 import beautify from "js-beautify";
 
 export default function HtmlBeautifier() {
-  const { t } = useTranslation();
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -28,7 +26,7 @@ export default function HtmlBeautifier() {
 
   const handleBeautify = () => {
     if (!input.trim()) {
-      setError(t("htmlEmpty", { defaultValue: "HTML input is empty" }));
+      setError("HTML input is empty");
       setOutput("");
       return;
     }
@@ -56,7 +54,7 @@ export default function HtmlBeautifier() {
       setError("");
     } catch (e: unknown) {
       const errMsg = e instanceof Error ? e.message : String(e);
-      setError(errMsg || t("htmlInvalid", { defaultValue: "Error beautifying HTML" }));
+      setError(errMsg || "Error beautifying HTML");
       setOutput("");
     }
   };
@@ -80,17 +78,17 @@ export default function HtmlBeautifier() {
         <div>
           <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
             <span className="w-2.5 h-6 bg-blue-500 rounded-full inline-block"></span>
-            {t("htmlBeautifierTitle", { defaultValue: "HTML Beautifier & Formatter" })}
+            {"HTML Beautifier & Formatter"}
           </h2>
           <p className="text-xs text-secondary mt-1">
-            {t("htmlBeautifierDesc", { defaultValue: "Format, clean, and beautify your HTML markup instantly." })}
+            {"Format, clean, and beautify your HTML markup instantly."}
           </p>
         </div>
         <button
           onClick={loadSample}
           className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary text-xs font-semibold rounded-lg transition-colors cursor-pointer"
         >
-          {t("loadSampleHtml", { defaultValue: "Paste Sample HTML" })}
+          {"Paste Sample HTML"}
         </button>
       </div>
 
@@ -98,7 +96,7 @@ export default function HtmlBeautifier() {
         {/* Input Panel */}
         <div className="flex flex-col">
           <label className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 flex items-center justify-between">
-            <span>{t("htmlInputLabel", { defaultValue: "Raw HTML Input" })}</span>
+            <span>{"Raw HTML Input"}</span>
             <span className="text-[10px] text-slate-400 normal-case">{input.length} chars</span>
           </label>
           <textarea
@@ -112,7 +110,7 @@ export default function HtmlBeautifier() {
         {/* Output Panel */}
         <div className="flex flex-col">
           <label className="text-xs font-bold text-secondary uppercase tracking-wider mb-2 flex items-center justify-between">
-            <span>{t("htmlOutputLabel", { defaultValue: "Beautified HTML Output" })}</span>
+            <span>{"Beautified HTML Output"}</span>
             {output && (
               <span className="text-[10px] text-slate-400 normal-case">
                 {output.length} chars
@@ -130,7 +128,7 @@ export default function HtmlBeautifier() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
                 <p className="text-sm font-medium">
-                  {t("htmlOutputPlaceholder", { defaultValue: "Beautified HTML will render here." })}
+                  {"Beautified HTML will render here."}
                 </p>
               </div>
             )}
@@ -145,14 +143,14 @@ export default function HtmlBeautifier() {
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
-                    {t("copied", { defaultValue: "Copied!" })}
+                    {"Copied!"}
                   </>
                 ) : (
                   <>
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                     </svg>
-                    {t("copy", { defaultValue: "Copy" })}
+                    {"Copy"}
                   </>
                 )}
               </button>
@@ -182,7 +180,7 @@ export default function HtmlBeautifier() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
-          {t("clear", { defaultValue: "Clear" })}
+          {"Clear"}
         </button>
         <button
           onClick={handleBeautify}
@@ -191,7 +189,7 @@ export default function HtmlBeautifier() {
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
-          {t("beautifyHtml", { defaultValue: "Beautify HTML" })}
+          {"Beautify HTML"}
         </button>
       </div>
     </div>

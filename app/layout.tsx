@@ -1,7 +1,7 @@
 import React from "react";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import I18nProvider from "./I18nProvider";
+
 import { Outfit } from "next/font/google";
 import type { Metadata } from "next";
 import Script from "next/script";
@@ -14,9 +14,16 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
-  description: "Free online developer tools: Format and validate JSON, convert YAML to JSON, decode JWTs, beautify HTML, minify CSS, generate hashes, encode Base64, and more. Fast, secure, and browser-based.",
+  metadataBase: new URL("https://www.allformatter.com"),
+  title: {
+    default: "AllFormatter — Free Online JSON Formatter, YAML, JWT, HTML & CSS Tools",
+    template: "%s | AllFormatter",
+  },
+  description: "AllFormatter offers free online developer tools: JSON Formatter & Beautifier, YAML to JSON converter, JWT Decoder, HTML Beautifier, CSS Minifier, Base64 encoder, Hash Generator, and more. Fast, secure, and 100% browser-based.",
   keywords: [
+    // Brand
+    "AllFormatter",
+    "allformatter.com",
     // JSON
     "JSON Formatter",
     "JSON Beautifier",
@@ -54,28 +61,29 @@ export const metadata: Metadata = {
     "Git Command Generator",
     "HTTP Status Codes",
     // General
-    "Developer Tools Online",
-    "Free Developer Utilities",
+    "online developer tools",
+    "free developer utilities",
     "browser based dev tools",
   ],
-  authors: [{ name: "Developer Tools Team" }],
-  creator: "Developer Tools",
+  authors: [{ name: "AllFormatter" }],
+  creator: "AllFormatter",
   icons: {
     icon: '/favicon.ico',
     apple: '/favicon.ico',
   },
   openGraph: {
-    title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
-    description: "Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and browser-based.",
+    title: "AllFormatter — Free Online JSON Formatter, YAML, JWT, HTML & CSS Tools",
+    description: "AllFormatter: Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and 100% browser-based at allformatter.com.",
     url: "https://www.allformatter.com",
-    siteName: "Developer Tools",
+    siteName: "AllFormatter",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Developer Tools — JSON, YAML, JWT, HTML, CSS & More | Developer Tools",
-    description: "Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and browser-based.",
+    title: "AllFormatter — Free Online JSON Formatter, YAML, JWT, HTML & CSS Tools",
+    description: "AllFormatter: Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and 100% browser-based.",
+    site: "@allformatter",
   },
   robots: {
     index: true,
@@ -91,6 +99,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-2678573850280758" />
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="AllFormatter" />
       </head>
       <body className="font-sans antialiased">
         <Script
@@ -117,10 +129,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
 
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
-          <I18nProvider>
             {children}
-          </I18nProvider>
-        </ThemeProvider>
+          </ThemeProvider>
       </body>
     </html>
   );
