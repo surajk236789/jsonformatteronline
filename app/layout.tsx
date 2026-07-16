@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { Outfit } from "next/font/google";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { CookieBanner } from "./components/CookieBanner";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -122,6 +123,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied'
+            });
+
             gtag('js', new Date());
             gtag('config', 'G-7X1Q9VXQ1R');
           `}
@@ -129,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
             {children}
+            <CookieBanner />
           </ThemeProvider>
       </body>
     </html>
