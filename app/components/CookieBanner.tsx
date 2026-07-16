@@ -14,6 +14,9 @@ export function CookieBanner() {
       if (consent === "granted" && typeof window !== "undefined" && (window as any).gtag) {
         (window as any).gtag("consent", "update", {
           analytics_storage: "granted",
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
         });
       }
     }
@@ -27,6 +30,9 @@ export function CookieBanner() {
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("consent", "update", {
         analytics_storage: "granted",
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
       });
     }
   };
@@ -39,6 +45,9 @@ export function CookieBanner() {
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("consent", "update", {
         analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
     }
   };
