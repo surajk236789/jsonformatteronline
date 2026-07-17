@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import HtmlEntityEncoder from "@/app/components/HtmlEntityEncoder";
 
 export const metadata: Metadata = {
-  title: "HTML Entity Encoder & Decoder Online | Developer Tools",
+  title: "HTML Entity Encoder & Decoder Online",
   description: "Encode special characters to HTML entities or decode HTML entities back to readable text. Free, browser-based HTML entity converter.",
   keywords: ["HTML Entity Encoder", "HTML Encode", "HTML Decode", "Escape HTML", "HTML Special Characters"],
   alternates: { canonical: "https://www.allformatter.com/tools/html-entity-encoder" },
+  openGraph: {
+    title: "HTML Entity Encoder & Decoder Online",
+    description: "Encode special characters to HTML entities or decode HTML entities back to readable text. Free, browser-based HTML entity converter.",
+    url: "https://www.allformatter.com/tools/html-entity-encoder",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HTML Entity Encoder & Decoder Online",
+    description: "Encode special characters to HTML entities or decode HTML entities back to readable text. Free, browser-based HTML entity converter.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function HtmlEntityEncoderPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "HTML Entity Encoder and Decoder Online",
+        "url": "https://www.allformatter.com/tools/html-entity-encoder",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Encode special characters to HTML entities or decode HTML entities back to readable text. Free, browser-based HTML entity converter.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 mb-4">
           🔠 Encoder

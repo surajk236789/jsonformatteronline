@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import JsonToCsv from "@/app/components/JsonToCsv";
 
 export const metadata: Metadata = {
-  title: "JSON to CSV Converter Online — Free & Instant | Developer Tools",
+  title: "JSON to CSV Converter Onlines",
   description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
   keywords: ["JSON to CSV", "Convert JSON to CSV", "JSON CSV Converter", "Export JSON as CSV", "JSON Table"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-to-csv" },
+  openGraph: {
+    title: "JSON to CSV Converter Onlines",
+    description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
+    url: "https://www.allformatter.com/tools/json-to-csv",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JSON to CSV Converter Onlines",
+    description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function JsonToCsvPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "JSON to CSV Converter Onlines",
+        "url": "https://www.allformatter.com/tools/json-to-csv",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-400 mb-4">
           📊 Converter

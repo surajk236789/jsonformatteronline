@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import PasswordGenerator from "@/app/components/PasswordGenerator";
 
 export const metadata: Metadata = {
-  title: "Password Generator Online — Secure & Random | Developer Tools",
+  title: "Password Generator Onlines",
   description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
   keywords: ["Password Generator", "Secure Password", "Random Password", "Strong Password Generator", "Online Password Tool"],
   alternates: { canonical: "https://www.allformatter.com/tools/password-generator" },
+  openGraph: {
+    title: "Password Generator Onlines",
+    description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
+    url: "https://www.allformatter.com/tools/password-generator",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Password Generator Onlines",
+    description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function PasswordGeneratorPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Password Generator Onlines",
+        "url": "https://www.allformatter.com/tools/password-generator",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 mb-4">
           🔑 Generator

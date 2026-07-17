@@ -97,7 +97,7 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
 
       {/* ── Main Container ── */}
       <section className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 mt-8">
-        {!isBlogPage && <AdSenseContainer slot="5523061044" />}
+        {/* {!isBlogPage && <AdSenseContainer slot="5523061044" />} */}
 
         {/* Dynamic Content */}
         <div className="transition-all duration-300 transform scale-100 opacity-100">

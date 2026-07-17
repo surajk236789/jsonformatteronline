@@ -4,12 +4,26 @@ import type { Metadata } from "next";
 import JsonToXml from "@/app/components/JsonToXml";
 
 export const metadata: Metadata = {
-  title: "JSON to XML Converter Online | Free & Instant | Developer Tools",
+  title: "JSON to XML Converter Online",
   description: "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
   keywords: ["JSON to XML", "Convert JSON to XML", "JSON XML Converter", "JSON to XML Online", "Free JSON Converter"],
-  alternates: {
-    canonical: "https://www.allformatter.com/tools/json-to-xml",
+  alternates: { canonical: "https://www.allformatter.com/tools/json-to-xml" },
+  openGraph: {
+    title: "JSON to XML Converter Online",
+    description: "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+    url: "https://www.allformatter.com/tools/json-to-xml",
+    siteName: "AllFormatter",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "JSON to XML Converter Online",
+    description: "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -27,8 +41,42 @@ const faqs = [
 ];
 
 export default function JsonToXmlPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "JSON to XML Converter Online",
+        "url": "https://www.allformatter.com/tools/json-to-xml",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 mb-4">
           🔄 Converter

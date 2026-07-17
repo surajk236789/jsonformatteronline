@@ -4,12 +4,26 @@ import type { Metadata } from "next";
 import Base64ToPdf from "@/app/components/Base64ToPdf";
 
 export const metadata: Metadata = {
-  title: "Base64 to PDF Converter Online | AllFormatter",
+  title: "Base64 to PDF Converter Online",
   description: "Free online Base64 to PDF converter. Instantly decode Base64 strings and preview or download them as PDF documents securely in your browser.",
   keywords: ["Base64 to PDF", "Decode Base64", "Base64 Converter", "Convert Base64 String to PDF", "AllFormatter"],
-  alternates: {
-    canonical: "https://www.allformatter.com/tools/base64-to-pdf",
+  alternates: { canonical: "https://www.allformatter.com/tools/base64-to-pdf" },
+  openGraph: {
+    title: "Base64 to PDF Converter Online",
+    description: "Free online Base64 to PDF converter. Instantly decode Base64 strings and preview or download them as PDF documents securely in your browser.",
+    url: "https://www.allformatter.com/tools/base64-to-pdf",
+    siteName: "AllFormatter",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Base64 to PDF Converter Online",
+    description: "Free online Base64 to PDF converter. Instantly decode Base64 strings and preview or download them as PDF documents securely in your browser.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -27,8 +41,42 @@ const faqs = [
 ];
 
 export default function Base64ToPdfPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Base64 to PDF Converter Online",
+        "url": "https://www.allformatter.com/tools/base64-to-pdf",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Free online Base64 to PDF converter. Instantly decode Base64 strings and preview or download them as PDF documents securely in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 mb-4">
           📄 Converter

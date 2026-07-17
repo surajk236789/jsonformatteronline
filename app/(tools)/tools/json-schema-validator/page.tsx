@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import JsonSchemaValidator from "@/app/components/JsonSchemaValidator";
 
 export const metadata: Metadata = {
-  title: "JSON Schema Validator Online — Free Tool | Developer Tools",
+  title: "JSON Schema Validator Onlines",
   description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
   keywords: ["JSON Schema Validator", "Validate JSON Schema", "JSON Validation Online", "JSON Draft-07", "Schema Checker"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-schema-validator" },
+  openGraph: {
+    title: "JSON Schema Validator Onlines",
+    description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
+    url: "https://www.allformatter.com/tools/json-schema-validator",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JSON Schema Validator Onlines",
+    description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function JsonSchemaValidatorPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "JSON Schema Validator Onlines",
+        "url": "https://www.allformatter.com/tools/json-schema-validator",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 mb-4">
           ✅ Validator

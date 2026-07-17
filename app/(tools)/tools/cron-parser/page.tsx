@@ -4,10 +4,30 @@ import type { Metadata } from "next";
 import CronParser from "@/app/components/CronParser";
 
 export const metadata: Metadata = {
-  title: "Cron Expression Parser & Generator Online | Developer Tools",
+  title: "Online Cron Parser & Generator",
   description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times. Free, browser-based cron parser.",
-  keywords: ["Cron Parser", "Cron Expression", "Cron Generator", "Cron Schedule", "Parse Cron Online"],
+  keywords: ["Cron Parser", "Cron Expression", "Cron Generator", "Cron Schedule", "Parse Cron Online", "Cron Job Tester", "crontab"],
   alternates: { canonical: "https://www.allformatter.com/tools/cron-parser" },
+  openGraph: {
+    title: "Online Cron Parser & Generator",
+    description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times.",
+    url: "https://www.allformatter.com/tools/cron-parser",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Online Cron Parser & Generator",
+    description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  }
 };
 
 const features = [
@@ -25,8 +45,42 @@ const faqs = [
 ];
 
 export default function CronParserPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Cron Expression Parser & Generator",
+        "url": "https://www.allformatter.com/tools/cron-parser",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 mb-4">
           ⏰ Utility

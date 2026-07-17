@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import HtmlToJsx from "@/app/components/HtmlToJsx";
 
 export const metadata: Metadata = {
-  title: "HTML to JSX Converter Online — Free React Tool | Developer Tools",
+  title: "HTML to JSX Converter Onlines",
   description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
   keywords: ["HTML to JSX", "Convert HTML to React", "HTML JSX Converter", "React Component HTML", "JSX Syntax Converter"],
   alternates: { canonical: "https://www.allformatter.com/tools/html-to-jsx" },
+  openGraph: {
+    title: "HTML to JSX Converter Onlines",
+    description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
+    url: "https://www.allformatter.com/tools/html-to-jsx",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HTML to JSX Converter Onlines",
+    description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function HtmlToJsxPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "HTML to JSX Converter Onlines",
+        "url": "https://www.allformatter.com/tools/html-to-jsx",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 mb-4">
           ⚛️ Converter

@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import Base64EncodeDecode from "@/app/components/Base64EncodeDecode";
 
 export const metadata: Metadata = {
-  title: "Base64 Encode & Decode Online — Free Tool | Developer Tools",
+  title: "Base64 Encode & Decode Onlines",
   description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
   keywords: ["Base64 Encode", "Base64 Decode", "Base64 Converter", "Encode to Base64", "Decode Base64 Online"],
   alternates: { canonical: "https://www.allformatter.com/tools/base64-encode-decode" },
+  openGraph: {
+    title: "Base64 Encode & Decode Onlines",
+    description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
+    url: "https://www.allformatter.com/tools/base64-encode-decode",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Base64 Encode & Decode Onlines",
+    description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function Base64EncoderPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Base64 Encode and Decode Onlines",
+        "url": "https://www.allformatter.com/tools/base64-encode-decode",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 mb-4">
           🔐 Encoder

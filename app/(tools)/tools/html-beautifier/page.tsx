@@ -13,12 +13,26 @@ const HtmlBeautifier = dynamic(() => import("@/app/components/HtmlBeautifier"), 
 });
 
 export const metadata: Metadata = {
-  title: "HTML Beautifier & Formatter Online | Developer Tools",
+  title: "HTML Beautifier & Formatter Online",
   description: "Free online HTML Beautifier and Formatter. Clean, format, and indent your messy HTML code instantly in your browser.",
   keywords: ["HTML Beautifier", "HTML Formatter", "Clean HTML Online", "Format HTML Code", "HTML Parser"],
-  alternates: {
-    canonical: "https://www.allformatter.com/tools/html-beautifier",
+  alternates: { canonical: "https://www.allformatter.com/tools/html-beautifier" },
+  openGraph: {
+    title: "HTML Beautifier & Formatter Online",
+    description: "Free online HTML Beautifier and Formatter. Clean, format, and indent your messy HTML code instantly in your browser.",
+    url: "https://www.allformatter.com/tools/html-beautifier",
+    siteName: "AllFormatter",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "HTML Beautifier & Formatter Online",
+    description: "Free online HTML Beautifier and Formatter. Clean, format, and indent your messy HTML code instantly in your browser.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -36,8 +50,42 @@ const faqs = [
 ];
 
 export default function HtmlBeautifierPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "HTML Beautifier and Formatter Online",
+        "url": "https://www.allformatter.com/tools/html-beautifier",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Free online HTML Beautifier and Formatter. Clean, format, and indent your messy HTML code instantly in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 mb-4">
           🎨 HTML Tool

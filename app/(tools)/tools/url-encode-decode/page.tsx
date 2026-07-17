@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import UrlEncodeDecode from "@/app/components/UrlEncodeDecode";
 
 export const metadata: Metadata = {
-  title: "URL Encode & Decode Online — Free Tool | Developer Tools",
+  title: "URL Encode & Decode Onlines",
   description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
   keywords: ["URL Encode", "URL Decode", "Percent Encode", "URI Encode Online", "URL Encoder Decoder"],
   alternates: { canonical: "https://www.allformatter.com/tools/url-encode-decode" },
+  openGraph: {
+    title: "URL Encode & Decode Onlines",
+    description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
+    url: "https://www.allformatter.com/tools/url-encode-decode",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "URL Encode & Decode Onlines",
+    description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function UrlEncoderPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "URL Encode and Decode Onlines",
+        "url": "https://www.allformatter.com/tools/url-encode-decode",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 mb-4">
           🔗 Encoder

@@ -4,12 +4,26 @@ import type { Metadata } from "next";
 import JsonCompare from "@/app/components/JsonCompare";
 
 export const metadata: Metadata = {
-  title: "JSON Compare Tool Online | Visual Diff & Editor",
+  title: "JSON Compare Tool Online",
   description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
   keywords: ["JSON Compare", "JSON Diff", "Compare JSON Online", "JSON Visualizer", "Diff Editor"],
-  alternates: {
-    canonical: "https://www.allformatter.com/tools/json-compare",
+  alternates: { canonical: "https://www.allformatter.com/tools/json-compare" },
+  openGraph: {
+    title: "JSON Compare Tool Online",
+    description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
+    url: "https://www.allformatter.com/tools/json-compare",
+    siteName: "AllFormatter",
+    type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "JSON Compare Tool Online",
+    description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -27,8 +41,42 @@ const faqs = [
 ];
 
 export default function JsonComparePage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "JSON Compare Tool Online",
+        "url": "https://www.allformatter.com/tools/json-compare",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-400 mb-4">
           🔍 Diff Tool

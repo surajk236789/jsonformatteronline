@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import GitCommandGenerator from "@/app/components/GitCommandGenerator";
 
 export const metadata: Metadata = {
-  title: "Git Command Generator Online — Build Git Commands Visually | Developer Tools",
+  title: "Git Command Generator Onlines",
   description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
   keywords: ["Git Command Generator", "Git Commands Online", "Generate Git Commands", "Git Helper Tool", "Git Cheat Sheet"],
   alternates: { canonical: "https://www.allformatter.com/tools/git-command-generator" },
+  openGraph: {
+    title: "Git Command Generator Onlines",
+    description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
+    url: "https://www.allformatter.com/tools/git-command-generator",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Git Command Generator Onlines",
+    description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function GitCommandGeneratorPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Git Command Generator Onlines",
+        "url": "https://www.allformatter.com/tools/git-command-generator",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 mb-4">
           🐙 Generator

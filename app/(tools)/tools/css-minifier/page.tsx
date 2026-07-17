@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import CssMinifier from "@/app/components/CssMinifier";
 
 export const metadata: Metadata = {
-  title: "CSS Minifier Online — Compress & Optimize CSS | Developer Tools",
+  title: "CSS Minifier Onlines",
   description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
   keywords: ["CSS Minifier", "Compress CSS", "Minify CSS Online", "CSS Optimizer", "Reduce CSS Size"],
   alternates: { canonical: "https://www.allformatter.com/tools/css-minifier" },
+  openGraph: {
+    title: "CSS Minifier Onlines",
+    description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
+    url: "https://www.allformatter.com/tools/css-minifier",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CSS Minifier Onlines",
+    description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function CssMinifierPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "CSS Minifier Onlines",
+        "url": "https://www.allformatter.com/tools/css-minifier",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 mb-4">
           💨 Optimizer

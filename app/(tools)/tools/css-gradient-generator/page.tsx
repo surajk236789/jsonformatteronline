@@ -4,10 +4,26 @@ import type { Metadata } from "next";
 import CssGradientGenerator from "@/app/components/CssGradientGenerator";
 
 export const metadata: Metadata = {
-  title: "CSS Gradient Generator Online — Build Beautiful Gradients | Developer Tools",
+  title: "CSS Gradient Generator Onlines",
   description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
   keywords: ["CSS Gradient Generator", "Linear Gradient CSS", "Radial Gradient Tool", "CSS Background Generator", "Gradient Builder Online"],
   alternates: { canonical: "https://www.allformatter.com/tools/css-gradient-generator" },
+  openGraph: {
+    title: "CSS Gradient Generator Onlines",
+    description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
+    url: "https://www.allformatter.com/tools/css-gradient-generator",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CSS Gradient Generator Onlines",
+    description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -25,8 +41,42 @@ const faqs = [
 ];
 
 export default function CssGradientGeneratorPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "CSS Gradient Generator Onlines",
+        "url": "https://www.allformatter.com/tools/css-gradient-generator",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map((faq: any) => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-400 mb-4">
           🌈 Generator

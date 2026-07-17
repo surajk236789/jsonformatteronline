@@ -13,7 +13,7 @@ const YamlToJson = dynamic(() => import("@/app/components/YamlToJson"), {
 });
 
 export const metadata: Metadata = {
-  title: "YAML to JSON Converter Online — Free & Instant | Developer Tools",
+  title: "YAML to JSON Converter Onlines",
   description: "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
   keywords: [
     "YAML to JSON",
@@ -28,6 +28,22 @@ export const metadata: Metadata = {
     "devops YAML tools",
   ],
   alternates: { canonical: "https://www.allformatter.com/tools/yaml-to-json" },
+  openGraph: {
+    title: "YAML to JSON Converter Onlines",
+    description: "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
+    url: "https://www.allformatter.com/tools/yaml-to-json",
+    siteName: "AllFormatter",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "YAML to JSON Converter Onlines",
+    description: "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 const features = [
@@ -38,8 +54,31 @@ const features = [
 ];
 
 export default function YamlToJsonPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "YAML to JSON Converter Onlines",
+        "url": "https://www.allformatter.com/tools/yaml-to-json",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-8">
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 mb-4">
           🔄 Converter
