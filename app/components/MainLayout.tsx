@@ -51,6 +51,7 @@ const toolGroups = [
     category: "Utilities",
     emoji: "🛠️",
     tools: [
+      { href: "/tools/seo-checker", label: "SEO Checker", description: "Analyze on-page SEO", emoji: "🔍", color: "indigo" },
       { href: "/tools/cron-parser", label: "Cron Parser", description: "Parse cron expressions", emoji: "⏰", color: "amber" },
       { href: "/tools/password-generator", label: "Password Generator", description: "Secure random passwords", emoji: "🔑", color: "rose" },
       { href: "/tools/git-command-generator", label: "Git Command Generator", description: "Build git commands", emoji: "🐙", color: "slate" },
