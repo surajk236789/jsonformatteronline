@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 
 export default function JsonToCsv() {
   const [input, setInput] = useState("");
@@ -100,29 +101,29 @@ export default function JsonToCsv() {
       )}
 
       <div className="mt-6 flex gap-3">
-        <button
+        <Button
           onClick={convert}
-          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors"
+          variant="primary"
         >
           Convert to CSV
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             setInput("");
             setOutput("");
             setError("");
           }}
-          className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors"
+          variant="secondary"
         >
           Clear
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={downloadCSV}
           disabled={!output}
-          className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-50"
+          
         >
           Download CSV
-        </button>
+        </Button>
       </div>
     </div>
   );

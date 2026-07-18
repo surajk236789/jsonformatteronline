@@ -28,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/html-entity-encoder',
     '/tools/http-status-codes',
     '/tools/git-command-generator',
+    '/tools/seo-checker',
+    '/tools/meta-tag-generator',
+    '/tools/robots-txt-generator',
+    '/tools/sitemap-generator',
+    '/tools/unix-timestamp-converter',
+    '/tools/timezone-converter',
   ];
 
   const blogRoutes = [

@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "./ui/Button";
 
 import { useState, useEffect } from "react";
 
@@ -60,18 +61,18 @@ export function CookieBanner() {
         We use cookies to analyze traffic and improve your experience. By clicking "Accept", you consent to our use of cookies.
       </div>
       <div className="flex gap-3 shrink-0">
-        <button
+        <Button
           onClick={declineCookies}
           className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md transition-colors"
         >
           Decline
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={acceptCookies}
-          className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-md transition-colors"
+          variant="primary"
         >
           Accept
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 
 interface SeoResult {
   score: { value: number; color: "green" | "yellow" | "red"; msg: string };
@@ -295,13 +296,13 @@ export default function SeoChecker() {
             placeholder="https://example.com"
             className="flex-1 bg-background border border-panel-border rounded-xl px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-primary placeholder:text-secondary"
           />
-          <button
+          <Button
             type="submit"
             disabled={loading}
-            className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-8 py-4 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/30"
+            variant="primary"
           >
             {loading ? "Analyzing..." : "Analyze SEO"}
-          </button>
+          </Button>
         </form>
         {error && (
           <div className="mt-4 p-4 bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800/30 rounded-xl text-sm font-medium">

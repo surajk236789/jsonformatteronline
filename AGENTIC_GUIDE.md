@@ -25,7 +25,7 @@ The Developer Tools Hub is a multi-page utility dashboard designed for developer
   * Action buttons for **Format & Beautify** and **Minify JSON**.
   * Interactive **Paste Sample JSON** helper.
   * Real-time parsing error boundaries highlighting syntax validation issues.
-  * **Floating copy icon button** (`absolute top-3 right-3`) overlaid on the output pane — toggles to a checkmark + "Copied!" for 2 seconds on click.
+  * **Floating copy icon button** (`absolute top-3 right-3`) overlaid on the output pane ï¿½ toggles to a checkmark + "Copied!" for 2 seconds on click.
 
 ### 3. HTML Beautifier
 * **File Reference**: [app/components/HtmlBeautifier.tsx](file:///d:/Project/jsonformatteronline/app/components/HtmlBeautifier.tsx)
@@ -101,32 +101,42 @@ The Developer Tools Hub is a multi-page utility dashboard designed for developer
 | JWT Decoder *(new)* | `/tools/jwt-decoder` | JwtDecoder.tsx |
 | Hash Generator | `/tools/hash-generator` | HashGenerator.tsx |
 
-**??? Utilities**
+**ðŸ“ˆ SEO Tools**
+| Label | Route | Component |
+|---|---|---|
+| SEO Checker | `/tools/seo-checker` | SeoChecker.tsx |
+| Meta Tag Generator | `/tools/meta-tag-generator` | MetaTagGenerator.tsx |
+| Robots.txt Generator | `/tools/robots-txt-generator` | RobotsTxtGenerator.tsx |
+| XML Sitemap Generator | `/tools/sitemap-generator` | SitemapGenerator.tsx |
+
+**ðŸ› ï¸ Utilities**
 | Label | Route | Component |
 |---|---|---|
 | Cron Parser | `/tools/cron-parser` | CronParser.tsx |
 | Password Generator | `/tools/password-generator` | PasswordGenerator.tsx |
 | Git Command Generator | `/tools/git-command-generator` | GitCommandGenerator.tsx |
 | HTTP Status Codes | `/tools/http-status-codes` | HttpStatusCodes.tsx |
+| Unix Timestamp Converter | `/tools/unix-timestamp-converter` | UnixTimestampConverter.tsx |
+| Timezone Converter | `/tools/timezone-converter` | TimezoneConverter.tsx |
 
 ### 8. YAML to JSON Converter *(new)*
 * **File Reference**: [app/components/YamlToJson.tsx](file:///d:/Project/jsonformatteronline/app/components/YamlToJson.tsx)
 * **Route**: `/tools/yaml-to-json` ? [app/tools/yaml-to-json/page.tsx](file:///d:/Project/jsonformatteronline/app/tools/yaml-to-json/page.tsx)
 * **Description**: Converts valid YAML into formatted JSON entirely client-side using `js-yaml`.
-* **Dependency**: `js-yaml` — must be imported as `import * as yaml from "js-yaml"` (namespace import). The ESM build does **not** have a default export.
+* **Dependency**: `js-yaml` ï¿½ must be imported as `import * as yaml from "js-yaml"` (namespace import). The ESM build does **not** have a default export.
 * **Features**:
   * Dual-pane layout: YAML textarea input ? JSON `pre/code` output with emerald syntax colouring.
   * **Floating copy icon button** overlaid on output pane (matches JsonBeautifier pattern).
   * Error display: rose-themed warning box with SVG icon (matches JsonBeautifier style).
   * Accent colour: **orange**.
 * **SEO** (`page.tsx` metadata):
-  * Title: `"YAML to JSON Converter Online — Free & Instant | Developer Tools"`
+  * Title: `"YAML to JSON Converter Online ï¿½ Free & Instant | Developer Tools"`
   * Canonical: `https://www.allformatter.com/tools/yaml-to-json`
 
 ### 9. JWT Decoder *(new)*
 * **File Reference**: [app/components/JwtDecoder.tsx](file:///d:/Project/jsonformatteronline/app/components/JwtDecoder.tsx)
 * **Route**: `/tools/jwt-decoder` ? [app/tools/jwt-decoder/page.tsx](file:///d:/Project/jsonformatteronline/app/tools/jwt-decoder/page.tsx)
-* **Description**: Decodes JSON Web Tokens (JWT) into Header and Payload — entirely client-side, zero external JWT libraries.
+* **Description**: Decodes JSON Web Tokens (JWT) into Header and Payload ï¿½ entirely client-side, zero external JWT libraries.
 * **Implementation**:
   * Splits token on `.` and asserts exactly 3 parts.
   * Custom `decodeBase64Url()` function: replaces `-`?`+`, `_`?`/`, pads with `=`, then uses `atob` + `decodeURIComponent`.
@@ -136,12 +146,12 @@ The Developer Tools Hub is a multi-page utility dashboard designed for developer
   * Payload output: **purple** text (`text-purple-600 dark:text-purple-400`).
   * Accent colour: **purple**.
 * **SEO** (`page.tsx` metadata):
-  * Title: `"JWT Decoder Online — Free & Instant | Developer Tools"`
+  * Title: `"JWT Decoder Online ï¿½ Free & Instant | Developer Tools"`
   * Canonical: `https://www.allformatter.com/tools/jwt-decoder`
 
 ### 10. Blog System
-* **Listing page**: [app/blogs/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/page.tsx) — Route: `/blogs`
-* **Dynamic post page**: [app/blogs/[slug]/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/%5Bslug%5D/page.tsx) — Route: `/blogs/[slug]`
+* **Listing page**: [app/blogs/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/page.tsx) ï¿½ Route: `/blogs`
+* **Dynamic post page**: [app/blogs/[slug]/page.tsx](file:///d:/Project/jsonformatteronline/app/blogs/%5Bslug%5D/page.tsx) ï¿½ Route: `/blogs/[slug]`
 * **Description**: Static blog system with 6 articles.
 * **Articles** (slugs): `json-formatting-best-practices`, `html-beautifier-guide`, `base64-encoding-explained`, `json-vs-xml`, `comparing-json-objects`, `api-debugging-tips`
 * `generateStaticParams` pre-generates all slugs at build time.
@@ -156,11 +166,11 @@ The Developer Tools Hub is a multi-page utility dashboard designed for developer
 
 The header is implemented in [MainLayout.tsx](file:///d:/Project/jsonformatteronline/app/components/MainLayout.tsx) and includes:
 
-* **Brand logo** — rendered via [Brand.tsx](file:///d:/Project/jsonformatteronline/app/components/Brand.tsx), links to `/`
-* **Tools dropdown** — 4 category groups rendered from `toolGroups` array
-* **Blogs dropdown** — 6 recent articles + "View all" link
-* **Theme toggle** — persists dark/light using `next-themes` (`storageKey="devtools-theme"`)
-* **Mobile hamburger** — slide-down menu on small screens
+* **Brand logo** ï¿½ rendered via [Brand.tsx](file:///d:/Project/jsonformatteronline/app/components/Brand.tsx), links to `/`
+* **Tools dropdown** ï¿½ 4 category groups rendered from `toolGroups` array
+* **Blogs dropdown** ï¿½ 6 recent articles + "View all" link
+* **Theme toggle** ï¿½ persists dark/light using `next-themes` (`storageKey="devtools-theme"`)
+* **Mobile hamburger** ï¿½ slide-down menu on small screens
 
 ### toolGroups shape:
 ```ts
@@ -233,7 +243,7 @@ const handleCopy = () => {
   ```tsx
   <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
   ```
-* **`enableSystem={false}`** — Prevents OS system theme from overriding user preference.
+* **`enableSystem={false}`** ï¿½ Prevents OS system theme from overriding user preference.
 * **Hydration guard**: `MainLayout` defers rendering until `mounted === true` to prevent SSR/client mismatches.
 
 ---
@@ -241,12 +251,12 @@ const handleCopy = () => {
 ## ?? SEO & Typography Setup
 
 * **Fonts**: `layout.tsx` imports `Outfit` via `next/font/google`. `globals.css` maps `font-sans` ? `--font-outfit`.
-* **Global Metadata**: In [app/layout.tsx](file:///d:/Project/jsonformatteronline/app/layout.tsx) — title, description, keywords, OpenGraph, Twitter card.
+* **Global Metadata**: In [app/layout.tsx](file:///d:/Project/jsonformatteronline/app/layout.tsx) ï¿½ title, description, keywords, OpenGraph, Twitter card.
 * **Blog SEO**: `generateMetadata` export in `[slug]/page.tsx` for per-post titles, descriptions, and canonical URLs.
 * **Tool SEO**: Each `app/tools/<slug>/page.tsx` exports a `metadata` object:
   ```ts
   export const metadata: Metadata = {
-    title: "Tool Name — Free & Instant | Developer Tools",
+    title: "Tool Name ï¿½ Free & Instant | Developer Tools",
     description: "Short description of what it does.",
     keywords: ["keyword1", "keyword2"],
     alternates: { canonical: "https://www.allformatter.com/tools/<slug>" },
@@ -281,12 +291,11 @@ const handleCopy = () => {
 ### 2. MCP Server
 * Start `npm run dev` and connect via `.mcp.json`. Use `get_errors`, `get_routes`, `get_page_metadata`, `get_logs` to diagnose issues.
 
-### 3. Styling
+### 3. Styling & Components
 * Tailwind CSS v4. Strict utility classes only. Always include `dark:` variants.
+* **Standard Button**: NEVER use native `<button>`. Always import and use `<Button variant="..." size="...">` from `app/components/ui/Button.tsx`. Defaults to `variant="primary"` and `size="md"`.
 
-### 4. Internationalization Compliance
-* Add new user-facing strings to [i18n.js](file:///d:/Project/jsonformatteronline/i18n.js) under both `en` and `hi`, then use `t("key")`.
-* Secondary tools (e.g., YAML?JSON, JWT Decoder) currently use hardcoded English strings. Extend i18n if they are localised.
+
 
 ### 5. Hydration Safeguards
 * Wrap theme-dependent or client-storage-dependent UI in a `mounted === true` guard from `useEffect`.
@@ -296,14 +305,14 @@ const handleCopy = () => {
 2. Add entry to `blogs` array in `app/blogs/page.tsx`.
 3. Add to `blogLinks` array in `MainLayout.tsx`.
 
-### 7. Adding New Tools — Checklist
+### 7. Adding New Tools ï¿½ Checklist
 1. Create `app/components/MyTool.tsx` with `"use client"` directive.
 2. Create `app/tools/<slug>/page.tsx` exporting `metadata` (title, description, keywords, canonical) and rendering `<MainLayout><MyTool /></MainLayout>`.
 3. Add tool entry to correct category in `toolGroups` in `MainLayout.tsx`.
 4. Use the **floating copy icon pattern** (see section above) for any output pane.
 5. Choose a consistent accent colour (`color` key) and reflect it in feature card hover effects.
 
-### 8. ESM Import Gotcha — `js-yaml`
+### 8. ESM Import Gotcha ï¿½ `js-yaml`
 * **Always** use the namespace import:
   ```ts
   import * as yaml from "js-yaml";   // ? correct

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { Button } from "./ui/Button";
 
 export default function PasswordGenerator() {
   const [password, setPassword] = useState("");
@@ -51,12 +52,12 @@ export default function PasswordGenerator() {
             value={password}
             className="w-full p-4 pr-24 bg-background border border-panel-border rounded-xl text-xl md:text-2xl font-mono text-center text-primary outline-none"
           />
-          <button 
+          <Button 
             onClick={() => navigator.clipboard.writeText(password)}
             className="absolute right-2 top-2 bottom-2 px-4 bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-900/40 dark:hover:bg-indigo-800/50 text-indigo-700 dark:text-indigo-300 font-bold rounded-lg transition-colors text-sm"
           >
             Copy
-          </button>
+          </Button>
         </div>
 
         <div className="space-y-6 bg-background p-6 rounded-xl border border-panel-border">
@@ -92,12 +93,12 @@ export default function PasswordGenerator() {
           </div>
         </div>
 
-        <button 
+        <Button 
           onClick={generate} 
-          className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors shadow-lg shadow-indigo-500/30 text-lg"
+          variant="primary"
         >
           Generate New Password
-        </button>
+        </Button>
       </div>
     </div>
   );

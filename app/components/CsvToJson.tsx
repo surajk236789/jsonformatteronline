@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
+import { Button } from "./ui/Button";
 
 export default function CsvToJson() {
   const [input, setInput] = useState("");
@@ -96,12 +97,12 @@ export default function CsvToJson() {
                 className="hidden" 
                 ref={fileInputRef} 
               />
-              <button 
+              <Button 
                 onClick={() => fileInputRef.current?.click()}
                 className="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300"
               >
                 + Import CSV File
-              </button>
+              </Button>
             </div>
           </div>
           <textarea 
@@ -125,19 +126,19 @@ export default function CsvToJson() {
       {error && <div className="mt-4 p-3 bg-red-50 text-red-600 rounded-xl text-sm">{error}</div>}
 
       <div className="mt-6 flex gap-3 flex-wrap">
-        <button onClick={convert} className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
+        <Button onClick={convert} variant="primary">
           Convert to JSON
-        </button>
-        <button onClick={() => { setInput(""); setOutput(""); setError(""); }} className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors">
+        </Button>
+        <Button onClick={() => { setInput(""); setOutput(""); setError(""); }} variant="secondary">
           Clear
-        </button>
-        <button 
+        </Button>
+        <Button 
           onClick={downloadJSON} 
           disabled={!output}
-          className="px-5 py-2.5 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-xl transition-colors disabled:opacity-50"
+          
         >
           Download JSON
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -48,14 +48,25 @@ const toolGroups = [
     ],
   },
   {
+    category: "SEO Tools",
+    emoji: "📈",
+    tools: [
+      { href: "/tools/seo-checker", label: "SEO Checker", description: "Analyze on-page SEO", emoji: "🔍", color: "indigo" },
+      { href: "/tools/meta-tag-generator", label: "Meta Tag Generator", description: "Generate Meta & OG tags", emoji: "🏷️", color: "blue" },
+      { href: "/tools/robots-txt-generator", label: "Robots.txt Generator", description: "Create robots.txt files", emoji: "🤖", color: "orange" },
+      { href: "/tools/sitemap-generator", label: "XML Sitemap Generator", description: "Generate XML Sitemaps", emoji: "🗺️", color: "emerald" },
+    ],
+  },
+  {
     category: "Utilities",
     emoji: "🛠️",
     tools: [
-      { href: "/tools/seo-checker", label: "SEO Checker", description: "Analyze on-page SEO", emoji: "🔍", color: "indigo" },
       { href: "/tools/cron-parser", label: "Cron Parser", description: "Parse cron expressions", emoji: "⏰", color: "amber" },
       { href: "/tools/password-generator", label: "Password Generator", description: "Secure random passwords", emoji: "🔑", color: "rose" },
       { href: "/tools/git-command-generator", label: "Git Command Generator", description: "Build git commands", emoji: "🐙", color: "slate" },
       { href: "/tools/http-status-codes", label: "HTTP Status Codes", description: "Reference & lookup", emoji: "🌐", color: "sky" },
+      { href: "/tools/unix-timestamp-converter", label: "Unix Timestamp Converter", description: "Convert Unix timestamps", emoji: "⏱️", color: "violet" },
+      { href: "/tools/timezone-converter", label: "Timezone Converter", description: "Compare & convert timezones", emoji: "🌍", color: "purple" },
     ],
   },
 ];
@@ -150,7 +161,7 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
       {/* ── SEO Footer (server-rendered static HTML) ── */}
       <footer className="mt-16 border-t border-panel-border py-16 bg-panel">
         <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-7 gap-10">
 
             {/* Left Panel: Brand & Copyright */}
             <div className="lg:col-span-2 space-y-6">

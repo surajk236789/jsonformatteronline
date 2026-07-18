@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 
 export default function HtmlEntityEncoder() {
   const [input, setInput] = useState("");
@@ -54,15 +55,15 @@ export default function HtmlEntityEncoder() {
       </div>
 
       <div className="mt-6 flex gap-3">
-        <button onClick={encode} className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
+        <Button onClick={encode} variant="primary">
           Encode Entities
-        </button>
-        <button onClick={decode} className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
+        </Button>
+        <Button onClick={decode} variant="primary">
           Decode Entities
-        </button>
-        <button onClick={() => { setInput(""); setOutput(""); }} className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors">
+        </Button>
+        <Button onClick={() => { setInput(""); setOutput(""); }} variant="secondary">
           Clear
-        </button>
+        </Button>
       </div>
     </div>
   );

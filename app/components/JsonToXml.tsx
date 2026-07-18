@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
+import { Button } from "./ui/Button";
 
 // ---------------------------------------------------------------------------
 // Pure JSON → XML conversion (no external dependencies)
@@ -173,12 +174,12 @@ export default function JsonToXml() {
             {"Convert JSON data into well-formed XML instantly. All conversion happens in your browser."}
           </p>
         </div>
-        <button
+        <Button
           onClick={loadSample}
-          className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+          variant="secondary"
         >
           {"Paste Sample JSON"}
-        </button>
+        </Button>
       </div>
 
       {/* Dual pane */}
@@ -240,7 +241,7 @@ export default function JsonToXml() {
             {output && (
               <div className="absolute top-3 right-3 flex items-center gap-2">
                 {/* Copy */}
-                <button
+                <Button
                   id="json-to-xml-copy-btn"
                   onClick={handleCopy}
                   title="Copy XML"
@@ -261,10 +262,10 @@ export default function JsonToXml() {
                       {"Copy"}
                     </>
                   )}
-                </button>
+                </Button>
 
                 {/* Download */}
-                <button
+                <Button
                   id="json-to-xml-download-btn"
                   onClick={handleDownload}
                   title="Download XML"
@@ -285,7 +286,7 @@ export default function JsonToXml() {
                       .xml
                     </>
                   )}
-                </button>
+                </Button>
               </div>
             )}
           </div>
@@ -306,18 +307,18 @@ export default function JsonToXml() {
 
       {/* Action buttons */}
       <div className="flex flex-wrap items-center justify-end gap-3 mt-6 pt-6 border-t border-panel-border/50">
-        <button
+        <Button
           id="json-to-xml-clear-btn"
           onClick={handleClear}
-          className="px-5 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-secondary text-sm font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-2"
+          variant="secondary"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
           {"Clear"}
-        </button>
+        </Button>
 
-        <button
+        <Button
           id="json-to-xml-convert-btn"
           onClick={handleConvert}
           className="glow-button px-6 py-2.5 bg-orange-600 hover:bg-orange-700 text-white text-sm font-bold rounded-lg transition shadow-md cursor-pointer flex items-center gap-2"
@@ -326,7 +327,7 @@ export default function JsonToXml() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
           </svg>
           {"Convert to XML"}
-        </button>
+        </Button>
       </div>
     </div>
   );

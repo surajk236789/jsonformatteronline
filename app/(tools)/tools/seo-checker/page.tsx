@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import SeoChecker from "@/app/components/SeoChecker";
 
 export const metadata: Metadata = {
-  title: "Online SEO Checker & Website Analyzer",
+  title: "Free SEO Checker & Website Analyzer",
   description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
   keywords: ["SEO Checker", "SEO Analyzer", "Website SEO Test", "On-page SEO Checker", "Check Meta Tags"],
   alternates: { canonical: "https://www.allformatter.com/tools/seo-checker" },
   openGraph: {
-    title: "Online SEO Checker & Website Analyzer",
+    title: "Free SEO Checker & Website Analyzer",
     description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
     url: "https://www.allformatter.com/tools/seo-checker",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online SEO Checker & Website Analyzer",
+    title: "Free SEO Checker & Website Analyzer",
     description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
   },
   robots: {

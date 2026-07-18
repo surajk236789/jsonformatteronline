@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 // @ts-expect-error: js-beautify has no typescript declaration file
 import beautify from "js-beautify";
 
@@ -84,12 +85,13 @@ export default function HtmlBeautifier() {
             {"Format, clean, and beautify your HTML markup instantly."}
           </p>
         </div>
-        <button
+        <Button
+          variant="secondary"
+          size="sm"
           onClick={loadSample}
-          className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary text-xs font-semibold rounded-lg transition-colors cursor-pointer"
         >
           {"Paste Sample HTML"}
-        </button>
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -134,9 +136,11 @@ export default function HtmlBeautifier() {
             )}
             
             {output && (
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={handleCopy}
-                className="absolute top-3 right-3 p-2 bg-slate-900/80 hover:bg-slate-900 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-md"
+                className="absolute top-3 right-3 shadow-md bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm"
               >
                 {copySuccess ? (
                   <>
@@ -153,7 +157,7 @@ export default function HtmlBeautifier() {
                     {"Copy"}
                   </>
                 )}
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -173,24 +177,24 @@ export default function HtmlBeautifier() {
 
       {/* Button Operations */}
       <div className="flex flex-wrap items-center justify-end gap-3 mt-6 pt-6 border-t border-panel-border/50">
-        <button
+        <Button
+          variant="secondary"
           onClick={handleClear}
-          className="px-5 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-secondary text-sm font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-2"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
           {"Clear"}
-        </button>
-        <button
+        </Button>
+        <Button
+          variant="primary"
           onClick={handleBeautify}
-          className="glow-button px-6 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold rounded-lg transition shadow-md cursor-pointer flex items-center gap-2"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
           {"Beautify HTML"}
-        </button>
+        </Button>
       </div>
     </div>
   );

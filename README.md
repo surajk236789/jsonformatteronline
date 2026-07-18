@@ -11,10 +11,11 @@ All operations (parsing, formatting, and file conversion) occur strictly client-
 - **JSON Beautifier & Formatter (Default)**: Parse, format, validate, and minify raw JSON strings with real-time syntax checking.
 - **HTML Beautifier**: Format and clean raw HTML markup with customizable indent spaces using `js-beautify`.
 - **Base64 to PDF Converter**: Convert Base64 data-URI or standard strings back into PDF files, including an in-app sandboxed PDF document preview.
+- **SEO Tools**: Meta Tag Generator, Robots.txt Generator, and XML Sitemap Generator for optimizing web presence.
+- **Developer Utilities**: Unix Timestamp Converter and Timezone Converter for quick time manipulations.
 - **Google Ads Integrations**: Structured placements for Google Ads banners using simulated, responsive ad containers.
 - **Dynamic Theme Engine**: Smooth, class-based toggle controls supporting Light and Dark modes.
-- **Localization**: Full internationalization (i18n) support for English and Hindi (हिन्दी).
-- **SEO Optimized**: Advanced semantic HTML layout, Google Fonts (`Outfit`), and metadata tag configurations.
+- **UI Architecture**: Standardized UI through reusable, brand-consistent `<Button>` components.
 
 ---
 

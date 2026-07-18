@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 import * as yaml from "js-yaml";
 
 export default function YamlToJson() {
@@ -83,7 +84,7 @@ export default function YamlToJson() {
             )}
 
             {output && (
-              <button
+              <Button
                 onClick={handleCopy}
                 className="absolute top-3 right-3 p-2 bg-slate-900/80 hover:bg-slate-900 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-md"
               >
@@ -102,7 +103,7 @@ export default function YamlToJson() {
                     Copy
                   </>
                 )}
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -118,22 +119,22 @@ export default function YamlToJson() {
       )}
 
       <div className="mt-6 flex gap-3">
-        <button
+        <Button
           onClick={convert}
-          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors"
+          variant="primary"
         >
           Convert to JSON
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             setInput("");
             setOutput("");
             setError("");
           }}
-          className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors"
+          variant="secondary"
         >
           Clear
-        </button>
+        </Button>
       </div>
     </div>
   );

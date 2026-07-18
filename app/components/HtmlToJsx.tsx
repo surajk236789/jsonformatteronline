@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
+import { Button } from "./ui/Button";
 
 export default function HtmlToJsx() {
   const [input, setInput] = useState<string>("");
@@ -100,21 +101,21 @@ export default function HtmlToJsx() {
       </div>
 
       <div className="mt-6 flex gap-3">
-        <button
+        <Button
           onClick={convert}
-          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors"
+          variant="primary"
         >
           Convert to JSX
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             setInput("");
             setOutput("");
           }}
-          className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors"
+          variant="secondary"
         >
           Clear
-        </button>
+        </Button>
       </div>
     </div>
   );

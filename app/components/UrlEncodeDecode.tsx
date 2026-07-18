@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 
 export default function UrlEncodeDecode() {
   const [input, setInput] = useState("");
@@ -59,15 +60,15 @@ export default function UrlEncodeDecode() {
       {error && <div className="mt-4 p-3 bg-red-50 text-red-600 rounded-xl text-sm">{error}</div>}
 
       <div className="mt-6 flex gap-3">
-        <button onClick={encode} className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
+        <Button onClick={encode} variant="primary">
           Encode URL
-        </button>
-        <button onClick={decode} className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors">
+        </Button>
+        <Button onClick={decode} variant="primary">
           Decode URL
-        </button>
-        <button onClick={() => { setInput(""); setOutput(""); setError(""); }} className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors">
+        </Button>
+        <Button onClick={() => { setInput(""); setOutput(""); setError(""); }} variant="secondary">
           Clear
-        </button>
+        </Button>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, ChangeEvent } from "react";
+import { Button } from "./ui/Button";
 
 type Hashes = {
   sha1: string;
@@ -120,7 +121,7 @@ export default function HashGenerator() {
                     placeholder={`${hash.label} hash will appear here`}
                   />
                   {hash.value && (
-                    <button
+                    <Button
                       onClick={() => copyToClipboard(hash.label, hash.value)}
                       className="absolute top-1/2 -translate-y-1/2 right-1.5 p-1.5 px-2.5 bg-slate-900/80 hover:bg-slate-900 text-white rounded-md text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-sm"
                     >
@@ -139,7 +140,7 @@ export default function HashGenerator() {
                           Copy
                         </>
                       )}
-                    </button>
+                    </Button>
                   )}
                 </div>
               </div>

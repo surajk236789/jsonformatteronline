@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 
 export default function JwtDecoder() {
   const [input, setInput] = useState("");
@@ -77,23 +78,23 @@ export default function JwtDecoder() {
             placeholder={"eyJhbGciOiJIUzI1NiIsInR5cCI... "}
           />
           <div className="mt-4 flex gap-3">
-            <button
+            <Button
               onClick={decodeJWT}
-              className="px-5 py-2.5 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-xl transition-colors"
+              
             >
               Decode JWT
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => {
                 setInput("");
                 setHeaderOutput("");
                 setPayloadOutput("");
                 setError("");
               }}
-              className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors"
+              variant="secondary"
             >
               Clear
-            </button>
+            </Button>
           </div>
         </div>
         <div className="space-y-4">

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
+import { Button } from "./ui/Button";
 
 type ValidationResult = {
   valid: boolean;
@@ -127,22 +128,22 @@ export default function JsonSchemaValidator() {
       )}
 
       <div className="mt-6 flex gap-3">
-        <button
+        <Button
           onClick={validate}
-          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors"
+          variant="primary"
         >
           Validate JSON
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => {
             setDataInput("");
             setSchemaInput("");
             setResult(null);
           }}
-          className="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary font-semibold rounded-xl transition-colors"
+          variant="secondary"
         >
           Clear
-        </button>
+        </Button>
       </div>
     </div>
   );

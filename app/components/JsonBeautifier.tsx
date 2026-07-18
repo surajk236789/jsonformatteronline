@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { Button } from "./ui/Button";
 
 export default function JsonBeautifier() {
   const [input, setInput] = useState("");
@@ -84,12 +85,12 @@ export default function JsonBeautifier() {
             {"Clean, format, validate, and minify your JSON data instantly."}
           </p>
         </div>
-        <button
+        <Button
           onClick={loadSample}
-          className="px-3.5 py-1.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-primary text-xs font-semibold rounded-lg transition-colors cursor-pointer"
+          variant="secondary"
         >
           {"Paste Sample JSON"}
-        </button>
+        </Button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -134,7 +135,7 @@ export default function JsonBeautifier() {
             )}
             
             {output && (
-              <button
+              <Button
                 onClick={handleCopy}
                 className="absolute top-3 right-3 p-2 bg-slate-900/80 hover:bg-slate-900 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shadow-md"
               >
@@ -153,7 +154,7 @@ export default function JsonBeautifier() {
                     {"Copy"}
                   </>
                 )}
-              </button>
+              </Button>
             )}
           </div>
         </div>
@@ -173,16 +174,16 @@ export default function JsonBeautifier() {
 
       {/* Button Operations */}
       <div className="flex flex-wrap items-center justify-end gap-3 mt-6 pt-6 border-t border-panel-border/50">
-        <button
+        <Button
           onClick={handleClear}
-          className="px-5 py-2.5 hover:bg-slate-100 dark:hover:bg-slate-800 text-secondary text-sm font-semibold rounded-lg transition-colors cursor-pointer flex items-center gap-2"
+          variant="secondary"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
           </svg>
           {"Clear"}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleMinify}
           className="px-6 py-2.5 bg-indigo-100/50 hover:bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:hover:bg-indigo-800/40 text-sm font-semibold rounded-lg transition shadow-sm cursor-pointer flex items-center gap-2"
         >
@@ -190,8 +191,8 @@ export default function JsonBeautifier() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 4l-5-5m-7 11v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
           </svg>
           {"Minify JSON"}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleFormat}
           className="glow-button px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-bold rounded-lg transition shadow-md cursor-pointer flex items-center gap-2"
         >
@@ -199,7 +200,7 @@ export default function JsonBeautifier() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
           {"Format & Beautify"}
-        </button>
+        </Button>
       </div>
     </div>
   );

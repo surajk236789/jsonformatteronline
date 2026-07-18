@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import { Button } from "./ui/Button";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -96,9 +97,9 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
           {toolGroups.map((group) => {
             return (
               <div className="relative group/navitem" key={group.category}>
-                <button
+                <Button
                   aria-haspopup="true"
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer text-secondary group-hover/navitem:text-indigo-600 group-hover/navitem:bg-slate-100 dark:group-hover/navitem:text-indigo-400 dark:group-hover/navitem:bg-slate-800"
+                  variant="ghost"
                 >
                   <span className="text-base">{group.emoji}</span>
                   <span className="hidden lg:block">{group.category}</span>
@@ -108,7 +109,7 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
-                </button>
+                </Button>
 
                 <div className="absolute top-full left-0 mt-2 w-[340px] opacity-0 invisible group-hover/navitem:opacity-100 group-hover/navitem:visible transition-all duration-200 bg-panel border border-panel-border rounded-2xl shadow-2xl shadow-slate-200/60 dark:shadow-slate-950/50 overflow-hidden z-50">
                   <div className="p-2 flex flex-col gap-1">
@@ -142,13 +143,14 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
 
           {/* Blogs Dropdown */}
           <div className="relative group/navitem">
-            <button
+            <Button
               id="header-blogs-btn"
               aria-haspopup="true"
+              variant="ghost"
               className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${
                 isBlogPage
                   ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
-                  : "text-secondary group-hover/navitem:text-indigo-600 group-hover/navitem:bg-slate-100 dark:group-hover/navitem:text-indigo-400 dark:group-hover/navitem:bg-slate-800"
+                  : "text-blue-600 dark:text-blue-400 group-hover/navitem:text-indigo-600 group-hover/navitem:bg-slate-100 dark:group-hover/navitem:text-indigo-400 dark:group-hover/navitem:bg-slate-800"
               }`}
             >
               📚 Blogs
@@ -158,7 +160,7 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
-            </button>
+            </Button>
 
             <div className="absolute top-full left-0 mt-2 w-72 opacity-0 invisible group-hover/navitem:opacity-100 group-hover/navitem:visible transition-all duration-200 bg-panel border border-panel-border rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-slate-950/50 overflow-hidden z-50">
               <div className="p-2">
@@ -193,8 +195,9 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
         {/* Right actions */}
         <div className="flex items-center gap-2">
           {/* Theme Toggle */}
-          <button
+          <Button
             id="header-theme-toggle"
+            variant="ghost"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${
               mounted
@@ -216,7 +219,7 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
             ) : (
               <div className="w-4 h-4" />
             )}
-          </button>
+          </Button>
 
           {/* Mobile hamburger label */}
           <label

@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, ChangeEvent } from "react";
+import { Button } from "./ui/Button";
 
 export default function GitCommandGenerator() {
   const [workflow, setWorkflow] = useState<"commit" | "branch" | "undo" | "sync">("commit");
@@ -115,12 +116,12 @@ export default function GitCommandGenerator() {
               value={getCommand()}
               readOnly
             />
-            <button
+            <Button
               onClick={copyToClipboard}
               className="absolute right-3 top-3 px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-white text-xs font-bold rounded-lg transition-colors"
             >
               Copy
-            </button>
+            </Button>
           </div>
         </div>
       </div>
