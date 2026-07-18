@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import JsonSchemaValidator from "@/app/components/JsonSchemaValidator";
 
 export const metadata: Metadata = {
-  title: "JSON Schema Validator Onlines",
+  title: "JSON Schema Validator Online",
   description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
   keywords: ["JSON Schema Validator", "Validate JSON Schema", "JSON Validation Online", "JSON Draft-07", "Schema Checker"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-schema-validator" },
   openGraph: {
-    title: "JSON Schema Validator Onlines",
+    title: "JSON Schema Validator Online",
     description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
     url: "https://www.allformatter.com/tools/json-schema-validator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JSON Schema Validator Onlines",
+    title: "JSON Schema Validator Online",
     description: "Validate JSON data against a JSON Schema instantly. Free, browser-based JSON Schema validator supporting Draft-07 and common schema keywords.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function JsonSchemaValidatorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "JSON Schema Validator Onlines",
+        "name": "JSON Schema Validator Online",
         "url": "https://www.allformatter.com/tools/json-schema-validator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

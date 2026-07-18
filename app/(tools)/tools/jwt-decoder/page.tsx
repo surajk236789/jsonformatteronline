@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import JwtDecoder from "@/app/components/JwtDecoder";
 
 export const metadata: Metadata = {
-  title: "JWT Decoder Onlines",
+  title: "JWT Decoder Online",
   description: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. View header, payload, and claims — no upload, no registration, 100% private.",
   keywords: [
     "JWT decoder",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.allformatter.com/tools/jwt-decoder" },
   openGraph: {
-    title: "JWT Decoder Onlines",
+    title: "JWT Decoder Online",
     description: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. View header, payload, and claims — no upload, no registration, 100% private.",
     url: "https://www.allformatter.com/tools/jwt-decoder",
     siteName: "AllFormatter",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JWT Decoder Onlines",
+    title: "JWT Decoder Online",
     description: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. View header, payload, and claims — no upload, no registration, 100% private.",
   },
   robots: {
@@ -50,7 +50,7 @@ export default function JwtDecoderPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "JWT Decoder Onlines",
+        "name": "JWT Decoder Online",
         "url": "https://www.allformatter.com/tools/jwt-decoder",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

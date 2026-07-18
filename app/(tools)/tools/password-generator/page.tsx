@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import PasswordGenerator from "@/app/components/PasswordGenerator";
 
 export const metadata: Metadata = {
-  title: "Password Generator Onlines",
+  title: "Password Generator Online",
   description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
   keywords: ["Password Generator", "Secure Password", "Random Password", "Strong Password Generator", "Online Password Tool"],
   alternates: { canonical: "https://www.allformatter.com/tools/password-generator" },
   openGraph: {
-    title: "Password Generator Onlines",
+    title: "Password Generator Online",
     description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
     url: "https://www.allformatter.com/tools/password-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Password Generator Onlines",
+    title: "Password Generator Online",
     description: "Generate strong, random, and secure passwords instantly. Customize length, include uppercase, lowercase, numbers, and symbols — free and browser-based.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function PasswordGeneratorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Password Generator Onlines",
+        "name": "Password Generator Online",
         "url": "https://www.allformatter.com/tools/password-generator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

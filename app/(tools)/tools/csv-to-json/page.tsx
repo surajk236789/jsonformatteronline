@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import CsvToJson from "@/app/components/CsvToJson";
 
 export const metadata: Metadata = {
-  title: "CSV to JSON Converter Onlines",
+  title: "CSV to JSON Converter Online",
   description: "Convert CSV files and text to JSON format instantly. Free, browser-based CSV to JSON converter — auto-detects headers, no uploads required.",
   keywords: ["CSV to JSON", "Convert CSV to JSON", "CSV JSON Converter", "Import CSV as JSON", "Parse CSV Online"],
   alternates: { canonical: "https://www.allformatter.com/tools/csv-to-json" },
   openGraph: {
-    title: "CSV to JSON Converter Onlines",
+    title: "CSV to JSON Converter Online",
     description: "Convert CSV files and text to JSON format instantly. Free, browser-based CSV to JSON converter — auto-detects headers, no uploads required.",
     url: "https://www.allformatter.com/tools/csv-to-json",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CSV to JSON Converter Onlines",
+    title: "CSV to JSON Converter Online",
     description: "Convert CSV files and text to JSON format instantly. Free, browser-based CSV to JSON converter — auto-detects headers, no uploads required.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function CsvToJsonPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "CSV to JSON Converter Onlines",
+        "name": "CSV to JSON Converter Online",
         "url": "https://www.allformatter.com/tools/csv-to-json",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

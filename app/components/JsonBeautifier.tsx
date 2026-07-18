@@ -9,7 +9,7 @@ export default function JsonBeautifier() {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const sampleJson = `{
-  "site": "Developer Tools",
+  "site": "AllFormatter",
   "features": ["JSON Beautifier", "HTML Beautifier", "Base64 to PDF"],
   "active": true,
   "theme": "dark",

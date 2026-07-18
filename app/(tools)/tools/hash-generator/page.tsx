@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import HashGenerator from "@/app/components/HashGenerator";
 
 export const metadata: Metadata = {
-  title: "Hash Generator Onlines",
+  title: "Hash Generator Online",
   description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
   keywords: ["Hash Generator", "MD5 Generator", "SHA256 Online", "SHA-1 Hash", "Cryptographic Hash Tool"],
   alternates: { canonical: "https://www.allformatter.com/tools/hash-generator" },
   openGraph: {
-    title: "Hash Generator Onlines",
+    title: "Hash Generator Online",
     description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
     url: "https://www.allformatter.com/tools/hash-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hash Generator Onlines",
+    title: "Hash Generator Online",
     description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function HashGeneratorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Hash Generator Onlines",
+        "name": "Hash Generator Online",
         "url": "https://www.allformatter.com/tools/hash-generator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

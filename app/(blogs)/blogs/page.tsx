@@ -79,7 +79,7 @@ const blogs = [
   },
   {
     slug: "api-debugging-tips",
-    title: "10 Pro Tips for Debugging APIs Faster with Developer Tools",
+    title: "10 Pro Tips for Debugging APIs Faster with AllFormatter",
     description:
       "From formatting raw JSON payloads to comparing request/response objects, these productivity tips will dramatically cut your API debugging time.",
     category: "API Tips",

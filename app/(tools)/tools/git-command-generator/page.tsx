@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import GitCommandGenerator from "@/app/components/GitCommandGenerator";
 
 export const metadata: Metadata = {
-  title: "Git Command Generator Onlines",
+  title: "Git Command Generator Online",
   description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
   keywords: ["Git Command Generator", "Git Commands Online", "Generate Git Commands", "Git Helper Tool", "Git Cheat Sheet"],
   alternates: { canonical: "https://www.allformatter.com/tools/git-command-generator" },
   openGraph: {
-    title: "Git Command Generator Onlines",
+    title: "Git Command Generator Online",
     description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
     url: "https://www.allformatter.com/tools/git-command-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Git Command Generator Onlines",
+    title: "Git Command Generator Online",
     description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function GitCommandGeneratorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Git Command Generator Onlines",
+        "name": "Git Command Generator Online",
         "url": "https://www.allformatter.com/tools/git-command-generator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

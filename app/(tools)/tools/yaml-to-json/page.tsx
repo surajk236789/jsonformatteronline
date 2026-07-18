@@ -13,7 +13,7 @@ const YamlToJson = dynamic(() => import("@/app/components/YamlToJson"), {
 });
 
 export const metadata: Metadata = {
-  title: "YAML to JSON Converter Onlines",
+  title: "YAML to JSON Converter Online",
   description: "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
   keywords: [
     "YAML to JSON",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.allformatter.com/tools/yaml-to-json" },
   openGraph: {
-    title: "YAML to JSON Converter Onlines",
+    title: "YAML to JSON Converter Online",
     description: "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
     url: "https://www.allformatter.com/tools/yaml-to-json",
     siteName: "AllFormatter",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YAML to JSON Converter Onlines",
+    title: "YAML to JSON Converter Online",
     description: "Convert YAML to JSON instantly online for free. Parse YAML files and export formatted JSON in your browser — no upload, no registration, 100% private.",
   },
   robots: {
@@ -59,7 +59,7 @@ export default function YamlToJsonPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "YAML to JSON Converter Onlines",
+        "name": "YAML to JSON Converter Online",
         "url": "https://www.allformatter.com/tools/yaml-to-json",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

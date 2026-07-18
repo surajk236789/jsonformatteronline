@@ -346,7 +346,7 @@ Mastering JSON comparison saves hours of manual debugging. Bookmark our [JSON Co
   },
 
   "api-debugging-tips": {
-    title: "10 Pro Tips for Debugging APIs Faster with Developer Tools",
+    title: "10 Pro Tips for Debugging APIs Faster with AllFormatter",
     description:
       "From formatting raw JSON payloads to comparing request/response objects, these productivity tips will dramatically cut your API debugging time.",
     category: "API Tips",
@@ -398,7 +398,7 @@ Use JSON Schema or example payloads to document what an endpoint returns. This b
 
 ---
 
-Faster API debugging starts with the right tools. Bookmark [Developer Tools](/) for instant JSON formatting, comparison, and file conversion — all free, all in-browser.
+Faster API debugging starts with the right tools. Bookmark [AllFormatter](/) for instant JSON formatting, comparison, and file conversion — all free, all in-browser.
     `,
   },
 };
@@ -418,7 +418,7 @@ export async function generateMetadata({
   const blog = blogContent[slug];
   if (!blog) return { title: "Blog Not Found" };
   return {
-    title: `${blog.title} | Developer Tools Blog`,
+    title: `${blog.title} | AllFormatter Blog`,
     description: blog.description,
     alternates: { canonical: `https://www.allformatter.com/blogs/${slug}` },
   };

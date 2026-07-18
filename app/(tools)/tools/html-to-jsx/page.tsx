@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import HtmlToJsx from "@/app/components/HtmlToJsx";
 
 export const metadata: Metadata = {
-  title: "HTML to JSX Converter Onlines",
+  title: "HTML to JSX Converter Online",
   description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
   keywords: ["HTML to JSX", "Convert HTML to React", "HTML JSX Converter", "React Component HTML", "JSX Syntax Converter"],
   alternates: { canonical: "https://www.allformatter.com/tools/html-to-jsx" },
   openGraph: {
-    title: "HTML to JSX Converter Onlines",
+    title: "HTML to JSX Converter Online",
     description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
     url: "https://www.allformatter.com/tools/html-to-jsx",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "HTML to JSX Converter Onlines",
+    title: "HTML to JSX Converter Online",
     description: "Convert HTML markup to React JSX instantly. Handles class→className, inline styles, self-closing tags, and all JSX syntax differences automatically.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function HtmlToJsxPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "HTML to JSX Converter Onlines",
+        "name": "HTML to JSX Converter Online",
         "url": "https://www.allformatter.com/tools/html-to-jsx",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

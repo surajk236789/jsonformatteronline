@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import Base64EncodeDecode from "@/app/components/Base64EncodeDecode";
 
 export const metadata: Metadata = {
-  title: "Base64 Encode & Decode Onlines",
+  title: "Base64 Encode & Decode Online",
   description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
   keywords: ["Base64 Encode", "Base64 Decode", "Base64 Converter", "Encode to Base64", "Decode Base64 Online"],
   alternates: { canonical: "https://www.allformatter.com/tools/base64-encode-decode" },
   openGraph: {
-    title: "Base64 Encode & Decode Onlines",
+    title: "Base64 Encode & Decode Online",
     description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
     url: "https://www.allformatter.com/tools/base64-encode-decode",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Base64 Encode & Decode Onlines",
+    title: "Base64 Encode & Decode Online",
     description: "Encode text to Base64 or decode Base64 strings back to text instantly. Free, browser-based, fully private Base64 encoder and decoder.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function Base64EncoderPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Base64 Encode and Decode Onlines",
+        "name": "Base64 Encode and Decode Online",
         "url": "https://www.allformatter.com/tools/base64-encode-decode",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import CssGradientGenerator from "@/app/components/CssGradientGenerator";
 
 export const metadata: Metadata = {
-  title: "CSS Gradient Generator Onlines",
+  title: "CSS Gradient Generator Online",
   description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
   keywords: ["CSS Gradient Generator", "Linear Gradient CSS", "Radial Gradient Tool", "CSS Background Generator", "Gradient Builder Online"],
   alternates: { canonical: "https://www.allformatter.com/tools/css-gradient-generator" },
   openGraph: {
-    title: "CSS Gradient Generator Onlines",
+    title: "CSS Gradient Generator Online",
     description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
     url: "https://www.allformatter.com/tools/css-gradient-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CSS Gradient Generator Onlines",
+    title: "CSS Gradient Generator Online",
     description: "Create stunning CSS linear and radial gradients visually. Copy the generated CSS code instantly — free, browser-based gradient builder.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function CssGradientGeneratorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "CSS Gradient Generator Onlines",
+        "name": "CSS Gradient Generator Online",
         "url": "https://www.allformatter.com/tools/css-gradient-generator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

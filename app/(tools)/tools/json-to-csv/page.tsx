@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import JsonToCsv from "@/app/components/JsonToCsv";
 
 export const metadata: Metadata = {
-  title: "JSON to CSV Converter Onlines",
+  title: "JSON to CSV Converter Online",
   description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
   keywords: ["JSON to CSV", "Convert JSON to CSV", "JSON CSV Converter", "Export JSON as CSV", "JSON Table"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-to-csv" },
   openGraph: {
-    title: "JSON to CSV Converter Onlines",
+    title: "JSON to CSV Converter Online",
     description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
     url: "https://www.allformatter.com/tools/json-to-csv",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JSON to CSV Converter Onlines",
+    title: "JSON to CSV Converter Online",
     description: "Convert JSON arrays to CSV format instantly online. Free, browser-based JSON to CSV converter — no data uploaded, no registration required.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function JsonToCsvPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "JSON to CSV Converter Onlines",
+        "name": "JSON to CSV Converter Online",
         "url": "https://www.allformatter.com/tools/json-to-csv",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

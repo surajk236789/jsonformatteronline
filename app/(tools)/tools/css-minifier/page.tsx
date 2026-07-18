@@ -4,12 +4,12 @@ import type { Metadata } from "next";
 import CssMinifier from "@/app/components/CssMinifier";
 
 export const metadata: Metadata = {
-  title: "CSS Minifier Onlines",
+  title: "CSS Minifier Online",
   description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
   keywords: ["CSS Minifier", "Compress CSS", "Minify CSS Online", "CSS Optimizer", "Reduce CSS Size"],
   alternates: { canonical: "https://www.allformatter.com/tools/css-minifier" },
   openGraph: {
-    title: "CSS Minifier Onlines",
+    title: "CSS Minifier Online",
     description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
     url: "https://www.allformatter.com/tools/css-minifier",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CSS Minifier Onlines",
+    title: "CSS Minifier Online",
     description: "Minify and compress CSS code instantly online. Free, browser-based CSS minifier — removes whitespace, comments, and redundancy to reduce file size.",
   },
   robots: {
@@ -46,7 +46,7 @@ export default function CssMinifierPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "CSS Minifier Onlines",
+        "name": "CSS Minifier Online",
         "url": "https://www.allformatter.com/tools/css-minifier",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",
