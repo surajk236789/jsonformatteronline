@@ -32,7 +32,7 @@ const features = [
   },
   {
     emoji: "🔒",
-    title: "100% Private",
+    title: "100% Private & Secure",
     desc: "All processing happens entirely in your browser. Your data never reaches our servers — ever.",
   },
   {

@@ -166,6 +166,17 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
                   All JSON formatting, parsing, and conversion occurs client-side for absolute privacy and security.
                 </p>
               </div>
+              <div className="flex gap-4 mt-6">
+                <Link href="/about" className="text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors">
+                  About Us
+                </Link>
+                <Link href="/privacy" className="text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
             </div>
 
             {/* Tool Categories Columns (server-rendered links) */}
