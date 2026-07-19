@@ -67,6 +67,7 @@ const toolGroups = [
       { href: "/tools/http-status-codes", label: "HTTP Status Codes", description: "Reference & lookup", emoji: "🌐", color: "sky" },
       { href: "/tools/unix-timestamp-converter", label: "Unix Timestamp Converter", description: "Convert Unix timestamps", emoji: "⏱️", color: "violet" },
       { href: "/tools/timezone-converter", label: "Timezone Converter", description: "Compare & convert timezones", emoji: "🌍", color: "purple" },
+      { href: "/tools/resume-builder", label: "Resume Builder", description: "Create ATS-friendly resumes", emoji: "📄", color: "indigo" },
     ],
   },
 ];
