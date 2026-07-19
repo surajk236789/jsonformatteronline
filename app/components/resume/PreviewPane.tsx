@@ -50,12 +50,12 @@ export function PreviewPane() {
       const pdfHeight = pdf.internal.pageSize.getHeight();
 
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-      
+
       const nameParts = (debouncedResumeData.personalInfo.fullName || "User").split(/\s+/);
       const firstName = nameParts[0] || "";
       const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : "";
       const fileName = [firstName, lastName, "allformatter", "resume.pdf"].filter(Boolean).join("_");
-      
+
       pdf.save(fileName);
     } catch (error) {
       console.error("Error generating PDF:", error);
@@ -82,7 +82,7 @@ export function PreviewPane() {
 
   return (
     <>
-      <div className="flex flex-col h-full bg-gray-100 dark:bg-gray-900 rounded-2xl overflow-hidden relative border border-gray-200 dark:border-gray-800">
+      <div className="flex flex-col h-full relative">
         {/* Top Action Bar */}
         <div className="absolute top-2 right-2 left-2 z-10 flex justify-between items-center">
           <div className="flex gap-2">
@@ -119,7 +119,7 @@ export function PreviewPane() {
         </div>
 
         {/* Mini Preview Container */}
-        <div className="flex-1 overflow-hidden bg-gray-100 dark:bg-gray-900 flex justify-center items-start pt-16 pb-4 relative">
+        <div className="flex-1 overflow-hidden flex justify-center items-start pt-16 pb-4 relative">
           <div className="origin-top transform scale-[0.25] sm:scale-[0.35] md:scale-[0.4] lg:scale-[0.25] xl:scale-[0.32] 2xl:scale-[0.4] transition-transform duration-300">
             <div className="w-[21cm] pointer-events-none">
               <PreviewContent />

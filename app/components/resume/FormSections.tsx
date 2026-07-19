@@ -58,7 +58,7 @@ export function FormSections() {
       </div>
 
       {/* Form Area */}
-      <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar min-h-[50vh]">
+      <div className="flex-1 min-h-[300px]">
         <CurrentComponent />
       </div>
 
