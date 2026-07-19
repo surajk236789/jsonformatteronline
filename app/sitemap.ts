@@ -34,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/sitemap-generator',
     '/tools/unix-timestamp-converter',
     '/tools/timezone-converter',
+    '/tools/resume-builder',
   ];
 
   const blogRoutes = [
