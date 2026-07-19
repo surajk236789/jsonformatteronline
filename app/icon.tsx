@@ -5,8 +5,8 @@ export const runtime = "edge";
 
 // Image metadata
 export const size = {
-  width: 32,
-  height: 32,
+  width: 96,
+  height: 96,
 };
 export const contentType = "image/png";
 
@@ -25,8 +25,8 @@ export default function Icon() {
           justifyContent: "center",
           color: "white",
           fontWeight: 800,
-          fontSize: 16,
-          borderRadius: 8,
+          fontSize: 48,
+          borderRadius: 24,
         }}
       >
         AF
