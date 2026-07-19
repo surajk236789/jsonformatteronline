@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Button } from "./ui/Button";
 // @ts-expect-error: js-beautify has no typescript declaration file
-import beautify from "js-beautify";
+import beautifyHtml from "js-beautify/js/lib/beautify-html.js";
 
 export default function HtmlBeautifier() {
   const [input, setInput] = useState("");
@@ -32,7 +32,7 @@ export default function HtmlBeautifier() {
       return;
     }
     try {
-      const pretty = beautify.html(input, {
+      const pretty = beautifyHtml.html_beautify(input, {
         indent_size: 2,
         indent_char: " ",
         max_preserve_newlines: 2,

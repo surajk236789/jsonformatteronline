@@ -15,6 +15,15 @@ export function PreviewPane() {
   const resumeRef = useRef<HTMLDivElement>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [debouncedResumeData, setDebouncedResumeData] = useState(resumeData);
+
+  // Debounce resumeData to prevent lag while typing
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedResumeData(resumeData);
+    }, 500); // 500ms delay gives a very smooth typing experience
+    return () => clearTimeout(timer);
+  }, [resumeData]);
 
   // Close modal on escape key
   useEffect(() => {
@@ -42,7 +51,7 @@ export function PreviewPane() {
 
       pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
       
-      const nameParts = (resumeData.personalInfo.fullName || "User").split(/\s+/);
+      const nameParts = (debouncedResumeData.personalInfo.fullName || "User").split(/\s+/);
       const firstName = nameParts[0] || "";
       const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : "";
       const fileName = [firstName, lastName, "allformatter", "resume.pdf"].filter(Boolean).join("_");
@@ -58,10 +67,10 @@ export function PreviewPane() {
 
   const renderTemplate = () => {
     switch (selectedTemplate) {
-      case "professional": return <ProfessionalTemplate />;
-      case "modern": return <ModernTemplate />;
-      case "creative": return <CreativeTemplate />;
-      default: return <ProfessionalTemplate />;
+      case "professional": return <ProfessionalTemplate previewData={debouncedResumeData} />;
+      case "modern": return <ModernTemplate previewData={debouncedResumeData} />;
+      case "creative": return <CreativeTemplate previewData={debouncedResumeData} />;
+      default: return <ProfessionalTemplate previewData={debouncedResumeData} />;
     }
   };
 
