@@ -48,7 +48,7 @@ export default function HashGeneratorPage() {
     {
         "title": "JSON Beautifier",
         "desc": "Format, clean, and beautify your JSON data.",
-        "href": "/tools/json-beautifier",
+        "href": "/",
         "emoji": "🗂️"
     },
     {
