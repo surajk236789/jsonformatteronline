@@ -13,7 +13,7 @@ interface MainLayoutProps {
 /* ─── All tools: existing + extras from devtoolslabs ─────────────────────── */
 const toolGroups = [
   {
-    category: "JSON Tools",
+    category: "JSON",
     emoji: "🗂️",
     tools: [
       { href: "/", label: "JSON Beautifier", description: "Format & validate JSON", emoji: "🗂️", color: "emerald" },
@@ -26,7 +26,7 @@ const toolGroups = [
     ],
   },
   {
-    category: "HTML / CSS Tools",
+    category: "HTML / CSS",
     emoji: "🎨",
     tools: [
       { href: "/tools/html-beautifier", label: "HTML Beautifier", description: "Clean & indent HTML", emoji: "🎨", color: "blue" },
@@ -48,7 +48,7 @@ const toolGroups = [
     ],
   },
   {
-    category: "SEO Tools",
+    category: "SEO",
     emoji: "📈",
     tools: [
       { href: "/tools/seo-checker", label: "SEO Checker", description: "Analyze on-page SEO", emoji: "🔍", color: "indigo" },
@@ -109,7 +109,7 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
       <NavBar toolGroups={toolGroups} blogLinks={blogLinks} />
 
       {/* ── Main Container ── */}
-      <section className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 mt-8">
+      <section className="w-full max-w-[1920px] mx-auto px-4 md:px-8 mt-8">
         {/* {!isBlogPage && <AdSenseContainer slot="5523061044" />} */}
 
         {/* Dynamic Content */}
@@ -123,7 +123,7 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
 
       {/* ── Latest Blogs Section (server-rendered static HTML, tool pages only) ── */}
       {!isBlogPage && (
-        <section className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 mt-16">
+        <section className="w-full max-w-[1920px] mx-auto px-4 md:px-8 mt-16">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
               📚 Recommended Articles
@@ -142,16 +142,18 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
                 href={`/blogs/${blog.slug}`}
                 className="group flex flex-col justify-between bg-panel border border-panel-border rounded-2xl p-6 hover:border-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-900/20 transition-all duration-300"
               >
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-900/40 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-900/40 flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     {blog.emoji}
                   </div>
-                  <h3 className="text-lg font-bold text-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2 mb-2">
-                    {blog.label}
-                  </h3>
-                  <p className="text-sm text-secondary line-clamp-3">
-                    {blog.description}
-                  </p>
+                  <div>
+                    <h3 className="text-lg font-bold text-primary group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors line-clamp-2 mb-1">
+                      {blog.label}
+                    </h3>
+                    <p className="text-sm text-secondary line-clamp-3">
+                      {blog.description}
+                    </p>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -161,7 +163,7 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
 
       {/* ── SEO Footer (server-rendered static HTML) ── */}
       <footer className="mt-16 border-t border-panel-border py-16 bg-panel">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4">
+        <div className="w-full max-w-[1920px] mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 xl:grid-cols-7 gap-10">
 
             {/* Left Panel: Brand & Copyright */}

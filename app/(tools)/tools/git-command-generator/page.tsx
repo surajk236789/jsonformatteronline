@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import GitCommandGenerator from "@/app/components/GitCommandGenerator";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "Git Command Generator Online",
@@ -101,14 +102,18 @@ export default function GitCommandGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          Git Command <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Build Git commands visually without memorizing syntax — select your operation, copy the command, and run it.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              Git Command <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
+            </>
+          }
+          description={
+            <>
+              Build Git commands visually without memorizing syntax — select your operation, copy the command, and run it.
+            </>
+          }
+        />
 
       <GitCommandGenerator />
 

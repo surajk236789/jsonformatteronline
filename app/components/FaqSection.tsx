@@ -9,7 +9,7 @@ export default function FaqSection({ faqs }: { faqs: Faq[] }) {
   if (!faqs || faqs.length === 0) return null;
 
   return (
-    <section className="mt-16 max-w-3xl mx-auto" aria-label="FAQ">
+    <section className="mt-16 max-w-4xl mx-auto w-full" aria-label="Frequently Asked Questions">
       <h2 className="text-xl font-bold text-primary text-center mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq) => (

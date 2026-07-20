@@ -1,4 +1,5 @@
 import React from "react";
+import ToolHeader from "@/app/components/ToolHeader";
 import type { Metadata } from "next";
 
 import JsonBeautifier from "@/app/components/JsonBeautifier";
@@ -70,14 +71,13 @@ export default function JsonBeautifierPage() {
   return (
     <>
       {/* Page H1 */}
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-3">
-          JSON Formatter & <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Beautifier</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          AllFormatter&apos;s free JSON Formatter instantly formats, validates, and minifies JSON — fast, and fully private. Your data never leaves your browser.
-        </p>
-      </div>
+      {/* Page H1 */}
+      <ToolHeader 
+        title={
+          <>JSON Formatter & <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Beautifier</span></>
+        }
+        description="AllFormatter's free JSON Formatter instantly formats, validates, and minifies JSON — fast, and fully private. Your data never leaves your browser."
+      />
 
       {/* Tool */}
       <JsonBeautifier />

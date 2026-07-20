@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JsonSchemaValidator from "@/app/components/JsonSchemaValidator";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "JSON Schema Validator Online",
@@ -101,14 +102,18 @@ export default function JsonSchemaValidatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          JSON Schema <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Validator</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Validate your JSON data against a JSON Schema — get clear error messages for every violation, instantly and privately.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              JSON Schema <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Validator</span>
+            </>
+          }
+          description={
+            <>
+              Validate your JSON data against a JSON Schema — get clear error messages for every violation, instantly and privately.
+            </>
+          }
+        />
 
       <JsonSchemaValidator />
 

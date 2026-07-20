@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Brand from "./Brand";
+import SearchTools from "./SearchTools";
 
 interface Tool {
   href: string;
@@ -48,6 +49,7 @@ const colorMap: Record<string, string> = {
 };
 
 export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
+  const allTools = toolGroups.flatMap(group => group.tools);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const pathname = usePathname();
@@ -75,22 +77,27 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
 
   return (
     <header
-      className={`group/header relative sticky top-0 z-50 w-full transition-all duration-500 ease-in-out has-[:checked]:bg-panel/90 has-[:checked]:backdrop-blur-md has-[:checked]:border-b has-[:checked]:border-panel-border ${
-        isHomePage && !scrolled
-          ? "bg-transparent border-transparent shadow-none"
-          : "bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none"
-      }`}
+      className={`group/header relative sticky top-0 z-50 w-full transition-all duration-500 ease-in-out has-[:checked]:bg-panel/90 has-[:checked]:backdrop-blur-md has-[:checked]:border-b has-[:checked]:border-panel-border ${isHomePage && !scrolled
+        ? "bg-transparent border-transparent shadow-none"
+        : "bg-panel/90 backdrop-blur-md border-b border-panel-border shadow-sm shadow-slate-100 dark:shadow-none"
+        }`}
     >
       {/* Hidden checkbox for CSS-only mobile menu toggle */}
-      <input 
-        type="checkbox" 
-        id="mobile-menu-toggle" 
-        className="peer hidden" 
+      <input
+        type="checkbox"
+        id="mobile-menu-toggle"
+        className="peer hidden"
         ref={mobileMenuRef}
       />
 
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 h-16 flex items-center justify-between relative z-10">
-        <Brand />
+      <div className="w-full max-w-[1920px] mx-auto px-4 md:px-8 h-16 flex items-center justify-between relative z-10">
+        <div className="flex items-center gap-4 flex-shrink-0">
+          <Brand />
+          {/* <div className="hidden xl:flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest bg-emerald-50 dark:bg-emerald-950/30 px-2 py-0.5 rounded-full border border-emerald-200/50 dark:border-emerald-800/50">
+            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            100% Free • Client-Side • No Data Stored
+          </div> */}
+        </div>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
@@ -118,9 +125,8 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
                         key={tool.href}
                         href={tool.href}
                         prefetch={false}
-                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group ${
-                          pathname === tool.href ? "bg-slate-100 dark:bg-slate-800" : ""
-                        }`}
+                        className={`flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group ${pathname === tool.href ? "bg-slate-100 dark:bg-slate-800" : ""
+                          }`}
                       >
                         <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm flex-shrink-0 ${colorMap[tool.color] ?? colorMap.slate}`}>
                           {tool.emoji}
@@ -147,11 +153,10 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
               id="header-blogs-btn"
               aria-haspopup="true"
               variant="ghost"
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                isBlogPage
-                  ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
-                  : "text-blue-600 dark:text-blue-400 group-hover/navitem:text-indigo-600 group-hover/navitem:bg-slate-100 dark:group-hover/navitem:text-indigo-400 dark:group-hover/navitem:bg-slate-800"
-              }`}
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${isBlogPage
+                ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
+                : "text-blue-600 dark:text-blue-400 group-hover/navitem:text-indigo-600 group-hover/navitem:bg-slate-100 dark:group-hover/navitem:text-indigo-400 dark:group-hover/navitem:bg-slate-800"
+                }`}
             >
               📚 Blogs
               <svg
@@ -194,18 +199,18 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
 
         {/* Right actions */}
         <div className="flex items-center gap-2">
+          <SearchTools tools={allTools} />
           {/* Theme Toggle */}
           <Button
             id="header-theme-toggle"
             variant="ghost"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${
-              mounted
-                ? theme === "dark"
-                  ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
-                  : "bg-slate-800 text-slate-100 hover:bg-slate-700"
-                : "bg-transparent text-transparent"
-            }`}
+            className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${mounted
+              ? theme === "dark"
+                ? "bg-slate-100 text-slate-800 hover:bg-slate-200"
+                : "bg-slate-800 text-slate-100 hover:bg-slate-700"
+              : "bg-transparent text-transparent"
+              }`}
             title={mounted && theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
           >
             {mounted && theme === "dark" ? (
@@ -251,11 +256,10 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
               <Link
                 key={tool.href}
                 href={tool.href}
-                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
-                  pathname === tool.href
-                    ? "bg-slate-100 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400"
-                    : "text-secondary hover:text-indigo-600 hover:bg-slate-100 dark:hover:text-indigo-400 dark:hover:bg-slate-800"
-                }`}
+                className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${pathname === tool.href
+                  ? "bg-slate-100 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400"
+                  : "text-secondary hover:text-indigo-600 hover:bg-slate-100 dark:hover:text-indigo-400 dark:hover:bg-slate-800"
+                  }`}
               >
                 <span>{tool.emoji}</span> {tool.label}
               </Link>
@@ -265,11 +269,10 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
         <p className="text-[10px] font-bold uppercase tracking-widest text-secondary px-2 pt-3 pb-1">📚 Blog</p>
         <Link
           href="/blogs"
-          className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${
-            isBlogPage
-              ? "bg-slate-100 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400"
-              : "text-secondary hover:text-indigo-600 hover:bg-slate-100 dark:hover:text-indigo-400 dark:hover:bg-slate-800"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium transition-colors ${isBlogPage
+            ? "bg-slate-100 dark:bg-slate-800 text-indigo-600 dark:text-indigo-400"
+            : "text-secondary hover:text-indigo-600 hover:bg-slate-100 dark:hover:text-indigo-400 dark:hover:bg-slate-800"
+            }`}
         >
           All Articles
         </Link>

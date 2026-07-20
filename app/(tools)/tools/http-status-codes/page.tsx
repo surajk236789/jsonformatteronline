@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import HttpStatusCodes from "@/app/components/HttpStatusCodes";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "Online HTTP Status Codes References",
@@ -101,14 +102,18 @@ export default function HttpStatusCodesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          HTTP Status Codes <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Reference</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Complete reference for all HTTP status codes — search by number or keyword and get plain-English explanations instantly.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              HTTP Status Codes <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Reference</span>
+            </>
+          }
+          description={
+            <>
+              Complete reference for all HTTP status codes — search by number or keyword and get plain-English explanations instantly.
+            </>
+          }
+        />
 
       <HttpStatusCodes />
 

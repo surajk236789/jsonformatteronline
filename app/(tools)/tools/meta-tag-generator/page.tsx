@@ -3,6 +3,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import MetaTagGenerator from "@/app/components/MetaTagGenerator";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "Free Meta Tag Generator Online",
@@ -70,14 +71,18 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
+            </>
+          }
+          description={
+            <>
+              Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.
+            </>
+          }
+        />
 
       <MetaTagGenerator />
       <RelatedTools tools={relatedTools} />

@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import PasswordGenerator from "@/app/components/PasswordGenerator";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "Password Generator Online",
@@ -101,14 +102,18 @@ export default function PasswordGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          Secure Password <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Generate strong, random passwords with custom rules — cryptographically secure and never stored or transmitted.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              Secure Password <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
+            </>
+          }
+          description={
+            <>
+              Generate strong, random passwords with custom rules — cryptographically secure and never stored or transmitted.
+            </>
+          }
+        />
 
       <PasswordGenerator />
 

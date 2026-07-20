@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JsonCompare from "@/app/components/JsonCompare";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "JSON Compare Tool Online",
@@ -101,14 +102,18 @@ export default function JsonComparePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          JSON Compare &amp; Diff <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Tool</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Visually compare two JSON objects side-by-side. Every difference is highlighted — instantly, privately, in your browser.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              JSON Compare &amp; Diff <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Tool</span>
+            </>
+          }
+          description={
+            <>
+              Visually compare two JSON objects side-by-side. Every difference is highlighted — instantly, privately, in your browser.
+            </>
+          }
+        />
 
       <JsonCompare />
 

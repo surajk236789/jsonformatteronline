@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import CsvToJson from "@/app/components/CsvToJson";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "CSV to JSON Converter Online",
@@ -101,14 +102,18 @@ export default function CsvToJsonPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          CSV to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Import CSV data as structured JSON instantly — auto-detects headers, fully private, no uploads.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              CSV to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
+            </>
+          }
+          description={
+            <>
+              Import CSV data as structured JSON instantly — auto-detects headers, fully private, no uploads.
+            </>
+          }
+        />
 
       <CsvToJson />
 

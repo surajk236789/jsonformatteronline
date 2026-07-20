@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import CronParser from "@/app/components/CronParser";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "Online Cron Parser & Generator",
@@ -105,14 +106,18 @@ export default function CronParserPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          Cron Expression <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Parser</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Understand and build cron expressions in plain English — see the next run times and verify your schedule before deploying.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              Cron Expression <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Parser</span>
+            </>
+          }
+          description={
+            <>
+              Understand and build cron expressions in plain English — see the next run times and verify your schedule before deploying.
+            </>
+          }
+        />
 
       <CronParser />
 

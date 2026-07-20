@@ -22,17 +22,19 @@ export default function RelatedTools({ tools }: { tools: RelatedToolInfo[] }) {
           <Link
             key={tool.href}
             href={tool.href}
-            className="flex flex-col p-5 rounded-2xl border border-panel-border bg-panel hover:border-indigo-400/40 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300 group"
+            className="flex items-start gap-4 p-5 rounded-2xl border border-panel-border bg-panel hover:border-indigo-400/40 hover:shadow-lg hover:shadow-indigo-500/5 transition-all duration-300 group"
           >
-            <div className="w-10 h-10 mb-3 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-xl flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center text-xl flex-shrink-0">
               {tool.emoji}
             </div>
-            <h3 className="text-sm font-bold text-primary mb-1 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
-              {tool.title}
-            </h3>
-            <p className="text-xs text-secondary leading-relaxed">
-              {tool.desc}
-            </p>
+            <div>
+              <h3 className="text-sm font-bold text-primary mb-1 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 transition-colors">
+                {tool.title}
+              </h3>
+              <p className="text-xs text-secondary leading-relaxed">
+                {tool.desc}
+              </p>
+            </div>
           </Link>
         ))}
       </div>

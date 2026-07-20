@@ -1,9 +1,9 @@
 import React from "react";
+import ToolHeader from "@/app/components/ToolHeader";
 import FeatureSection from "@/app/components/FeatureSection";
 import FaqSection from "@/app/components/FaqSection";
 import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
-
 import dynamic from "next/dynamic";
 
 const HtmlBeautifier = dynamic(() => import("@/app/components/HtmlBeautifier"), {
@@ -110,14 +110,18 @@ export default function HtmlBeautifierPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          HTML Beautifier &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Formatter</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Clean, indent, and format your messy HTML instantly — fully private, no server uploads.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              HTML Beautifier &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Formatter</span>
+            </>
+          }
+          description={
+            <>
+              Clean, indent, and format your messy HTML instantly — fully private, no server uploads.
+            </>
+          }
+        />
 
       <HtmlBeautifier />
 

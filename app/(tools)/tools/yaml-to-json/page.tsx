@@ -1,8 +1,8 @@
 import React from "react";
+import ToolHeader from "@/app/components/ToolHeader";
 import FeatureSection from "@/app/components/FeatureSection";
 import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
-
 import dynamic from "next/dynamic";
 
 const YamlToJson = dynamic(() => import("@/app/components/YamlToJson"), {
@@ -102,14 +102,18 @@ export default function YamlToJsonPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          YAML to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Convert YAML data to JSON instantly — all in your browser.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              YAML to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
+            </>
+          }
+          description={
+            <>
+              Convert YAML data to JSON instantly — all in your browser.
+            </>
+          }
+        />
 
       <YamlToJson />
 

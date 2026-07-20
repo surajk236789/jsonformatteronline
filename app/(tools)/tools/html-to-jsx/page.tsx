@@ -5,6 +5,7 @@ import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import HtmlToJsx from "@/app/components/HtmlToJsx";
+import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "HTML to JSX Converter Online",
@@ -101,14 +102,18 @@ export default function HtmlToJsxPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-6 flex flex-col items-center">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
-          HTML to JSX <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-        </h1>
-        <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
-          Convert HTML to React JSX instantly — handles className, htmlFor, self-closing tags, and all JSX syntax rules automatically.
-        </p>
-      </div>
+      <ToolHeader 
+          title={
+            <>
+              HTML to JSX <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
+            </>
+          }
+          description={
+            <>
+              Convert HTML to React JSX instantly — handles className, htmlFor, self-closing tags, and all JSX syntax rules automatically.
+            </>
+          }
+        />
 
       <HtmlToJsx />
 

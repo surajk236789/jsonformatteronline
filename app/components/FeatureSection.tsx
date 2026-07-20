@@ -28,9 +28,9 @@ export default function FeatureSection({ features, color = "indigo", title = "Wh
   const iconClasses = styleClasses.split(" ").filter(c => c.startsWith("bg-")).join(" ");
 
   return (
-    <section className="mt-20 max-w-4xl mx-auto" aria-label="Features">
+    <section className="mt-16 w-full" aria-label="Features">
       <h2 className="text-xl font-bold text-primary text-center mb-8">{title}</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {features.map((f) => (
           <div key={f.title} className={`flex gap-4 p-5 rounded-2xl border border-panel-border bg-panel transition-all duration-300 ${styleClasses.split(' ').filter(c => c.startsWith('hover:')).join(' ')}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 ${iconClasses}`}>
