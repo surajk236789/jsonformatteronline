@@ -1,4 +1,5 @@
 import React from "react";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import TimezoneConverter from "@/app/components/TimezoneConverter";
@@ -26,6 +27,27 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const relatedTools = [
+    {
+        "title": "JSON Beautifier",
+        "desc": "Format, clean, and beautify your JSON data.",
+        "href": "/tools/json-beautifier",
+        "emoji": "🗂️"
+    },
+    {
+        "title": "CSS Minifier",
+        "desc": "Minify CSS code and reduce size.",
+        "href": "/tools/css-minifier",
+        "emoji": "🎨"
+    },
+    {
+        "title": "Base64 Encode/Decode",
+        "desc": "Encode text to Base64 or decode it.",
+        "href": "/tools/base64-encode-decode",
+        "emoji": "🔐"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -58,6 +80,8 @@ export default function Page() {
       </div>
 
       <TimezoneConverter />
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      </>
   );
 }

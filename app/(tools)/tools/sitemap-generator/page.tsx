@@ -1,4 +1,5 @@
 import React from "react";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import SitemapGenerator from "@/app/components/SitemapGenerator";
@@ -26,6 +27,27 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const relatedTools = [
+    {
+        "title": "JSON Schema Validator",
+        "desc": "Validate JSON against a Schema.",
+        "href": "/tools/json-schema-validator",
+        "emoji": "✅"
+    },
+    {
+        "title": "HTML Beautifier",
+        "desc": "Format and beautify your HTML.",
+        "href": "/tools/html-beautifier",
+        "emoji": "🌐"
+    },
+    {
+        "title": "CSV to JSON",
+        "desc": "Convert CSV to JSON arrays.",
+        "href": "/tools/csv-to-json",
+        "emoji": "📊"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -58,6 +80,8 @@ export default function Page() {
       </div>
 
       <SitemapGenerator />
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      </>
   );
 }

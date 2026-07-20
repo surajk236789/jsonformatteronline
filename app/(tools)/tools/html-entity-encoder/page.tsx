@@ -1,4 +1,7 @@
 import React from "react";
+import FeatureSection from "@/app/components/FeatureSection";
+import FaqSection from "@/app/components/FaqSection";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import HtmlEntityEncoder from "@/app/components/HtmlEntityEncoder";
@@ -41,6 +44,27 @@ const faqs = [
 ];
 
 export default function HtmlEntityEncoderPage() {
+  const relatedTools = [
+    {
+        "title": "Hash Generator",
+        "desc": "Generate MD5, SHA-1, SHA-256 hashes.",
+        "href": "/tools/hash-generator",
+        "emoji": "#️⃣"
+    },
+    {
+        "title": "YAML to JSON",
+        "desc": "Convert YAML to JSON format.",
+        "href": "/tools/yaml-to-json",
+        "emoji": "📝"
+    },
+    {
+        "title": "JSON to XML",
+        "desc": "Convert JSON to well-formed XML.",
+        "href": "/tools/json-to-xml",
+        "emoji": "🔄"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -88,39 +112,11 @@ export default function HtmlEntityEncoderPage() {
 
       <HtmlEntityEncoder />
 
-      <section className="mt-20 max-w-4xl mx-auto" aria-label="Features">
-        <h2 className="text-xl font-bold text-primary text-center mb-8">Why use our HTML Entity Encoder?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="flex gap-4 p-5 rounded-2xl border border-panel-border bg-panel hover:border-slate-400/40 hover:shadow-lg hover:shadow-slate-500/5 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-xl flex-shrink-0">{f.emoji}</div>
-              <div>
-                <h3 className="text-sm font-bold text-primary mb-1">{f.title}</h3>
-                <p className="text-xs text-secondary leading-relaxed">{f.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <RelatedTools tools={relatedTools} />
 
-      <section className="mt-16 max-w-3xl mx-auto" aria-label="FAQ">
-        <h2 className="text-xl font-bold text-primary text-center mb-8">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {faqs.map((faq) => (
-            <details key={faq.q} className="group p-5 rounded-2xl border border-panel-border bg-panel [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex items-center justify-between cursor-pointer text-sm font-bold text-primary list-none">
-                <span>{faq.q}</span>
-                <span className="transition duration-300 group-open:-rotate-180 text-secondary">
-                  <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
-                </span>
-              </summary>
-              <p className="text-xs text-secondary leading-relaxed mt-4">
-                {faq.a}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
-    </>
+      <FeatureSection features={features} title="Why use our HTML Entity Encoder?" color="slate" />
+
+      <FaqSection faqs={faqs} />
+      </>
   );
 }

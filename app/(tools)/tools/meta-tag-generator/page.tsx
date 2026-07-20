@@ -1,4 +1,5 @@
 import React from "react";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import MetaTagGenerator from "@/app/components/MetaTagGenerator";
@@ -26,6 +27,27 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const relatedTools = [
+    {
+        "title": "Hash Generator",
+        "desc": "Generate MD5, SHA-1, SHA-256 hashes.",
+        "href": "/tools/hash-generator",
+        "emoji": "#️⃣"
+    },
+    {
+        "title": "JWT Decoder",
+        "desc": "Decode JSON Web Tokens instantly.",
+        "href": "/tools/jwt-decoder",
+        "emoji": "🔑"
+    },
+    {
+        "title": "Base64 Encode/Decode",
+        "desc": "Encode text to Base64 or decode it.",
+        "href": "/tools/base64-encode-decode",
+        "emoji": "🔐"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -58,6 +80,8 @@ export default function Page() {
       </div>
 
       <MetaTagGenerator />
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      </>
   );
 }

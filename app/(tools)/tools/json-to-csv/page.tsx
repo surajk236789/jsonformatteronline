@@ -1,4 +1,7 @@
 import React from "react";
+import FeatureSection from "@/app/components/FeatureSection";
+import FaqSection from "@/app/components/FaqSection";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JsonToCsv from "@/app/components/JsonToCsv";
@@ -41,6 +44,27 @@ const faqs = [
 ];
 
 export default function JsonToCsvPage() {
+  const relatedTools = [
+    {
+        "title": "JSON Beautifier",
+        "desc": "Format, clean, and beautify your JSON data.",
+        "href": "/tools/json-beautifier",
+        "emoji": "🗂️"
+    },
+    {
+        "title": "HTML Beautifier",
+        "desc": "Format and beautify your HTML.",
+        "href": "/tools/html-beautifier",
+        "emoji": "🌐"
+    },
+    {
+        "title": "JSON Compare",
+        "desc": "Compare two JSON objects side-by-side.",
+        "href": "/tools/json-compare",
+        "emoji": "⚖️"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -88,39 +112,11 @@ export default function JsonToCsvPage() {
 
       <JsonToCsv />
 
-      <section className="mt-20 max-w-4xl mx-auto" aria-label="Features">
-        <h2 className="text-xl font-bold text-primary text-center mb-8">Why use our JSON to CSV Converter?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="flex gap-4 p-5 rounded-2xl border border-panel-border bg-panel hover:border-teal-400/40 hover:shadow-lg hover:shadow-teal-500/5 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-900/30 flex items-center justify-center text-xl flex-shrink-0">{f.emoji}</div>
-              <div>
-                <h3 className="text-sm font-bold text-primary mb-1">{f.title}</h3>
-                <p className="text-xs text-secondary leading-relaxed">{f.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <RelatedTools tools={relatedTools} />
 
-      <section className="mt-16 max-w-3xl mx-auto" aria-label="FAQ">
-        <h2 className="text-xl font-bold text-primary text-center mb-8">Frequently Asked Questions</h2>
-        <div className="space-y-4">
-          {faqs.map((faq) => (
-            <details key={faq.q} className="group p-5 rounded-2xl border border-panel-border bg-panel [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex items-center justify-between cursor-pointer text-sm font-bold text-primary list-none">
-                <span>{faq.q}</span>
-                <span className="transition duration-300 group-open:-rotate-180 text-secondary">
-                  <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
-                </span>
-              </summary>
-              <p className="text-xs text-secondary leading-relaxed mt-4">
-                {faq.a}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
-    </>
+      <FeatureSection features={features} title="Why use our JSON to CSV Converter?" color="teal" />
+
+      <FaqSection faqs={faqs} />
+      </>
   );
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import FeatureSection from "@/app/components/FeatureSection";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JwtDecoder from "@/app/components/JwtDecoder";
@@ -45,6 +47,27 @@ const features = [
 ];
 
 export default function JwtDecoderPage() {
+  const relatedTools = [
+    {
+        "title": "JSON Beautifier",
+        "desc": "Format, clean, and beautify your JSON data.",
+        "href": "/tools/json-beautifier",
+        "emoji": "🗂️"
+    },
+    {
+        "title": "HTML Beautifier",
+        "desc": "Format and beautify your HTML.",
+        "href": "/tools/html-beautifier",
+        "emoji": "🌐"
+    },
+    {
+        "title": "JSON Schema Validator",
+        "desc": "Validate JSON against a Schema.",
+        "href": "/tools/json-schema-validator",
+        "emoji": "✅"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -81,20 +104,9 @@ export default function JwtDecoderPage() {
 
       <JwtDecoder />
 
-      <section className="mt-20 max-w-4xl mx-auto" aria-label="Features">
-        <h2 className="text-xl font-bold text-primary text-center mb-8">Why use our JWT Decoder?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="flex gap-4 p-5 rounded-2xl border border-panel-border bg-panel hover:border-purple-400/40 hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-xl flex-shrink-0">{f.emoji}</div>
-              <div>
-                <h3 className="text-sm font-bold text-primary mb-1">{f.title}</h3>
-                <p className="text-xs text-secondary leading-relaxed">{f.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      <FeatureSection features={features} title="Why use our JWT Decoder?" color="purple" />
+      </>
   );
 }

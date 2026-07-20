@@ -1,4 +1,5 @@
 import React from "react";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import RobotsTxtGenerator from "@/app/components/RobotsTxtGenerator";
@@ -26,6 +27,27 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const relatedTools = [
+    {
+        "title": "JSON Beautifier",
+        "desc": "Format, clean, and beautify your JSON data.",
+        "href": "/tools/json-beautifier",
+        "emoji": "🗂️"
+    },
+    {
+        "title": "JSON Compare",
+        "desc": "Compare two JSON objects side-by-side.",
+        "href": "/tools/json-compare",
+        "emoji": "⚖️"
+    },
+    {
+        "title": "URL Encode/Decode",
+        "desc": "Encode or decode URL components.",
+        "href": "/tools/url-encode-decode",
+        "emoji": "🔗"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -58,6 +80,8 @@ export default function Page() {
       </div>
 
       <RobotsTxtGenerator />
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      </>
   );
 }

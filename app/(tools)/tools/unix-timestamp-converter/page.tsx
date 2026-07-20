@@ -1,4 +1,5 @@
 import React from "react";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import UnixTimestampConverter from "@/app/components/UnixTimestampConverter";
@@ -26,6 +27,27 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const relatedTools = [
+    {
+        "title": "JSON Beautifier",
+        "desc": "Format, clean, and beautify your JSON data.",
+        "href": "/tools/json-beautifier",
+        "emoji": "🗂️"
+    },
+    {
+        "title": "JSON Compare",
+        "desc": "Compare two JSON objects side-by-side.",
+        "href": "/tools/json-compare",
+        "emoji": "⚖️"
+    },
+    {
+        "title": "JSON Schema Validator",
+        "desc": "Validate JSON against a Schema.",
+        "href": "/tools/json-schema-validator",
+        "emoji": "✅"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -58,6 +80,8 @@ export default function Page() {
       </div>
 
       <UnixTimestampConverter />
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      </>
   );
 }

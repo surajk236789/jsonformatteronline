@@ -1,4 +1,6 @@
 import React from "react";
+import FeatureSection from "@/app/components/FeatureSection";
+import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import dynamic from "next/dynamic";
@@ -54,6 +56,27 @@ const features = [
 ];
 
 export default function YamlToJsonPage() {
+  const relatedTools = [
+    {
+        "title": "HTML Beautifier",
+        "desc": "Format and beautify your HTML.",
+        "href": "/tools/html-beautifier",
+        "emoji": "🌐"
+    },
+    {
+        "title": "JSON Beautifier",
+        "desc": "Format, clean, and beautify your JSON data.",
+        "href": "/tools/json-beautifier",
+        "emoji": "🗂️"
+    },
+    {
+        "title": "Hash Generator",
+        "desc": "Generate MD5, SHA-1, SHA-256 hashes.",
+        "href": "/tools/hash-generator",
+        "emoji": "#️⃣"
+    }
+];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -90,20 +113,9 @@ export default function YamlToJsonPage() {
 
       <YamlToJson />
 
-      <section className="mt-20 max-w-4xl mx-auto" aria-label="Features">
-        <h2 className="text-xl font-bold text-primary text-center mb-8">Why use our YAML to JSON Converter?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {features.map((f) => (
-            <div key={f.title} className="flex gap-4 p-5 rounded-2xl border border-panel-border bg-panel hover:border-orange-400/40 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-300">
-              <div className="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center text-xl flex-shrink-0">{f.emoji}</div>
-              <div>
-                <h3 className="text-sm font-bold text-primary mb-1">{f.title}</h3>
-                <p className="text-xs text-secondary leading-relaxed">{f.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+      <RelatedTools tools={relatedTools} />
+
+      <FeatureSection features={features} title="Why use our YAML to JSON Converter?" color="orange" />
+      </>
   );
 }
