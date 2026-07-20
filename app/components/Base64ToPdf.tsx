@@ -208,14 +208,18 @@ export default function Base64ToPdf() {
 
   const [batchMode, setBatchMode] = useState(false);
   const [batchItems, setBatchItems] = useState<BatchItem[]>([]);
+  const batchUrlsRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     return () => { if (pdfUrl) URL.revokeObjectURL(pdfUrl); };
   }, [pdfUrl]);
 
   useEffect(() => {
-    return () => { batchItems.forEach((it) => { if (it.pdfUrl) URL.revokeObjectURL(it.pdfUrl); }); };
-  }, [batchItems]);
+    return () => { 
+      batchUrlsRef.current.forEach((url) => URL.revokeObjectURL(url)); 
+      batchUrlsRef.current.clear();
+    };
+  }, []);
 
   const handleConvert = useCallback(() => {
     setError(null);
@@ -312,8 +316,13 @@ export default function Base64ToPdf() {
         const validation = validateBase64(clean);
         if (!validation.ok) return { ...item, status: "error" as const, error: validation.hint ?? "Invalid Base64" };
         try {
+          if (item.pdfUrl) {
+            URL.revokeObjectURL(item.pdfUrl);
+            batchUrlsRef.current.delete(item.pdfUrl);
+          }
           const blob = base64ToBlob(clean);
           const url = URL.createObjectURL(blob);
+          batchUrlsRef.current.add(url);
           return { ...item, pdfUrl: url, status: "done" as const, error: null };
         } catch {
           return { ...item, status: "error" as const, error: "Could not decode to PDF" };
@@ -325,13 +334,21 @@ export default function Base64ToPdf() {
   const removeBatchItem = (id: string) => {
     setBatchItems((prev) => {
       const item = prev.find((i) => i.id === id);
-      if (item?.pdfUrl) URL.revokeObjectURL(item.pdfUrl);
+      if (item?.pdfUrl) {
+        URL.revokeObjectURL(item.pdfUrl);
+        batchUrlsRef.current.delete(item.pdfUrl);
+      }
       return prev.filter((i) => i.id !== id);
     });
   };
 
   const clearBatch = () => {
-    batchItems.forEach((it) => { if (it.pdfUrl) URL.revokeObjectURL(it.pdfUrl); });
+    batchItems.forEach((it) => { 
+      if (it.pdfUrl) {
+        URL.revokeObjectURL(it.pdfUrl); 
+        batchUrlsRef.current.delete(it.pdfUrl);
+      }
+    });
     setBatchItems([]);
   };
 

@@ -22,24 +22,42 @@ export default function CsvToJson() {
     }
     setError("");
     try {
+      const parseCsvLine = (text: string): string[] => {
+        const result: string[] = [];
+        let current = "";
+        let inQuotes = false;
+        for (let i = 0; i < text.length; i++) {
+          const char = text[i];
+          if (char === '"') {
+            if (inQuotes && text[i + 1] === '"') {
+              current += '"';
+              i++;
+            } else {
+              inQuotes = !inQuotes;
+            }
+          } else if (char === ',' && !inQuotes) {
+            result.push(current);
+            current = "";
+          } else {
+            current += char;
+          }
+        }
+        result.push(current);
+        return result;
+      };
+
       const lines = input.split(/\r?\n/).filter(line => line.trim() !== "");
       if (lines.length < 1) throw new Error("CSV is empty");
 
-      // Basic split by comma (doesn't handle commas inside quotes perfectly, but good for basic use cases)
-      const headers = lines[0].split(",").map(h => h.trim());
+      const headers = parseCsvLine(lines[0]).map(h => h.trim());
       const result = [];
 
       for (let i = 1; i < lines.length; i++) {
         const obj: any = {};
-        const currentline = lines[i].split(",");
+        const currentline = parseCsvLine(lines[i]);
 
         for (let j = 0; j < headers.length; j++) {
-          let val = currentline[j] ? currentline[j].trim() : "";
-          // Remove quotes if present
-          if (val.startsWith('"') && val.endsWith('"')) {
-            val = val.slice(1, -1).replace(/""/g, '"');
-          }
-          obj[headers[j]] = val;
+          obj[headers[j]] = currentline[j] !== undefined ? currentline[j].trim() : "";
         }
         result.push(obj);
       }

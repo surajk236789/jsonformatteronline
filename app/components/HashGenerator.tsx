@@ -134,7 +134,7 @@ export default function HashGenerator() {
                 <textarea
                   readOnly
                   value={hash.value}
-                  className="w-full p-4 font-mono text-sm bg-transparent outline-none resize-none text-yellow-600 dark:text-yellow-500 overflow-hidden pr-24"
+                  className="w-full p-4 font-mono text-sm bg-transparent outline-none resize-none text-yellow-600 dark:text-yellow-500 placeholder-slate-400 dark:placeholder-slate-500 overflow-hidden pr-24"
                   placeholder={`${hash.label} hash will appear here`}
                   rows={2}
                 />

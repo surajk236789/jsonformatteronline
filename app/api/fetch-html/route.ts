@@ -9,8 +9,11 @@ export async function GET(request: Request) {
   }
 
   try {
-    // Validate URL format
+    // Validate URL format and protocol to prevent SSRF
     const url = new URL(targetUrl);
+    if (url.protocol !== "http:" && url.protocol !== "https:") {
+      return NextResponse.json({ error: "Only HTTP and HTTPS protocols are allowed." }, { status: 400 });
+    }
 
     // Fetch the HTML with a generic user agent to prevent basic blocks
     const response = await fetch(url.toString(), {

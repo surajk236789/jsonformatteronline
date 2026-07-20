@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 
 import { Outfit } from "next/font/google";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { CookieBanner } from "./components/CookieBanner";
 
@@ -13,6 +13,10 @@ const outfit = Outfit({
   variable: "--font-outfit",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#6366f1",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.allformatter.com"),
@@ -68,7 +72,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "AllFormatter" }],
   creator: "AllFormatter",
-
+  appleWebApp: {
+    capable: true,
+    title: "AllFormatter",
+    statusBarStyle: "default",
+  },
   openGraph: {
     title: "AllFormatter — Free Online JSON Formatter, YAML, JWT, HTML & CSS Tools",
     description: "AllFormatter: Format JSON, convert YAML, decode JWTs, beautify HTML, minify CSS, generate hashes and more — all free and 100% browser-based at allformatter.com.",
@@ -96,11 +104,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={outfit.variable} suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-2678573850280758" />
-        <meta name="theme-color" content="#6366f1" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="AllFormatter" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
       </head>
