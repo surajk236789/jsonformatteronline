@@ -82,7 +82,7 @@ export default function Base64ToPdfPage() {
           📄 Converter
         </span>
         <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-          Base64 to PDF Converter
+          Base64 to PDF <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           Decode Base64 strings to PDF instantly — preview and download securely in your browser, no uploads needed.

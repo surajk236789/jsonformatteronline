@@ -11,7 +11,7 @@ export default function JsonBeautifier() {
 
   const sampleJson = `{
   "site": "AllFormatter",
-  "features": ["JSON Beautifier", "HTML Beautifier", "Base64 to PDF"],
+  "features": ["JSON Beautifier", "JSON Validator", "Online json validator", "json formatter"],
   "active": true,
   "theme": "dark",
   "stats": {
@@ -133,7 +133,7 @@ export default function JsonBeautifier() {
                 </p>
               </div>
             )}
-            
+
             {/* Action buttons overlay */}
             {output && (
               <div className="absolute top-3 right-3 flex items-center gap-2">

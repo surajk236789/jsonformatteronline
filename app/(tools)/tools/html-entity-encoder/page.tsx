@@ -82,7 +82,7 @@ export default function HtmlEntityEncoderPage() {
           🔠 Encoder
         </span>
         <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-          HTML Entity Encoder &amp; Decoder
+          HTML Entity Encoder &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           Encode special characters to HTML entities or decode them back — prevent XSS and ensure safe HTML rendering.

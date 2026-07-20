@@ -82,7 +82,7 @@ export default function Base64EncoderPage() {
           🔐 Encoder
         </span>
         <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-          Base64 Encode &amp; Decode
+          Base64 Encode &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decode</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           Encode text to Base64 or decode Base64 strings back to plain text — instantly and privately in your browser.

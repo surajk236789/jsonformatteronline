@@ -82,7 +82,7 @@ export default function JsonToXmlPage() {
           🔄 Converter
         </span>
         <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-          JSON to XML Converter
+          JSON to XML <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           Convert any JSON data to well-formed XML instantly — free, private, and with full support for nested structures.

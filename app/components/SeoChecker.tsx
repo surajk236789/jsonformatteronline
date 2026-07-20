@@ -289,11 +289,11 @@ export default function SeoChecker() {
       <div className="bg-panel border border-panel-border rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-slate-900/50">
         <form onSubmit={analyzeUrl} className="flex flex-col md:flex-row gap-4">
           <input
-            type="url"
+            type="text"
             required
             value={url}
             onChange={(e) => setUrl(e.target.value)}
-            placeholder="https://example.com"
+            placeholder="example.com"
             className="flex-1 bg-background border border-panel-border rounded-xl px-6 py-4 text-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-primary placeholder:text-secondary"
           />
           <Button

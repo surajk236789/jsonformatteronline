@@ -53,7 +53,7 @@ export default function Page() {
           🤖 Tool
         </span>
         <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-          Robots.txt Generator
+          Robots.txt <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           Easily create a valid robots.txt file for your website to control search engine crawlers like Googlebot and Bingbot.

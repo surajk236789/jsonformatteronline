@@ -82,7 +82,7 @@ export default function UrlEncoderPage() {
           🔗 Encoder
         </span>
         <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
-          URL Encode &amp; Decode
+          URL Encode &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decode</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           Percent-encode URLs and query parameters or decode them back to readable text — instantly and privately.

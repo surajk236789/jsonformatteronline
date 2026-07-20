@@ -74,8 +74,11 @@ export default function JsonBeautifierPage() {
         <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 mb-4">
           🗂️ JSON Tool
         </span>
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
+        {/* <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
           JSON Formatter &amp; Beautifier
+        </h1> */}
+        <h1 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
+          JSON Formatter & <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Beautifier</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
           AllFormatter&apos;s free JSON Formatter instantly formats, validates, and minifies JSON — fast, and fully private. Your data never leaves your browser.

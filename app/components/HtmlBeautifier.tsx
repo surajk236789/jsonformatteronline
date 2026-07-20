@@ -2,8 +2,7 @@
 
 import React, { useState } from "react";
 import { Button } from "./ui/Button";
-// @ts-expect-error: js-beautify has no typescript declaration file
-import beautifyHtml from "js-beautify/js/lib/beautify-html.js";
+
 
 export default function HtmlBeautifier() {
   const [input, setInput] = useState("");
@@ -25,14 +24,17 @@ export default function HtmlBeautifier() {
     setOutput("");
   };
 
-  const handleBeautify = () => {
+  const handleBeautify = async () => {
     if (!input.trim()) {
       setError("HTML input is empty");
       setOutput("");
       return;
     }
     try {
-      const pretty = beautifyHtml.html_beautify(input, {
+      // @ts-expect-error: js-beautify has no typescript declaration file
+      const jsBeautify = await import("js-beautify");
+      const beautify = jsBeautify.default || jsBeautify;
+      const pretty = beautify.html(input, {
         indent_size: 2,
         indent_char: " ",
         max_preserve_newlines: 2,
