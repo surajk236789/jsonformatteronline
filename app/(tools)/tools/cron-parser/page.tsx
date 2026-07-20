@@ -81,11 +81,8 @@ export default function CronParserPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="text-center mb-8">
-        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 mb-4">
-          ⏰ Utility
-        </span>
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight">
+      <div className="text-center mb-6 flex flex-col items-center">
+        <h1 className="text-3xl md:text-5xl font-black tracking-tight text-primary leading-tight mb-3">
           Cron Expression <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Parser</span>
         </h1>
         <p className="mt-3 text-sm md:text-base text-secondary max-w-2xl mx-auto">
