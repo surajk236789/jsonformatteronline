@@ -252,16 +252,18 @@ export default function BlogsPage() {
                 href={`/blogs/${blog.slug}`}
                 className="group bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-6 hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 transition-all duration-300 hover:-translate-y-1 flex flex-col gap-4"
               >
-                {/* Emoji icon */}
-                <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-2xl">
-                  {blog.emoji}
-                </div>
+                <div className="flex items-center justify-between">
+                  {/* Emoji icon */}
+                  <div className="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-2xl">
+                    {blog.emoji}
+                  </div>
 
-                {/* Category badge */}
-                <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold w-fit ${colors.badge}`}>
-                  <span className={`w-1.5 h-1.5 rounded-full ${colors.dot}`} />
-                  {blog.category}
-                </span>
+                  {/* Category badge */}
+                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-bold w-fit ${colors.badge}`}>
+                    <span className={`w-1.5 h-1.5 rounded-full ${colors.dot}`} />
+                    {blog.category}
+                  </span>
+                </div>
 
                 {/* Title */}
                 <h2 className={`text-sm font-bold text-slate-800 dark:text-slate-100 leading-snug transition-colors ${colors.hover}`}>
