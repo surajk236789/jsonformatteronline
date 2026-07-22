@@ -1,10 +1,7 @@
 import React from "react";
-import ToolHeader from "@/app/components/ToolHeader";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import ToolLayout from "@/app/components/ToolLayout";
 
 const HtmlBeautifier = dynamic(() => import("@/app/components/HtmlBeautifier"), {
 
@@ -105,31 +102,19 @@ export default function HtmlBeautifierPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               HTML Beautifier &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Formatter</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Clean, indent, and format your messy HTML instantly — fully private, no server uploads.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our HTML Beautifier?" featureColor="blue"
+      faqs={faqs}
+    >
       <HtmlBeautifier />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our HTML Beautifier?" color="blue" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

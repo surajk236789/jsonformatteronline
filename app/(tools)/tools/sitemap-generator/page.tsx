@@ -1,9 +1,8 @@
 import React from "react";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import SitemapGenerator from "@/app/components/SitemapGenerator";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Free XML Sitemap Generator Online",
@@ -65,28 +64,17 @@ export default function Page() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               XML Sitemap <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Generate valid XML sitemaps instantly from a list of URLs. Configure lastmod, changefreq, and priority tags easily.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      >
       <SitemapGenerator />
-      <RelatedTools tools={relatedTools} />
-
-      </>
+    </ToolLayout>
   );
 }

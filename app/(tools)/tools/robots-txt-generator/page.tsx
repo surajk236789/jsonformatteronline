@@ -1,9 +1,8 @@
 import React from "react";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import RobotsTxtGenerator from "@/app/components/RobotsTxtGenerator";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Free Robots.txt Generator Online",
@@ -65,28 +64,17 @@ export default function Page() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Robots.txt <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Easily create a valid robots.txt file for your website to control search engine crawlers like Googlebot and Bingbot.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      >
       <RobotsTxtGenerator />
-      <RelatedTools tools={relatedTools} />
-
-      </>
+    </ToolLayout>
   );
 }

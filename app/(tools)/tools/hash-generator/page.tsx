@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import HashGenerator from "@/app/components/HashGenerator";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Hash Generator Online",
@@ -97,31 +94,19 @@ export default function HashGeneratorPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Hash <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text — instantly and privately in your browser.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our Hash Generator?" featureColor="slate"
+      faqs={faqs}
+    >
       <HashGenerator />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our Hash Generator?" color="slate" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

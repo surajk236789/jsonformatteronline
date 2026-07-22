@@ -16,15 +16,26 @@ export default function AdSenseContainer({
   const adRef = React.useRef<HTMLModElement>(null);
 
   useEffect(() => {
-    // Only push if the ad container exists and hasn't been filled yet (prevents Strict Mode double-push errors)
-    if (adRef.current && adRef.current.innerHTML === "") {
-      try {
-        // @ts-ignore
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (err) {
-        console.error("AdSense loading error:", err);
-      }
-    }
+    if (!adRef.current) return;
+    const el = adRef.current;
+
+    // Only push ad when the container scrolls near the viewport (200px margin)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && el.innerHTML === "") {
+          try {
+            // @ts-ignore
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+          } catch (err) {
+            console.error("AdSense loading error:", err);
+          }
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
   }, []);
 
   return (

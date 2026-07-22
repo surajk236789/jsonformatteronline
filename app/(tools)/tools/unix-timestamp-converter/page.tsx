@@ -1,9 +1,8 @@
 import React from "react";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import UnixTimestampConverter from "@/app/components/UnixTimestampConverter";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Free Unix Timestamp Converter Online",
@@ -65,28 +64,17 @@ export default function Page() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Unix Timestamp <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Convert Unix epoch timestamps to human-readable dates and vice versa. Live ticking epoch clock and timezone support.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      >
       <UnixTimestampConverter />
-      <RelatedTools tools={relatedTools} />
-
-      </>
+    </ToolLayout>
   );
 }

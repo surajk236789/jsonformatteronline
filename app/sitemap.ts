@@ -47,26 +47,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blogs/api-debugging-tips',
   ];
 
+  const staticRoutes = [
+    '/about',
+    '/privacy',
+    '/terms',
+  ];
+
   const now = new Date();
 
   return [
     ...mainRoutes.map(({ path, priority }) => ({
       url: `${baseUrl}${path}`,
       lastModified: now,
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'daily' as const,
       priority,
     })),
     ...toolRoutes.map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified: now,
-      changeFrequency: 'monthly' as const,
+      changeFrequency: 'daily' as const,
       priority: 0.8,
     })),
     ...blogRoutes.map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified: now,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    })),
+    ...staticRoutes.map((path) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: now,
       changeFrequency: 'monthly' as const,
-      priority: 0.7,
+      priority: 0.3,
     })),
   ];
 }
+

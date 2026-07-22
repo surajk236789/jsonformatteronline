@@ -1,10 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JwtDecoder from "@/app/components/JwtDecoder";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "JWT Decoder Online",
@@ -89,29 +87,18 @@ export default function JwtDecoderPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               JWT <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Decode JSON Web Tokens instantly and securely — entirely in your browser.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our JWT Decoder?" featureColor="purple"
+    >
       <JwtDecoder />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our JWT Decoder?" color="purple" />
-      </>
+    </ToolLayout>
   );
 }

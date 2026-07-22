@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Us | AllFormatter",
   description: "Learn about the developers behind AllFormatter and our mission to build fast, secure, browser-based tools.",
+  alternates: { canonical: "https://www.allformatter.com/about" },
 };
 
 export default function AboutPage() {

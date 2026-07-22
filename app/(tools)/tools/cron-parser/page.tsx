@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import CronParser from "@/app/components/CronParser";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Online Cron Parser & Generator",
@@ -101,31 +98,19 @@ export default function CronParserPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Cron Expression <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Parser</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Understand and build cron expressions in plain English — see the next run times and verify your schedule before deploying.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our Cron Parser?" featureColor="amber"
+      faqs={faqs}
+    >
       <CronParser />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our Cron Parser?" color="amber" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

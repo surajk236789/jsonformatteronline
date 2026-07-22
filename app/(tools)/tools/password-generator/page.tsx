@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import PasswordGenerator from "@/app/components/PasswordGenerator";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Password Generator Online",
@@ -97,31 +94,19 @@ export default function PasswordGeneratorPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Secure Password <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Generate strong, random passwords with custom rules — cryptographically secure and never stored or transmitted.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our Password Generator?" featureColor="rose"
+      faqs={faqs}
+    >
       <PasswordGenerator />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our Password Generator?" color="rose" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

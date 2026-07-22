@@ -1,9 +1,8 @@
 import React from "react";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import MetaTagGenerator from "@/app/components/MetaTagGenerator";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "Free Meta Tag Generator Online",
@@ -65,28 +64,17 @@ export default function Page() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+    >
       <MetaTagGenerator />
-      <RelatedTools tools={relatedTools} />
-
-      </>
+    </ToolLayout>
   );
 }

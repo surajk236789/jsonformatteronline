@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import HtmlEntityEncoder from "@/app/components/HtmlEntityEncoder";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "HTML Entity Encoder & Decoder Online",
@@ -97,31 +94,19 @@ export default function HtmlEntityEncoderPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               HTML Entity Encoder &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Encode special characters to HTML entities or decode them back — prevent XSS and ensure safe HTML rendering.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our HTML Entity Encoder?" featureColor="slate"
+      faqs={faqs}
+    >
       <HtmlEntityEncoder />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our HTML Entity Encoder?" color="slate" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

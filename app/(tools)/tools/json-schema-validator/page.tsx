@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JsonSchemaValidator from "@/app/components/JsonSchemaValidator";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "JSON Schema Validator Online",
@@ -97,31 +94,19 @@ export default function JsonSchemaValidatorPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               JSON Schema <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Validator</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Validate your JSON data against a JSON Schema — get clear error messages for every violation, instantly and privately.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our JSON Schema Validator?" featureColor="emerald"
+      faqs={faqs}
+    >
       <JsonSchemaValidator />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our JSON Schema Validator?" color="emerald" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

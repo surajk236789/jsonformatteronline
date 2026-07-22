@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { ResumeProvider } from "../../components/resume/ResumeContext";
 import { ResumeBuilderApp } from "../../components/resume/ResumeBuilderApp";
 import MainLayout from "../../components/MainLayout";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "Free ATS-Friendly Resume Builder | AllFormatter",
   description: "Create a professional, modern, or creative resume in minutes. Optimize for ATS systems and download instantly as a PDF. Choose from 10+ beautiful templates.",
@@ -44,29 +44,18 @@ export default function ResumeBuilderPage() {
   };
 
   return (
-    <MainLayout>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="w-full space-y-6 mb-12">
-        <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Create Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Perfect Resume</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Stand out to employers with beautifully designed, ATS-optimized templates. Download as PDF instantly.
-            </>
-          }
-        />
-
-        <ResumeProvider>
-          <ResumeBuilderApp />
-        </ResumeProvider>
-      </div>
-    </MainLayout>
+            </>}
+      jsonLd={jsonLd}
+      >
+      <ResumeProvider>
+        <ResumeBuilderApp />
+      </ResumeProvider>
+    </ToolLayout>
   );
 }

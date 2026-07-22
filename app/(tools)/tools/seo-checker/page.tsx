@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
+import ToolLayout from "@/app/components/ToolLayout";
 
 import SeoChecker from "@/app/components/SeoChecker";
-import ToolHeader from "@/app/components/ToolHeader";
 
 export const metadata: Metadata = {
   title: "Free SEO Checker & Website Analyzer",
@@ -97,32 +94,19 @@ export default function SeoCheckerPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               Free SEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Checker</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Enter a URL below to instantly analyze on-page SEO factors, meta tags, and content structure.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our SEO Analyzer?" featureColor="indigo"
+      faqs={faqs}
+    >
       <SeoChecker />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our SEO Analyzer?" color="indigo" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

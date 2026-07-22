@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | AllFormatter",
   description: "Terms of service and usage conditions for AllFormatter tools.",
+  alternates: { canonical: "https://www.allformatter.com/terms" },
 };
 
 export default function TermsPage() {

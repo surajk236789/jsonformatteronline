@@ -1,9 +1,7 @@
 import React from "react";
-import ToolHeader from "@/app/components/ToolHeader";
-import FeatureSection from "@/app/components/FeatureSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
+import ToolLayout from "@/app/components/ToolLayout";
 
 const YamlToJson = dynamic(() => import("@/app/components/YamlToJson"), {
 
@@ -97,29 +95,18 @@ export default function YamlToJsonPage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               YAML to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Convert YAML data to JSON instantly — all in your browser.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our YAML to JSON Converter?" featureColor="orange"
+      >
       <YamlToJson />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our YAML to JSON Converter?" color="orange" />
-      </>
+    </ToolLayout>
   );
 }

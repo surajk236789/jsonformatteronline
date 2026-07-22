@@ -1,11 +1,8 @@
 import React from "react";
-import FeatureSection from "@/app/components/FeatureSection";
-import FaqSection from "@/app/components/FaqSection";
-import RelatedTools from "@/app/components/RelatedTools";
 import type { Metadata } from "next";
 
 import JsonCompare from "@/app/components/JsonCompare";
-import ToolHeader from "@/app/components/ToolHeader";
+import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "JSON Compare Tool Online",
@@ -97,31 +94,19 @@ export default function JsonComparePage() {
   };
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <ToolHeader 
-          title={
-            <>
+    <ToolLayout
+      title={<>
               JSON Compare &amp; Diff <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Tool</span>
-            </>
-          }
-          description={
-            <>
+            </>}
+      description={<>
               Visually compare two JSON objects side-by-side. Every difference is highlighted — instantly, privately, in your browser.
-            </>
-          }
-        />
-
+            </>}
+      jsonLd={jsonLd}
+      relatedTools={relatedTools}
+      features={features} featureTitle="Why use our JSON Compare tool?" featureColor="violet"
+      faqs={faqs}
+    >
       <JsonCompare />
-
-      <RelatedTools tools={relatedTools} />
-
-      <FeatureSection features={features} title="Why use our JSON Compare tool?" color="violet" />
-
-      <FaqSection faqs={faqs} />
-      </>
+    </ToolLayout>
   );
 }

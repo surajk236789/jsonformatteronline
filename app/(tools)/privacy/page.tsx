@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | AllFormatter",
   description: "Privacy policy for AllFormatter. Learn how we keep your data 100% secure and local.",
+  alternates: { canonical: "https://www.allformatter.com/privacy" },
 };
 
 export default function PrivacyPage() {

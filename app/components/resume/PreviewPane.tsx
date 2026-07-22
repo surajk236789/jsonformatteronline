@@ -6,8 +6,6 @@ import { ProfessionalTemplate } from "./templates/ProfessionalTemplate";
 import { ModernTemplate } from "./templates/ModernTemplate";
 import { CreativeTemplate } from "./templates/CreativeTemplate";
 import { Download, Loader2, Maximize2, X, LayoutTemplate } from "lucide-react";
-import { toPng } from "html-to-image";
-import jsPDF from "jspdf";
 import { Button } from "../ui/Button";
 
 export function PreviewPane() {
@@ -39,6 +37,12 @@ export function PreviewPane() {
     setIsGenerating(true);
 
     try {
+      // Dynamic imports — only loaded when user clicks download (~350KB saved from initial bundle)
+      const [{ toPng }, { default: jsPDF }] = await Promise.all([
+        import("html-to-image"),
+        import("jspdf"),
+      ]);
+
       const imgData = await toPng(resumeRef.current, {
         quality: 1,
         pixelRatio: 2,
