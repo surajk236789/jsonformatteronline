@@ -68,8 +68,24 @@ const faqs = [
 ];
 
 export default function JsonBeautifierPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AllFormatter",
+    "url": "https://www.allformatter.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.allformatter.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Page H1 */}
       {/* Page H1 */}
       <ToolHeader 

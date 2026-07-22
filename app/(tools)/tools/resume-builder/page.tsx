@@ -1,8 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
-import { ResumeProvider } from "../../components/resume/ResumeContext";
-import { ResumeBuilderApp } from "../../components/resume/ResumeBuilderApp";
-import MainLayout from "../../components/MainLayout";
+import { ResumeProvider } from "@/app/components/resume/ResumeContext";
+import { ResumeBuilderApp } from "@/app/components/resume/ResumeBuilderApp";
 import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "Free ATS-Friendly Resume Builder | AllFormatter",

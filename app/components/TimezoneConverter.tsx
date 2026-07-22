@@ -14,6 +14,23 @@ export default function TimezoneConverter() {
     Intl.DateTimeFormat().resolvedOptions().timeZone || "America/New_York",
     "Asia/Tokyo"
   ]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("allformatter_timezones");
+      if (saved) {
+        setSelectedTimezones(JSON.parse(saved));
+      }
+    } catch (e) {}
+    setIsLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("allformatter_timezones", JSON.stringify(selectedTimezones));
+    }
+  }, [selectedTimezones, isLoaded]);
   
   // Base time in UTC milliseconds
   const [baseTimeMs, setBaseTimeMs] = useState<number>(Date.now());

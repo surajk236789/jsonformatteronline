@@ -106,6 +106,8 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
               <div className="relative group/navitem" key={group.category}>
                 <Button
                   aria-haspopup="true"
+                  aria-expanded="false"
+                  aria-label={`${group.category} tools`}
                   variant="ghost"
                 >
                   <span className="text-base">{group.emoji}</span>
@@ -152,6 +154,8 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
             <Button
               id="header-blogs-btn"
               aria-haspopup="true"
+              aria-expanded="false"
+              aria-label="Blog articles"
               variant="ghost"
               className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 cursor-pointer ${isBlogPage
                 ? "bg-indigo-50 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400"
@@ -204,6 +208,7 @@ export default function NavBar({ toolGroups, blogLinks }: NavBarProps) {
           <Button
             id="header-theme-toggle"
             variant="ghost"
+            aria-label="Toggle Theme"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             className={`p-2 border border-panel-border rounded-lg transition-all cursor-pointer ${mounted
               ? theme === "dark"

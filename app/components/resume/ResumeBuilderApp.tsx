@@ -2,9 +2,11 @@
 
 import React from "react";
 import { useResume } from "./ResumeContext";
-import { TemplateShowcase } from "./TemplateShowcase";
-import { FormSections } from "./FormSections";
+import dynamic from "next/dynamic";
 import { DynamicPreviewPane } from "./DynamicPreviewPane";
+
+const TemplateShowcase = dynamic(() => import("./TemplateShowcase").then(mod => mod.TemplateShowcase), { ssr: false, loading: () => <div className="p-8 text-center animate-pulse">Loading templates...</div> });
+const FormSections = dynamic(() => import("./FormSections").then(mod => mod.FormSections), { ssr: false, loading: () => <div className="p-8 text-center animate-pulse">Loading editor...</div> });
 
 import { Button } from "../ui/Button";
 
