@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
+import { getEventsFromSheets } from '@/lib/google';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.SITE_URL || 'https://www.allformatter.com';
 
   const mainRoutes = [
@@ -9,6 +10,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/tools/json-compare', priority: 0.9 },
     { path: '/tools/json-to-xml', priority: 0.9 },
     { path: '/tools/base64-to-pdf', priority: 0.9 },
+    { path: '/events', priority: 0.9 },
+    { path: '/events/hackathons', priority: 0.8 },
+    { path: '/events/ai-meetups', priority: 0.8 },
   ];
 
   const toolRoutes = [
@@ -81,6 +85,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const now = new Date();
+  
+  // Fetch dynamic event slugs
+  const events = await getEventsFromSheets();
+  const eventRoutes = events.map(event => ({
+    url: `${baseUrl}/events/${event.slug}`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.7,
+  }));
 
   return [
     ...mainRoutes.map(({ path, priority }) => ({
@@ -89,6 +102,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily' as const,
       priority,
     })),
+    ...eventRoutes,
     ...toolRoutes.map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified: now,
