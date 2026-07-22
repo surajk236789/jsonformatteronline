@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useCallback, useEffect } from "react";
 import { Button } from "./ui/Button";
-import * as yaml from "js-yaml";
 
 const SAMPLE_JSON = `{
   "person": {
@@ -28,7 +27,7 @@ export default function JsonToYaml() {
   const [copySuccess, setCopySuccess] = useState(false);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
 
-  const convert = useCallback(() => {
+  const convert = useCallback(async () => {
     setError("");
     try {
       if (!input.trim()) {
@@ -37,6 +36,7 @@ export default function JsonToYaml() {
         return;
       }
       const data = JSON.parse(input);
+      const yaml = await import("js-yaml");
       setOutput(yaml.dump(data, { indent: 2 }));
     } catch (err) {
       if (err instanceof Error) {

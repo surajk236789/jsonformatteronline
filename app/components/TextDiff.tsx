@@ -1,7 +1,6 @@
 "use client";
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/Button";
-import * as Diff from "diff";
 import { ArrowRightLeft } from "lucide-react";
 
 export default function TextDiff() {
@@ -9,12 +8,31 @@ export default function TextDiff() {
   const [modified, setModified] = useState("");
   const [mode, setMode] = useState<"lines" | "words">("lines");
 
-  const diffResult = useMemo(() => {
-    if (!original && !modified) return [];
-    if (mode === "lines") {
-      return Diff.diffLines(original, modified);
+  const [diffResult, setDiffResult] = useState<any[]>([]);
+
+  useEffect(() => {
+    let isMounted = true;
+    if (!original && !modified) {
+      setDiffResult([]);
+      return;
     }
-    return Diff.diffWords(original, modified);
+
+    const computeDiff = async () => {
+      const Diff = await import("diff");
+      if (!isMounted) return;
+      
+      if (mode === "lines") {
+        setDiffResult(Diff.diffLines(original, modified));
+      } else {
+        setDiffResult(Diff.diffWords(original, modified));
+      }
+    };
+    
+    computeDiff();
+    
+    return () => {
+      isMounted = false;
+    };
   }, [original, modified, mode]);
 
   const loadSample = () => {

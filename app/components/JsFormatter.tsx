@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import { Button } from "./ui/Button";
-import beautify from "js-beautify";
 
 export default function JsFormatter() {
   const [input, setInput] = useState("");
@@ -26,13 +25,15 @@ console.log(  calculateTotal(cart, 0.05) );`;
     setOutput("");
   };
 
-  const handleFormat = () => {
+  const handleFormat = async () => {
     if (!input.trim()) {
       setError("JavaScript input is empty");
       setOutput("");
       return;
     }
     try {
+      const jsBeautify = await import("js-beautify");
+      const beautify = jsBeautify.default || jsBeautify;
       const formatted = beautify.js(input, {
         indent_size: 2,
         space_in_empty_paren: true,

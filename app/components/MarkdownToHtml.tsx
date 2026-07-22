@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Button } from "./ui/Button";
-import { marked } from "marked";
 import { Copy, Download, Code, LayoutTemplate } from "lucide-react";
 import DOMPurify from "dompurify";
 
@@ -36,12 +35,13 @@ export default function MarkdownToHtml() {
   const [copySuccess, setCopySuccess] = useState(false);
   const [downloadSuccess, setDownloadSuccess] = useState(false);
 
-  const convert = useCallback(() => {
+  const convert = useCallback(async () => {
     if (!input.trim()) {
       setHtmlOutput("");
       return;
     }
     // Parse markdown
+    const { marked } = await import("marked");
     const rawHtml = marked.parse(input) as string;
     // Purify HTML to prevent XSS
     const cleanHtml = DOMPurify.sanitize(rawHtml);
