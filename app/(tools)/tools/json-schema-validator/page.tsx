@@ -41,6 +41,18 @@ const faqs = [
   { q: "Can I validate nested objects?", a: "Yes. JSON Schema supports deeply nested object and array validation through the properties, items, and $ref keywords, and this tool handles nested schemas correctly." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is JSON Schema?",
+    body: "JSON Schema is a vocabulary that allows you to annotate and validate JSON documents. It provides a clear contract for the structure of your data, ensuring required fields exist and data types are correct before processing."
+  },
+  {
+    title: "How to Validate Data",
+    body: "Paste your JSON Schema definition into the top editor, and your JSON data payload into the bottom editor. The tool will instantly validate the data against the schema and highlight any specific validation errors."
+  }
+];
+
 export default function JsonSchemaValidatorPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function JsonSchemaValidatorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         JSON Schema <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Validator</span>
       </>}

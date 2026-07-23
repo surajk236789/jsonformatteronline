@@ -41,6 +41,18 @@ const faqs = [
   { q: "What's the difference between MD5 and SHA-256?", a: "MD5 produces a 128-bit (32-character hex) hash and is fast but no longer secure. SHA-256 produces a 256-bit (64-character hex) hash and is considered cryptographically safe for most applications." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What are Cryptographic Hashes?",
+    body: "A cryptographic hash is a one-way mathematical algorithm that maps data of any size to a fixed-size bit string. Common algorithms like MD5, SHA-1, and SHA-256 are used for verifying data integrity and securely storing passwords."
+  },
+  {
+    title: "How to Generate Hashes",
+    body: "Type or paste your plain text into the input field. The tool will instantly compute and display the corresponding hashes across multiple algorithms simultaneously."
+  }
+];
+
 export default function HashGeneratorPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function HashGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Hash <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
       </>}

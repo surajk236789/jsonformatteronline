@@ -41,6 +41,18 @@ const faqs = [
   { q: "Can I use gradients for text or borders?", a: "Yes! Use 'background-clip: text' for gradient text effects, or apply gradients to borders using 'border-image'. The basic gradient code from this generator works as a starting point." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a CSS Gradient?",
+    body: "CSS gradients let you display smooth transitions between two or more specified colors. They can be linear (going in a straight line) or radial (radiating outward from a center point), providing a modern aesthetic without needing image files."
+  },
+  {
+    title: "How to Generate Gradients",
+    body: "Use the color pickers to select your starting and ending colors. Adjust the angle or switch between linear and radial modes. The CSS code is automatically generated for you to copy and paste directly into your stylesheet."
+  }
+];
+
 export default function CssGradientGeneratorPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function CssGradientGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               CSS Gradient <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
             </>}

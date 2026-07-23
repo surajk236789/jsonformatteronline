@@ -34,6 +34,18 @@ const faqs = [
   { q: "Does it detect my local timezone automatically?", a: "Yes, the converter detects your system time to provide a convenient starting point." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Use a Timezone Converter?",
+    body: "Coordinating meetings or tracking events across the globe can be confusing due to different timezones and Daylight Saving Time rules. A converter provides a definitive, synchronized view of what time it is across multiple global locations."
+  },
+  {
+    title: "How to Convert Timezones",
+    body: "Search and add multiple cities or timezones to your dashboard. The tool will display the current time in all selected locations. You can adjust the time on one location to see how it reflects across the others."
+  }
+];
+
 export default function Page() {
   const relatedTools = [
     {
@@ -87,7 +99,7 @@ export default function Page() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
               Timezone <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

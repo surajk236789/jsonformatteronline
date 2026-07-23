@@ -52,6 +52,18 @@ const faqs = [
   { q: "What is a JSON Web Token (JWT)?", a: "A JWT is a secure way to transmit information between parties as a JSON object, commonly used for authentication." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a JSON Web Token?",
+    body: "A JSON Web Token (JWT) is a compact, URL-safe means of representing claims to be transferred between two parties. The token is composed of three Base64Url encoded parts: a Header, a Payload, and a Signature."
+  },
+  {
+    title: "How to Decode a JWT",
+    body: "Paste your full JWT string into the input box. The tool will instantly decode the Base64Url strings and display the readable JSON objects for the Header and Payload sections."
+  }
+];
+
 export default function JwtDecoderPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function JwtDecoderPage() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
         JWT <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
       </>}

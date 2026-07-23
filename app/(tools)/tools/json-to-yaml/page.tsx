@@ -40,6 +40,18 @@ const faqs = [
   { q: "Does it produce valid YAML?", a: "Yes. The converter generates well-formed, strict YAML using industry-standard libraries." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is YAML?",
+    body: "YAML (YAML Ain't Markup Language) is a human-friendly data serialization standard. It is widely used for configuration files in modern DevOps tools like Docker, Kubernetes, and CI/CD pipelines due to its clean, minimalist syntax."
+  },
+  {
+    title: "How to Convert JSON to YAML",
+    body: "Paste your standard JSON into the left editor. The tool will strip away all the brackets and quotes, instantly generating a clean, properly indented YAML equivalent on the right."
+  }
+];
+
 export default function JsonToYamlPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function JsonToYamlPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         JSON to YAML <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">Converter</span>
       </>}

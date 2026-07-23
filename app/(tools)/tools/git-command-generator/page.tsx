@@ -41,6 +41,18 @@ const faqs = [
   { q: "Does it require any login or extension?", a: "No. The tool runs entirely in your browser with no account, no extension, and no server-side processing required." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is the Git Command Generator?",
+    body: "This visual tool helps developers construct complex Git commands without needing to memorize the extensive CLI arguments. It provides a UI to select actions like branching, merging, and committing."
+  },
+  {
+    title: "How to Use",
+    body: "Select the Git operation you want to perform from the dropdown. Fill in the required fields such as branch names or commit messages, and the tool will generate the exact terminal command for you to execute."
+  }
+];
+
 export default function GitCommandGeneratorPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function GitCommandGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               Git Command <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
             </>}

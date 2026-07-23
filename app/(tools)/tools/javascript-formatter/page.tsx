@@ -33,6 +33,18 @@ const faqs = [
   { q: "Does it support modern ES6+ syntax?", a: "Yes, the formatter supports all modern JavaScript features including arrow functions, classes, and async/await." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Format JavaScript?",
+    body: "Clean, well-indented JavaScript is crucial for code readability, team collaboration, and debugging. Formatting enforces consistent style rules, spacing, and bracket placement across your entire codebase."
+  },
+  {
+    title: "How to Beautify JS",
+    body: "Paste your minified or poorly formatted JavaScript into the left editor. The tool uses advanced parsing to instantly reformat the code with proper indentation and spacing on the right."
+  }
+];
+
 export default function JavascriptFormatterPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -65,7 +77,7 @@ export default function JavascriptFormatterPage() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>JavaScript <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Formatter & Minifier</span></>}
       description={<>Instantly beautify or minify your JS code. All processing happens entirely in your browser.</>}
       jsonLd={jsonLd}

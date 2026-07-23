@@ -33,6 +33,18 @@ const faqs = [
   { q: "Is this color picker free to use?", a: "Yes, it is 100% free and works entirely in your browser." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is the Color Picker?",
+    body: "Our Color Picker is an interactive design utility that helps developers and designers select precise colors from a visual palette and instantly get their corresponding HEX, RGB, and HSL values."
+  },
+  {
+    title: "How to Convert Colors",
+    body: "Simply click on the color spectrum or use the hue slider to find your perfect color. The tool automatically updates the color codes in real-time, allowing you to easily copy the exact format you need for your CSS."
+  }
+];
+
 export default function ColorPickerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -65,7 +77,7 @@ export default function ColorPickerPage() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>Color Picker & <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">Converter</span></>}
       description={<>Quickly pick colors and convert values between HEX, RGB, and HSL formats.</>}
       jsonLd={jsonLd}

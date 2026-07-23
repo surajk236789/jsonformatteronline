@@ -41,6 +41,18 @@ const faqs = [
   { q: "What does 'padding' mean in Base64?", a: "Base64 output is padded with '=' characters to make its length a multiple of 4. Some implementations strip padding — both forms are valid and widely supported." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is Base64 Encoding?",
+    body: "Base64 is a data encoding scheme used to represent binary data in an ASCII string format. This is extremely useful for transmitting data over media that are designed to deal with textual data, ensuring that the data remains intact without modification during transport."
+  },
+  {
+    title: "How to Use This Tool",
+    body: "Select whether you want to encode plain text into Base64 or decode a Base64 string back to plain text. Paste your input into the provided text area, and the converted output will appear instantly on the screen."
+  }
+];
+
 export default function Base64EncoderPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function Base64EncoderPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               Base64 Encode &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decode</span>
             </>}

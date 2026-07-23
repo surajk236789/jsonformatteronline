@@ -41,6 +41,18 @@ const faqs = [
   { q: "Does it handle CSS variables and custom properties?", a: "Yes. Modern CSS features including variables (--custom-property), calc(), clamp(), grid, and flexbox are fully preserved during minification." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Minify CSS?",
+    body: "Minifying CSS removes unnecessary spaces, line breaks, comments, and extra characters from your stylesheet. This reduces the file size, which speeds up load times and improves your website's overall performance and SEO ranking."
+  },
+  {
+    title: "How to Compress CSS",
+    body: "Paste your formatted, readable CSS code into the left editor. The tool will instantly process the stylesheet and display the minified version on the right, ready to be copied or saved for your production environment."
+  }
+];
+
 export default function CssMinifierPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function CssMinifierPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               CSS Minifier &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Compressor</span>
             </>}

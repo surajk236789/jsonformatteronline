@@ -41,6 +41,18 @@ const faqs = [
   { q: "Is there a size limit for JSON comparison?", a: "There is no hard limit — but very large payloads (10MB+) may slow down rendering. For best performance, paste only the relevant parts of your JSON." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is JSON Diffing?",
+    body: "Comparing two JSON objects manually can be tedious and error-prone. A JSON Diff tool visually highlights the exact additions, deletions, and modifications between an original JSON document and a modified version."
+  },
+  {
+    title: "How to Compare JSON",
+    body: "Paste your original JSON into the left editor and the modified JSON into the right editor. The tool will automatically align the structures and highlight the differences using a standard diff format."
+  }
+];
+
 export default function JsonComparePage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function JsonComparePage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               JSON Compare &amp; Diff <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Tool</span>
             </>}

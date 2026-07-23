@@ -40,6 +40,18 @@ const faqs = [
   { q: "Do these QR codes expire?", a: "No! The QR codes generated here are 'Static' QR codes. They directly contain the text or URL you input, meaning they will work forever and never expire." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a QR Code?",
+    body: "A QR (Quick Response) code is a two-dimensional barcode that can store various types of information, such as URLs, plain text, or contact information. It is designed to be easily read by digital imaging devices like smartphones."
+  },
+  {
+    title: "How to Generate a QR Code",
+    body: "Enter your URL or text into the input field. Customize the visual appearance by selecting a foreground color, background color, and error correction level. The QR code will update instantly and can be downloaded as a high-resolution PNG."
+  }
+];
+
 export default function QrCodeGeneratorPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function QrCodeGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         QR Code <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Generator</span>
       </>}

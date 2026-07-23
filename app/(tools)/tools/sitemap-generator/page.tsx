@@ -34,6 +34,18 @@ const faqs = [
   { q: "Can I use this for any website?", a: "Yes, our generator creates standard XML sitemaps that comply with all major search engine protocols." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is an XML Sitemap?",
+    body: "An XML sitemap is a file that lists all the essential URLs on a website along with metadata about each URL (like when it was last updated). This acts as a roadmap, helping search engine crawlers discover and index your content efficiently."
+  },
+  {
+    title: "How to Generate a Sitemap",
+    body: "Add your website URLs to the list, optionally configuring the priority and change frequency for each one. The tool compiles this data into a perfectly formatted XML document ready to be submitted to Google Search Console."
+  }
+];
+
 export default function Page() {
   const relatedTools = [
     {
@@ -87,7 +99,7 @@ export default function Page() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
               XML Sitemap <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
             </>}

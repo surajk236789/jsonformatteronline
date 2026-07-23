@@ -41,6 +41,18 @@ const faqs = [
   { q: "Does it work with Tailwind CSS classes?", a: "Yes. All class values (including long Tailwind class strings) are simply moved into className attributes without any modification to the class names themselves." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is JSX?",
+    body: "JSX is a syntax extension for JavaScript used primarily in React. It looks like HTML but allows you to write JavaScript logic directly within the markup. However, standard HTML attributes like `class` must be converted to `className` in JSX."
+  },
+  {
+    title: "How to Convert HTML to JSX",
+    body: "Paste your standard HTML markup into the editor. The tool will automatically transform all HTML attributes to their React JSX equivalents and close any self-closing tags properly."
+  }
+];
+
 export default function HtmlToJsxPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function HtmlToJsxPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               HTML to JSX <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

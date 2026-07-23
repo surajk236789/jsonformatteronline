@@ -40,6 +40,18 @@ const faqs = [
   { q: "Does it validate my SQL syntax?", a: "This tool focuses on formatting and beautifying existing SQL. While it can handle most queries, it does not strictly validate the syntax or execute the SQL against a database engine." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Format SQL?",
+    body: "Complex SQL queries can quickly become unreadable. Formatting SQL introduces consistent indentation, capitalizes keywords, and aligns clauses, making it vastly easier for developers to understand the logic and spot syntax errors."
+  },
+  {
+    title: "How to Beautify SQL",
+    body: "Paste your raw, unformatted SQL query into the left editor. The tool instantly parses the syntax and outputs a beautifully indented and standardized SQL query on the right."
+  }
+];
+
 export default function SqlFormatterPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function SqlFormatterPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               SQL <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Formatter</span>
             </>}

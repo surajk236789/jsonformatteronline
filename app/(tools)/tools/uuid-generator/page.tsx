@@ -41,6 +41,18 @@ const faqs = [
   { q: "Are the generated UUIDs truly unique?", a: "While mathematically possible to have a collision (generating the same UUID twice), the chances are unimaginably small. Generating 1 billion UUIDs every second for 85 years would only result in a 50% chance of a single collision." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a UUID?",
+    body: "A UUID (Universally Unique Identifier) is a 128-bit label used for information in computer systems. UUID Version 4 is generated using random numbers and is statistically guaranteed to be unique, making it perfect for primary keys in databases."
+  },
+  {
+    title: "How to Generate UUIDs",
+    body: "Select the number of UUIDs you need to generate. The tool instantly creates cryptographically secure, random UUID v4 strings that you can copy individually or in bulk."
+  }
+];
+
 export default function UuidGeneratorPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function UuidGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         UUID / GUID <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-indigo-500">Generator</span>
       </>}

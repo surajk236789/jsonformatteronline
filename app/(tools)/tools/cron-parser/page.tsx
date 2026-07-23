@@ -47,6 +47,18 @@ const faqs = [
   { q: "How to check cron logs in Ubuntu?", a: "You can check the syslog for cron executions using the command: `grep CRON /var/log/syslog`. If you want to enable a dedicated cron log, uncomment the `#cron.* /var/log/cron.log` line in `/etc/rsyslog.d/50-default.conf` and restart rsyslog." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a Cron Expression?",
+    body: "A cron expression is a string representing a schedule to execute commands automatically. It consists of five or six fields separated by spaces, representing minute, hour, day of the month, month, day of the week, and optionally, year."
+  },
+  {
+    title: "How to Use the Cron Parser",
+    body: "Enter your cron expression into the input field. The tool will instantly translate the expression into plain English and show you the exact dates and times for the next upcoming executions in your local timezone."
+  }
+];
+
 export default function CronParserPage() {
   const relatedTools = [
     {
@@ -100,7 +112,7 @@ export default function CronParserPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               Cron Expression <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Parser</span>
             </>}

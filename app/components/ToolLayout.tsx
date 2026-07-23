@@ -3,6 +3,7 @@ import ToolHeader from "./ToolHeader";
 import RelatedTools, { RelatedToolInfo } from "./RelatedTools";
 import FeatureSection, { Feature } from "./FeatureSection";
 import FaqSection, { Faq } from "./FaqSection";
+import ContentSection, { ContentBlock } from "./ContentSection";
 
 interface ToolLayoutProps {
   title: React.ReactNode;
@@ -13,6 +14,7 @@ interface ToolLayoutProps {
   featureTitle?: string;
   featureColor?: string;
   faqs?: Faq[];
+  contentBlocks?: ContentBlock[];
   children: React.ReactNode;
 }
 
@@ -25,6 +27,7 @@ export default function ToolLayout({
   featureTitle = "Why use this tool?",
   featureColor = "indigo",
   faqs,
+  contentBlocks,
   children,
 }: ToolLayoutProps) {
   return (
@@ -53,6 +56,11 @@ export default function ToolLayout({
           title={featureTitle}
           color={featureColor}
         />
+      )}
+
+      {/* Informational Content (SEO) */}
+      {contentBlocks && contentBlocks.length > 0 && (
+        <ContentSection blocks={contentBlocks} />
       )}
 
       {/* SEO-optimized Frequently Asked Questions */}

@@ -41,6 +41,18 @@ const faqs = [
   { q: "Does it handle Unicode and emoji?", a: "Yes. Unicode characters and emoji can be encoded to their numeric HTML entity equivalents, ensuring compatibility across all browsers and email clients." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What are HTML Entities?",
+    body: "HTML entities are special character codes used to display reserved characters (like `<` or `>`) or invisible characters in HTML. Encoding them ensures the browser renders the characters as text rather than interpreting them as code."
+  },
+  {
+    title: "How to Encode and Decode",
+    body: "Select whether you want to encode or decode text. Paste your string into the input area, and the tool will instantly replace all applicable characters with their HTML entity equivalents or vice versa."
+  }
+];
+
 export default function HtmlEntityEncoderPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function HtmlEntityEncoderPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               HTML Entity Encoder &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
             </>}

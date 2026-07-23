@@ -49,6 +49,18 @@ const faqs = [
   { q: "Can I use it to format HTML inside JSX?", a: "For JSX-specific formatting, use our HTML to JSX converter. This tool is optimized for standard HTML5 markup." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Beautify HTML?",
+    body: "Unformatted or minified HTML can be incredibly difficult to read and debug. Beautifying HTML adds consistent indentation, line breaks, and spacing, making the DOM structure visually clear and easy to maintain."
+  },
+  {
+    title: "How to Format HTML",
+    body: "Paste your messy or minified HTML code into the editor. The tool will instantly parse the markup and apply standard formatting rules, producing clean, structured code on the right."
+  }
+];
+
 export default function HtmlBeautifierPage() {
   const relatedTools = [
     {
@@ -102,7 +114,7 @@ export default function HtmlBeautifierPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               HTML Beautifier &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Formatter</span>
             </>}

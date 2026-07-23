@@ -40,6 +40,18 @@ const faqs = [
   { q: "Can I reverse the minification?", a: "Yes, you can easily reverse minification by using our JSON Beautifier tool, which will format and indent the JSON back to a human-readable state." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is JSON Minification?",
+    body: "JSON minification is the process of removing unnecessary characters like spaces, tabs, and newlines from a JSON file. This significantly reduces the file size, leading to faster network transmissions and lower bandwidth usage for your applications."
+  },
+  {
+    title: "How to Use the JSON Minifier",
+    body: "Simply paste your formatted JSON into the left editor. The tool will instantly process your data and output a fully minified, single-line JSON string on the right. You can then copy the minified code or download it as a .json file."
+  }
+];
+
 export default function JsonMinifierPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function JsonMinifierPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Minifier</span>
       </>}

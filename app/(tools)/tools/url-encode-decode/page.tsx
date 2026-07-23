@@ -41,6 +41,18 @@ const faqs = [
   { q: "Should I encode the entire URL or just the parameters?", a: "Only encode the individual parameter values, not the full URL. Encoding the entire URL would corrupt the slashes and protocol, making it invalid." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is URL Encoding?",
+    body: "URL encoding, or percent-encoding, is a mechanism for encoding information in a Uniform Resource Identifier (URI). It replaces unsafe ASCII characters with a `%` followed by two hexadecimal digits, ensuring the URL can be transmitted over the internet safely."
+  },
+  {
+    title: "How to Encode or Decode URLs",
+    body: "Select your desired operation. Paste your URL or text string into the input box, and the tool will instantly replace all unsafe characters with percent-encoded equivalents, or decode an existing percent-encoded string back to plain text."
+  }
+];
+
 export default function UrlEncoderPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function UrlEncoderPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               URL Encode &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decode</span>
             </>}

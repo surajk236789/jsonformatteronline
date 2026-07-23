@@ -41,6 +41,18 @@ const faqs = [
   { q: "How long should my password be?", a: "At minimum 12 characters for personal accounts, 16+ for financial and critical systems, and 20+ for root/admin credentials. Longer passwords are exponentially harder to crack." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Use a Password Generator?",
+    body: "Creating strong, unpredictable passwords is the first line of defense against cyber attacks. A password generator creates highly secure strings of characters that are virtually immune to dictionary and brute-force attacks."
+  },
+  {
+    title: "How to Generate Passwords",
+    body: "Adjust the slider to choose your desired password length. Toggle the checkboxes to include or exclude uppercase letters, lowercase letters, numbers, and special symbols. Click generate to create a new secure password."
+  }
+];
+
 export default function PasswordGeneratorPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function PasswordGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               Secure Password <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
             </>}

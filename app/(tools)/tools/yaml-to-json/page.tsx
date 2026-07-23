@@ -60,6 +60,18 @@ const faqs = [
   { q: "Is my data secure during conversion?", a: "Absolutely. The conversion runs entirely on your device with zero server interaction." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is YAML to JSON Conversion?",
+    body: "YAML and JSON are both data serialization languages. While YAML is heavily used in configuration files for its human readability, JSON is the universal standard for web APIs. Converting YAML to JSON prepares configuration data to be parsed by web applications."
+  },
+  {
+    title: "How to Convert YAML",
+    body: "Paste your YAML syntax into the left editor. The tool instantly parses the YAML and generates a strictly formatted, valid JSON equivalent on the right, converting all lists and dictionaries into JSON arrays and objects."
+  }
+];
+
 export default function YamlToJsonPage() {
   const relatedTools = [
     {
@@ -102,7 +114,7 @@ export default function YamlToJsonPage() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
               YAML to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

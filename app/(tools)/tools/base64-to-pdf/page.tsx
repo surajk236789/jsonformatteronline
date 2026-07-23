@@ -41,6 +41,18 @@ const faqs = [
   { q: "What if the output looks corrupted?", a: "A corrupted output usually means the Base64 string is truncated or has invalid characters. Ensure you paste the complete, clean Base64 string without any extra spaces or line breaks." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a Base64 to PDF Converter?",
+    body: "This tool allows you to take a Base64 encoded string representing a PDF document and instantly render it back into a viewable and downloadable PDF file in your browser."
+  },
+  {
+    title: "How to Use",
+    body: "Paste your Base64 string into the input box. The tool will automatically decode the string and render a preview of the PDF. You can then download the original PDF file directly to your device."
+  }
+];
+
 export default function Base64ToPdfPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function Base64ToPdfPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               Base64 to PDF <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

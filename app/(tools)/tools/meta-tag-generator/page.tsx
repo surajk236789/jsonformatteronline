@@ -34,6 +34,18 @@ const faqs = [
   { q: "How long should a meta description be?", a: "Meta descriptions should generally be between 150-160 characters to avoid being truncated by search engines." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why are Meta Tags Important?",
+    body: "Meta tags provide data about your webpage to search engines and website visitors. They are crucial for SEO, determining how your page appears in search engine results and when shared on social media networks."
+  },
+  {
+    title: "How to Generate Meta Tags",
+    body: "Fill in the form fields with your website's title, description, image URL, and author. The tool will automatically generate standard HTML meta tags, OpenGraph tags for Facebook, and Twitter Card tags."
+  }
+];
+
 export default function Page() {
   const relatedTools = [
     {
@@ -87,7 +99,7 @@ export default function Page() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
         Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
       </>}

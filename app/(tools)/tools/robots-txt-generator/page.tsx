@@ -34,6 +34,18 @@ const faqs = [
   { q: "Can robots.txt hide my page from Google?", a: "It prevents crawling, but if other sites link to your page, it may still be indexed. Use a noindex meta tag to completely hide a page." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a Robots.txt File?",
+    body: "The robots.txt file is a simple text file placed in the root directory of your website. It uses the Robots Exclusion Protocol to tell search engine crawlers which pages or files they are allowed or forbidden from requesting."
+  },
+  {
+    title: "How to Generate Robots.txt",
+    body: "Use the interface to define rules for specific user agents (like Googlebot or Bingbot). You can allow or disallow specific directories and define the location of your sitemap. The tool generates the precise syntax required."
+  }
+];
+
 export default function Page() {
   const relatedTools = [
     {
@@ -87,7 +99,7 @@ export default function Page() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
               Robots.txt <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
             </>}

@@ -34,6 +34,18 @@ const faqs = [
   { q: "Does this tool account for my local timezone?", a: "Yes, it converts the UTC epoch time into your local browser's timezone automatically." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a Unix Timestamp?",
+    body: "A Unix timestamp is a way to track time as a running total of seconds. Specifically, it represents the number of seconds that have elapsed since the Unix Epoch (January 1, 1970, 00:00:00 UTC), providing a standardized way to store dates in databases."
+  },
+  {
+    title: "How to Convert Timestamps",
+    body: "Enter a Unix timestamp (in seconds or milliseconds) into the input field to convert it into a human-readable date. Conversely, you can select a date and time to generate the corresponding Unix timestamp."
+  }
+];
+
 export default function Page() {
   const relatedTools = [
     {
@@ -87,7 +99,7 @@ export default function Page() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
               Unix Timestamp <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

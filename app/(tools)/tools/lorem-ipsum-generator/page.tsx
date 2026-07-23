@@ -40,6 +40,18 @@ const faqs = [
   { q: "Does this text mean anything?", a: "No. While it is derived from a real Latin text written by Cicero in 45 BC, words have been altered, added, and removed to make it nonsensical." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is Lorem Ipsum?",
+    body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s, used to demonstrate the visual form of a document or typeface without relying on meaningful content."
+  },
+  {
+    title: "How to Generate Text",
+    body: "Select whether you want to generate paragraphs, sentences, or words, and specify the quantity. The tool will instantly generate the requested amount of filler text for you to use in your mockups."
+  }
+];
+
 export default function LoremIpsumGeneratorPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function LoremIpsumGeneratorPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Lorem Ipsum <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-emerald-500">Generator</span>
       </>}

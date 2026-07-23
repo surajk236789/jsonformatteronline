@@ -40,6 +40,18 @@ const faqs = [
   { q: "Are there any downsides?", a: "Yes. Base64 strings are generally 33% larger than the original image file size. You should only use Base64 encoding for very small images, logos, or icons. Large photographs will make your HTML/CSS files massive and slow to parse." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Convert Images to Base64?",
+    body: "Converting an image to a Base64 string allows you to embed the image data directly into your HTML or CSS files. This eliminates the need for an external HTTP request to fetch the image, which can speed up the loading time of small icons or logos."
+  },
+  {
+    title: "How to Convert",
+    body: "Drag and drop your image file (PNG, JPG, SVG, GIF) into the dropzone. The tool will instantly encode the image and provide the Base64 string formatted as a valid Data URI."
+  }
+];
+
 export default function ImageToBase64Page() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function ImageToBase64Page() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Image to <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">Base64</span>
       </>}

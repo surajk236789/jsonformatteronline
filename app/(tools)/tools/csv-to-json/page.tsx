@@ -41,6 +41,18 @@ const faqs = [
   { q: "Can I use tab-separated values (TSV)?", a: "Some configurations support TSV. If your data is tab-separated, try replacing tabs with commas before pasting, or use the raw paste mode if available." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is CSV to JSON Conversion?",
+    body: "CSV (Comma-Separated Values) is a plain text format for tabular data, while JSON (JavaScript Object Notation) is a structured data format widely used in web APIs. Converting CSV to JSON turns flat spreadsheet data into nested data structures."
+  },
+  {
+    title: "How to Convert Data",
+    body: "Paste your CSV data into the input box. The tool will automatically detect the headers from the first row and map them as keys for the JSON objects, instantly generating a formatted JSON array."
+  }
+];
+
 export default function CsvToJsonPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function CsvToJsonPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         CSV to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
       </>}

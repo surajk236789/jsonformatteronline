@@ -41,6 +41,18 @@ const faqs = [
   { q: "Why do images need alt attributes?", a: "Alt attributes provide a text alternative for search engines to understand what the image depicts. They are crucial for image search rankings and for visually impaired users using screen readers." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is On-Page SEO?",
+    body: "On-page SEO involves optimizing individual web pages to rank higher and earn more relevant traffic in search engines. This includes optimizing title tags, meta descriptions, heading structures, and ensuring the presence of social graph tags."
+  },
+  {
+    title: "How to Analyze a Website",
+    body: "Enter the full URL of any public website into the search bar. The tool will fetch the page and analyze its HTML structure, providing a comprehensive report on all critical on-page SEO metrics and missing tags."
+  }
+];
+
 export default function SeoCheckerPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function SeoCheckerPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Free SEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Checker</span>
       </>}

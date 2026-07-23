@@ -40,6 +40,18 @@ const faqs = [
   { q: "Is it safe to paste sensitive documents?", a: "Absolutely. This tool runs 100% locally in your web browser. Your text is never transmitted over the internet, stored in a database, or seen by our servers." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is Markdown?",
+    body: "Markdown is a lightweight markup language with plain-text formatting syntax. It is designed so that it can be converted to HTML and many other formats. It's widely used for readme files, forum discussions, and blogs."
+  },
+  {
+    title: "How to Convert Markdown",
+    body: "Type or paste your Markdown text into the left editor. The tool will instantly render a live visual preview of the formatted content and generate the raw HTML code on the right."
+  }
+];
+
 export default function MarkdownToHtmlPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function MarkdownToHtmlPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Markdown to HTML <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500">Converter</span>
       </>}

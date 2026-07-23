@@ -41,6 +41,18 @@ const faqs = [
   { q: "Is 301 or 302 better for permanent redirects?", a: "Use 301 for permanent redirects — browsers and search engines will update their cached URL. Use 302 for temporary redirects where the original URL should remain indexed by search engines." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What are HTTP Status Codes?",
+    body: "HTTP status codes are standard response codes given by web servers on the internet to indicate whether a specific HTTP request has been successfully completed. They are divided into five classes, such as 2xx for success and 4xx for client errors."
+  },
+  {
+    title: "How to Use This Reference",
+    body: "Browse through the categorized list of HTTP status codes or use the search bar to find a specific code. Each entry provides a detailed explanation of what the code means and when it is typically used."
+  }
+];
+
 export default function HttpStatusCodesPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function HttpStatusCodesPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               HTTP Status Codes <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Reference</span>
             </>}

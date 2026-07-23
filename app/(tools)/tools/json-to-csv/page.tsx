@@ -41,6 +41,18 @@ const faqs = [
   { q: "Is there a size limit?", a: "There's no hard limit — but very large JSON datasets may slow down browser rendering. For best performance, process in batches if needed." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is JSON to CSV Conversion?",
+    body: "Converting JSON to CSV transforms deeply nested, hierarchical data into a flat, tabular format. This is incredibly useful for importing web API data into spreadsheet applications like Microsoft Excel or Google Sheets."
+  },
+  {
+    title: "How to Convert JSON",
+    body: "Paste an array of JSON objects into the editor. The tool will parse the keys to generate column headers and extract the values to generate the CSV rows. You can then download the resulting CSV file."
+  }
+];
+
 export default function JsonToCsvPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function JsonToCsvPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         JSON to CSV <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
       </>}

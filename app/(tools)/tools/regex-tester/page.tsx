@@ -41,6 +41,18 @@ const faqs = [
   { q: "How do I use capture groups?", a: "Wrap a part of your pattern in parentheses like (pattern). The captured content will appear under the Match Results section." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a Regular Expression?",
+    body: "A regular expression (regex) is a sequence of characters that specifies a search pattern. They are extremely powerful tools used in programming for string matching, validation, and advanced search-and-replace operations."
+  },
+  {
+    title: "How to Test Regex Patterns",
+    body: "Enter your regular expression in the top input and the text you want to search in the main editor. The tool will highlight all matches in real-time, helping you debug complex patterns."
+  }
+];
+
 export default function RegexTesterPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function RegexTesterPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               Regex <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Tester</span>
             </>}

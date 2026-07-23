@@ -33,6 +33,18 @@ const faqs = [
   { q: "Do you store my personal information?", a: "No. All data is processed locally on your device and is never stored on our servers." }
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is an ATS-Friendly Resume?",
+    body: "An ATS (Applicant Tracking System) friendly resume is designed without complex formatting, tables, or images that can confuse automated resume parsers. It ensures human resources software can accurately read your skills and experience."
+  },
+  {
+    title: "How to Build Your Resume",
+    body: "Fill out the structured form fields with your personal details, work experience, and education. The tool formats this data into a clean, professional, and ATS-friendly layout that you can immediately download as a PDF."
+  }
+];
+
 export default function ResumeBuilderPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -65,7 +77,7 @@ export default function ResumeBuilderPage() {
   };
 
   return (
-    <ToolLayout faqs={faqs}
+    <ToolLayout contentBlocks={contentBlocks} faqs={faqs}
       title={<>
               Create Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Perfect Resume</span>
             </>}

@@ -41,6 +41,18 @@ const faqs = [
   { q: "Can I convert XML back to JSON?", a: "This tool converts JSON to XML. For the reverse, use a dedicated XML to JSON converter — conversion in both directions is possible but requires a separate parsing step." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Convert JSON to XML?",
+    body: "While JSON is the modern standard for web APIs, many legacy enterprise systems, SOAP APIs, and configuration files still require XML. This tool provides a seamless bridge between modern JSON payloads and legacy XML systems."
+  },
+  {
+    title: "How to Convert",
+    body: "Paste your valid JSON object or array into the input editor. The tool will instantly traverse the JSON tree and construct a well-formed XML document with equivalent nested tags."
+  }
+];
+
 export default function JsonToXmlPage() {
   const relatedTools = [
     {
@@ -94,7 +106,7 @@ export default function JsonToXmlPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
               JSON to XML <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

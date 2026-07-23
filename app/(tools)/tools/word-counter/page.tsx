@@ -40,6 +40,18 @@ const faqs = [
   { q: "Does this tool save my text?", a: "No. This tool is completely client-side. The text you paste never leaves your device, making it safe for confidential documents and personal essays." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "Why Use a Word Counter?",
+    body: "Word counters are essential tools for writers, students, and SEO professionals who need to adhere to strict length guidelines for essays, articles, or meta descriptions. They provide instant metrics on the length and structure of your text."
+  },
+  {
+    title: "How to Count Words",
+    body: "Start typing or paste your text directly into the editor. The tool provides real-time statistics including total words, total characters (with and without spaces), paragraph count, and estimated reading time."
+  }
+];
+
 export default function WordCounterPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function WordCounterPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Word & Character <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500">Counter</span>
       </>}

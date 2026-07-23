@@ -40,6 +40,18 @@ const faqs = [
   { q: "Does this work for code?", a: "Yes! While we have specific tools for JSON comparison, this Text Diff tool works perfectly for comparing generic code snippets, configuration files, or logs." },
 ];
 
+
+const contentBlocks = [
+  {
+    title: "What is a Text Diff Tool?",
+    body: "A text diff (difference) tool is a utility that compares two blocks of text or code and visually highlights exactly what has been added, removed, or modified between the two versions."
+  },
+  {
+    title: "How to Compare Text",
+    body: "Paste the original text into the left panel and the updated text into the right panel. The tool will calculate the differences and highlight them using standard color coding: red for deletions and green for additions."
+  }
+];
+
 export default function TextDiffPage() {
   const relatedTools = [
     {
@@ -93,7 +105,7 @@ export default function TextDiffPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout contentBlocks={contentBlocks}
       title={<>
         Text <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">Diff</span> Checker
       </>}
