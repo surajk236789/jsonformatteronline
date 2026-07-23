@@ -53,6 +53,13 @@ const features = [
   { emoji: "⚡", title: "Works Instantly", desc: "No login, no upload, no waiting. Paste YAML and get JSON output right away." },
 ];
 
+
+const faqs = [
+  { q: "Is YAML better than JSON?", a: "YAML is often considered more human-readable and supports comments, while JSON is better for machine parsing and data transfer." },
+  { q: "Does this tool support nested YAML objects?", a: "Yes, it accurately converts deep nested objects, arrays, and lists from YAML to JSON format." },
+  { q: "Is my data secure during conversion?", a: "Absolutely. The conversion runs entirely on your device with zero server interaction." }
+];
+
 export default function YamlToJsonPage() {
   const relatedTools = [
     {
@@ -95,7 +102,7 @@ export default function YamlToJsonPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>
               YAML to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

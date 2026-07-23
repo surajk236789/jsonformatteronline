@@ -26,10 +26,19 @@ export const metadata: Metadata = {
   }
 };
 
+
+const faqs = [
+  { q: "How do I convert HEX to RGB?", a: "Our color picker automatically converts any color you select into HEX, RGB, and HSL values instantly." },
+  { q: "What is the difference between HEX and RGB?", a: "HEX is a base-16 representation commonly used in web design, while RGB defines the mix of Red, Green, and Blue light." },
+  { q: "Is this color picker free to use?", a: "Yes, it is 100% free and works entirely in your browser." }
+];
+
 export default function ColorPickerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@graph": [
+      {
+        "@type": "WebApplication",
     "name": "Color Picker and Converter",
     "url": "https://www.allformatter.com/tools/color-picker",
     "applicationCategory": "DesignApplication",
@@ -40,10 +49,23 @@ export default function ColorPickerPage() {
       "price": "0",
       "priceCurrency": "USD"
     }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>Color Picker & <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">Converter</span></>}
       description={<>Quickly pick colors and convert values between HEX, RGB, and HSL formats.</>}
       jsonLd={jsonLd}

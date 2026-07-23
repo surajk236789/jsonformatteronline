@@ -26,10 +26,19 @@ export const metadata: Metadata = {
   }
 };
 
+
+const faqs = [
+  { q: "Is this resume builder ATS friendly?", a: "Yes, the templates generate clean, readable text structures that Applicant Tracking Systems (ATS) can easily parse." },
+  { q: "Can I download my resume as a PDF?", a: "Yes, once you have entered your details, you can instantly download your formatted resume as a PDF." },
+  { q: "Do you store my personal information?", a: "No. All data is processed locally on your device and is never stored on our servers." }
+];
+
 export default function ResumeBuilderPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@graph": [
+      {
+        "@type": "WebApplication",
     "name": "Free ATS-Friendly Resume Builder Online",
     "url": "https://www.allformatter.com/tools/resume-builder",
     "applicationCategory": "DeveloperApplication",
@@ -40,10 +49,23 @@ export default function ResumeBuilderPage() {
       "price": "0",
       "priceCurrency": "USD"
     }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>
               Create Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Perfect Resume</span>
             </>}

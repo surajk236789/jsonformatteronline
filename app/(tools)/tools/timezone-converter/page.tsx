@@ -7,6 +7,7 @@ import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "Timezone Converter Online",
   description: "Visually compare and convert time across multiple timezones instantly. Perfect for scheduling international meetings.",
+  keywords: ["Timezone Converter", "Convert Timezone Online", "Global Meeting Planner", "Timezone Calculator"],
   alternates: { canonical: "https://www.allformatter.com/tools/timezone-converter" },
   openGraph: {
     title: "Timezone Converter Online",
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
     follow: true,
   }
 };
+
+
+const faqs = [
+  { q: "How accurate is the timezone conversion?", a: "It uses the standard IANA time zone database, ensuring highly accurate conversions including Daylight Saving Time rules." },
+  { q: "Can I convert multiple timezones at once?", a: "Yes, the tool allows you to compare and convert times across multiple global cities simultaneously." },
+  { q: "Does it detect my local timezone automatically?", a: "Yes, the converter detects your system time to provide a convenient starting point." }
+];
 
 export default function Page() {
   const relatedTools = [
@@ -50,7 +58,9 @@ export default function Page() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@graph": [
+      {
+        "@type": "WebApplication",
     "name": "Timezone Converter",
     "url": "https://www.allformatter.com/tools/timezone-converter",
     "applicationCategory": "DeveloperApplication",
@@ -61,10 +71,23 @@ export default function Page() {
       "price": "0",
       "priceCurrency": "USD"
     }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>
               Timezone <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
             </>}

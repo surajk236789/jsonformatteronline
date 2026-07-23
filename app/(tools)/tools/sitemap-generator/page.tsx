@@ -7,6 +7,7 @@ import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "XML Sitemap Generator Online",
   description: "Generate valid XML sitemaps instantly from a list of URLs. Configure lastmod, changefreq, and priority tags easily.",
+  keywords: ["XML Sitemap Generator", "Create Sitemap Online", "SEO URL Builder", "Sitemap Creator"],
   alternates: { canonical: "https://www.allformatter.com/tools/sitemap-generator" },
   openGraph: {
     title: "XML Sitemap Generator Online",
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
     follow: true,
   }
 };
+
+
+const faqs = [
+  { q: "Why do I need an XML sitemap?", a: "An XML sitemap helps search engines like Google and Bing discover and index your website's pages faster." },
+  { q: "How do I submit my sitemap to Google?", a: "You can submit your sitemap URL through the Google Search Console under the 'Sitemaps' section." },
+  { q: "Can I use this for any website?", a: "Yes, our generator creates standard XML sitemaps that comply with all major search engine protocols." }
+];
 
 export default function Page() {
   const relatedTools = [
@@ -50,7 +58,9 @@ export default function Page() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@graph": [
+      {
+        "@type": "WebApplication",
     "name": "XML Sitemap Generator",
     "url": "https://www.allformatter.com/tools/sitemap-generator",
     "applicationCategory": "DeveloperApplication",
@@ -61,10 +71,23 @@ export default function Page() {
       "price": "0",
       "priceCurrency": "USD"
     }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>
               XML Sitemap <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
             </>}

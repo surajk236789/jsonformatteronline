@@ -45,6 +45,13 @@ const features = [
   { emoji: "⚡", title: "Works Instantly", desc: "No login, no upload, no waiting. Paste your JWT and get the decoded JSON output right away." },
 ];
 
+
+const faqs = [
+  { q: "Is it safe to decode my JWT here?", a: "Yes. The decoding happens entirely in your browser using JavaScript. No data is transmitted to our servers." },
+  { q: "Can this tool verify a JWT signature?", a: "This tool decodes the Header and Payload. Signature verification requires your secret key, which should never be pasted online." },
+  { q: "What is a JSON Web Token (JWT)?", a: "A JWT is a secure way to transmit information between parties as a JSON object, commonly used for authentication." }
+];
+
 export default function JwtDecoderPage() {
   const relatedTools = [
     {
@@ -87,7 +94,7 @@ export default function JwtDecoderPage() {
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>
         JWT <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
       </>}

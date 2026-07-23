@@ -7,6 +7,7 @@ import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "Free Meta Tag Generator for SEO Online",
   description: "Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.",
+  keywords: ["Meta Tag Generator", "SEO Tags", "OpenGraph Generator", "Twitter Card Generator", "Create Meta Tags"],
   alternates: { canonical: "https://www.allformatter.com/tools/meta-tag-generator" },
   openGraph: {
     title: "Free Meta Tag Generator for SEO Online",
@@ -25,6 +26,13 @@ export const metadata: Metadata = {
     follow: true,
   }
 };
+
+
+const faqs = [
+  { q: "Do meta tags still matter for SEO?", a: "Yes. While keywords are less important, Title, Description, and OpenGraph tags are critical for click-through rates and social sharing." },
+  { q: "What is an OpenGraph tag?", a: "OpenGraph tags control how your website appears when shared on social media platforms like Facebook, Twitter, and LinkedIn." },
+  { q: "How long should a meta description be?", a: "Meta descriptions should generally be between 150-160 characters to avoid being truncated by search engines." }
+];
 
 export default function Page() {
   const relatedTools = [
@@ -50,7 +58,9 @@ export default function Page() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@graph": [
+      {
+        "@type": "WebApplication",
     "name": "Meta Tag Generator",
     "url": "https://www.allformatter.com/tools/meta-tag-generator",
     "applicationCategory": "DeveloperApplication",
@@ -61,10 +71,23 @@ export default function Page() {
       "price": "0",
       "priceCurrency": "USD"
     }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.a
+          }
+        }))
+      }
+    ]
   };
 
   return (
-    <ToolLayout
+    <ToolLayout faqs={faqs}
       title={<>
         Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
       </>}
