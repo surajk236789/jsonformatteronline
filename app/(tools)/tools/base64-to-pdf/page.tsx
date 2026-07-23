@@ -68,7 +68,7 @@ export default function Base64ToPdfPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Base64 to PDF Converter Online",
+        "name": "Base64 to PDF Converter",
         "url": "https://www.allformatter.com/tools/base64-to-pdf",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

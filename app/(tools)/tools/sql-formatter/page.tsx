@@ -5,12 +5,12 @@ import SqlFormatter from "@/app/components/SqlFormatter";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free SQL Formatter & Beautifier Online — Format SQL Queries Instantly",
+  title: "SQL Formatter & Beautifier Online",
   description: "Format, beautify, and indent SQL queries online. Supports MySQL, PostgreSQL, SQL Server, and standard SQL syntax. Free and browser-based.",
   keywords: ["SQL Formatter", "Format SQL Online", "SQL Beautifier", "SQL Indent", "Prettify SQL"],
   alternates: { canonical: "https://www.allformatter.com/tools/sql-formatter" },
   openGraph: {
-    title: "Free SQL Formatter & Beautifier Online — Format SQL Queries Instantly",
+    title: "SQL Formatter & Beautifier Online",
     description: "Format, beautify, and indent SQL queries online. Supports MySQL, PostgreSQL, SQL Server, and standard SQL syntax. Free and browser-based.",
     url: "https://www.allformatter.com/tools/sql-formatter",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free SQL Formatter & Beautifier Online — Format SQL Queries Instantly",
+    title: "SQL Formatter & Beautifier Online",
     description: "Format, beautify, and indent SQL queries online. Supports MySQL, PostgreSQL, SQL Server, and standard SQL syntax. Free and browser-based.",
   },
   robots: {
@@ -105,7 +105,12 @@ export default function SqlFormatterPage() {
       features={features} featureTitle="Why use our SQL Formatter?" featureColor="blue"
       faqs={faqs}
     >
-      <SqlFormatter />
+      <div className="mb-8">
+        <SqlFormatter />
+      </div>
+      <div className="text-sm text-secondary bg-panel border border-panel-border p-4 rounded-xl text-center">
+        Debugging a backend script? Format your queries here, and check your execution schedules with our <a href="/tools/cron-parser" className="text-indigo-500 hover:underline font-semibold">Cron Expression Parser</a>.
+      </div>
     </ToolLayout>
   );
 }

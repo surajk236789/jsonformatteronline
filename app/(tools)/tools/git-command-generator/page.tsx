@@ -7,7 +7,7 @@ import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "Git Command Generator Online",
   description: "Generate complex Git commands visually without memorizing syntax. Select the operation and options, then copy the ready-to-run command.",
-  keywords: ["Git Command Generator", "Git Commands Online", "Generate Git Commands", "Git Helper Tool", "Git Cheat Sheet"],
+  keywords: ["Git Command Generator Online", "Git Commands Online", "Generate Git Commands", "Git Helper Tool", "Git Cheat Sheet"],
   alternates: { canonical: "https://www.allformatter.com/tools/git-command-generator" },
   openGraph: {
     title: "Git Command Generator Online",

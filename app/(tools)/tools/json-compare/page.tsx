@@ -5,20 +5,20 @@ import JsonCompare from "@/app/components/JsonCompare";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "JSON Compare Tool Online",
-  description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
+  title: "JSON Compare & Diff Tool Online",
+  description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side with our advanced Monaco Editor with folding and line numbers.",
   keywords: ["JSON Compare", "JSON Diff", "Compare JSON Online", "JSON Visualizer", "Diff Editor"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-compare" },
   openGraph: {
-    title: "JSON Compare Tool Online",
-    description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
+    title: "JSON Compare & Diff Tool Online",
+    description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side with our advanced Monaco Editor with folding and line numbers.",
     url: "https://www.allformatter.com/tools/json-compare",
     siteName: "AllFormatter",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JSON Compare Tool Online",
+    title: "JSON Compare & Diff Tool Online",
     description: "Free online JSON Compare tool. Visually compare differences between two JSON objects side-by-side using our advanced Monaco Editor with folding and line numbers.",
   },
   robots: {
@@ -68,7 +68,7 @@ export default function JsonComparePage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "JSON Compare Tool Online",
+        "name": "JSON Compare Tool",
         "url": "https://www.allformatter.com/tools/json-compare",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

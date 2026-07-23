@@ -4,12 +4,12 @@ import { ResumeProvider } from "@/app/components/resume/ResumeContext";
 import { ResumeBuilderApp } from "@/app/components/resume/ResumeBuilderApp";
 import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
-  title: "Free ATS-Friendly Resume Builder | AllFormatter",
+  title: "Free ATS-Friendly Resume Builder Online",
   description: "Create a professional, modern, or creative resume in minutes. Optimize for ATS systems and download instantly as a PDF. Choose from 10+ beautiful templates.",
   keywords: ["resume builder", "ATS friendly resume maker", "download PDF resume", "free resume creator", "modern resume template", "resume generator", "cv builder"],
   alternates: { canonical: "https://www.allformatter.com/tools/resume-builder" },
   openGraph: {
-    title: "Free ATS-Friendly Resume Builder | AllFormatter",
+    title: "Free ATS-Friendly Resume Builder Online",
     description: "Create a professional, modern, or creative resume in minutes. Optimize for ATS systems and download instantly as a PDF. Choose from 10+ beautiful templates.",
     url: "https://www.allformatter.com/tools/resume-builder",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free ATS-Friendly Resume Builder | AllFormatter",
+    title: "Free ATS-Friendly Resume Builder Online",
     description: "Create a professional, modern, or creative resume in minutes. Optimize for ATS systems and download instantly as a PDF. Choose from 10+ beautiful templates.",
   },
   robots: {
@@ -30,7 +30,7 @@ export default function ResumeBuilderPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Free ATS-Friendly Resume Builder",
+    "name": "Free ATS-Friendly Resume Builder Online",
     "url": "https://www.allformatter.com/tools/resume-builder",
     "applicationCategory": "DeveloperApplication",
     "operatingSystem": "Any",

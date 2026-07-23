@@ -44,24 +44,24 @@ const faqs = [
 export default function JsonSchemaValidatorPage() {
   const relatedTools = [
     {
-        "title": "JSON Beautifier",
-        "desc": "Format, clean, and beautify your JSON data.",
-        "href": "/",
-        "emoji": "🗂️"
+      "title": "JSON Beautifier",
+      "desc": "Format, clean, and beautify your JSON data.",
+      "href": "/",
+      "emoji": "🗂️"
     },
     {
-        "title": "JSON to XML",
-        "desc": "Convert JSON to well-formed XML.",
-        "href": "/tools/json-to-xml",
-        "emoji": "🔄"
+      "title": "JSON to XML",
+      "desc": "Convert JSON to well-formed XML.",
+      "href": "/tools/json-to-xml",
+      "emoji": "🔄"
     },
     {
-        "title": "URL Encode/Decode",
-        "desc": "Encode or decode URL components.",
-        "href": "/tools/url-encode-decode",
-        "emoji": "🔗"
+      "title": "URL Encode/Decode",
+      "desc": "Encode or decode URL components.",
+      "href": "/tools/url-encode-decode",
+      "emoji": "🔗"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,11 +96,11 @@ export default function JsonSchemaValidatorPage() {
   return (
     <ToolLayout
       title={<>
-              JSON Schema <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Validator</span>
-            </>}
+        JSON Schema <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Validator</span>
+      </>}
       description={<>
-              Validate your JSON data against a JSON Schema — get clear error messages for every violation, instantly and privately.
-            </>}
+        Validate your JSON data against a JSON Schema — get clear error messages for every violation, instantly and privately.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
       features={features} featureTitle="Why use our JSON Schema Validator?" featureColor="emerald"

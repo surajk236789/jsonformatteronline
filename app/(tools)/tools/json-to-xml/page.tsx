@@ -6,12 +6,12 @@ import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "JSON to XML Converter Online",
-  description: "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+  description: "Convert JSON to XML online for free. Browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
   keywords: ["JSON to XML", "Convert JSON to XML", "JSON XML Converter", "JSON to XML Online", "Free JSON Converter"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-to-xml" },
   openGraph: {
     title: "JSON to XML Converter Online",
-    description: "Convert JSON to XML online for free. Fast, secure, browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+    description: "Convert JSON to XML online for free. Browser-based JSON to XML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
     url: "https://www.allformatter.com/tools/json-to-xml",
     siteName: "AllFormatter",
     type: "website",
@@ -68,7 +68,7 @@ export default function JsonToXmlPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "JSON to XML Converter Online",
+        "name": "JSON to XML Converter",
         "url": "https://www.allformatter.com/tools/json-to-xml",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",
@@ -106,7 +106,12 @@ export default function JsonToXmlPage() {
       features={features} featureTitle="Why use our JSON to XML Converter?" featureColor="orange"
       faqs={faqs}
     >
-      <JsonToXml />
+      <div className="mb-8">
+        <JsonToXml />
+      </div>
+      <div className="text-sm text-secondary bg-panel border border-panel-border p-4 rounded-xl text-center">
+        Need to clean up your JSON before converting? Use our <a href="/" className="text-indigo-500 hover:underline font-semibold">JSON Formatter</a> to beautify and validate it first.
+      </div>
     </ToolLayout>
   );
 }

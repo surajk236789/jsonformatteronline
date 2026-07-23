@@ -5,11 +5,11 @@ import UnixTimestampConverter from "@/app/components/UnixTimestampConverter";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Unix Timestamp Converter Online",
+  title: "Unix Timestamp Converter Online",
   description: "Convert Unix epoch timestamps to human-readable dates and vice versa. Live ticking epoch clock and timezone support.",
   alternates: { canonical: "https://www.allformatter.com/tools/unix-timestamp-converter" },
   openGraph: {
-    title: "Free Unix Timestamp Converter Online",
+    title: "Unix Timestamp Converter Online",
     description: "Convert Unix epoch timestamps to human-readable dates and vice versa. Live ticking epoch clock and timezone support.",
     url: "https://www.allformatter.com/tools/unix-timestamp-converter",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Unix Timestamp Converter Online",
+    title: "Unix Timestamp Converter Online",
     description: "Convert Unix epoch timestamps to human-readable dates and vice versa. Live ticking epoch clock and timezone support.",
   },
   robots: {

@@ -5,12 +5,12 @@ import MarkdownToHtml from "@/app/components/MarkdownToHtml";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Markdown to HTML Converter Online | Instant Preview",
+  title: "Free Markdown to HTML Converter Online",
   description: "Convert Markdown to clean, sanitized HTML online. Features side-by-side live preview and code output. 100% secure, browser-based converter.",
   keywords: ["Markdown to HTML", "Convert Markdown", "MD to HTML", "Markdown Preview", "Online Markdown Editor"],
   alternates: { canonical: "https://www.allformatter.com/tools/markdown-to-html" },
   openGraph: {
-    title: "Free Markdown to HTML Converter Online | Instant Preview",
+    title: "Free Markdown to HTML Converter Online",
     description: "Convert Markdown to clean, sanitized HTML online. Features side-by-side live preview and code output. 100% secure, browser-based converter.",
     url: "https://www.allformatter.com/tools/markdown-to-html",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Markdown to HTML Converter Online | Instant Preview",
+    title: "Free Markdown to HTML Converter Online",
     description: "Convert Markdown to clean, sanitized HTML online. Features side-by-side live preview and code output. 100% secure, browser-based converter.",
   },
   robots: {

@@ -5,12 +5,12 @@ import JsonMinifier from "@/app/components/JsonMinifier";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free JSON Minifier Online — Compress JSON Instantly",
+  title: "JSON Minifier Online",
   description: "Minify and compress JSON data online. Remove whitespace, comments, and formatting to reduce file size. Fast, free, and 100% browser-based.",
   keywords: ["JSON Minifier", "Compress JSON", "Minify JSON Online", "JSON Compressor", "Remove JSON whitespace"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-minifier" },
   openGraph: {
-    title: "Free JSON Minifier Online — Compress JSON Instantly",
+    title: "JSON Minifier Online",
     description: "Minify and compress JSON data online. Remove whitespace, comments, and formatting to reduce file size. Fast, free, and 100% browser-based.",
     url: "https://www.allformatter.com/tools/json-minifier",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free JSON Minifier Online — Compress JSON Instantly",
+    title: "JSON Minifier Online",
     description: "Minify and compress JSON data online. Remove whitespace, comments, and formatting to reduce file size. Fast, free, and 100% browser-based.",
   },
   robots: {

@@ -5,12 +5,12 @@ import UrlEncodeDecode from "@/app/components/UrlEncodeDecode";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "URL Encode & Decode Online",
+  title: "URL Encoder & Decoder Online",
   description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
   keywords: ["URL Encode", "URL Decode", "Percent Encode", "URI Encode Online", "URL Encoder Decoder"],
   alternates: { canonical: "https://www.allformatter.com/tools/url-encode-decode" },
   openGraph: {
-    title: "URL Encode & Decode Online",
+    title: "URL Encoder & Decoder Online",
     description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
     url: "https://www.allformatter.com/tools/url-encode-decode",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "URL Encode & Decode Online",
+    title: "URL Encoder & Decoder Online",
     description: "URL encode or decode strings instantly online. Free, browser-based percent-encoding tool for query strings, API parameters, and URI components.",
   },
   robots: {

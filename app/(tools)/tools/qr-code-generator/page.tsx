@@ -5,12 +5,12 @@ import QrCodeGenerator from "@/app/components/QrCodeGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free QR Code Generator Online | High-Res PNG Download",
+  title: "Free QR Code Generator Online",
   description: "Create custom QR codes for URLs, text, and data online. Customize colors and error correction levels. Download high-resolution PNGs instantly for free.",
   keywords: ["QR Code Generator", "Create QR Code", "QR Code Maker", "Custom QR Code", "Free QR Code"],
   alternates: { canonical: "https://www.allformatter.com/tools/qr-code-generator" },
   openGraph: {
-    title: "Free QR Code Generator Online | High-Res PNG Download",
+    title: "Free QR Code Generator Online",
     description: "Create custom QR codes for URLs, text, and data online. Customize colors and error correction levels. Download high-resolution PNGs instantly for free.",
     url: "https://www.allformatter.com/tools/qr-code-generator",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free QR Code Generator Online | High-Res PNG Download",
+    title: "Free QR Code Generator Online",
     description: "Create custom QR codes for URLs, text, and data online. Customize colors and error correction levels. Download high-resolution PNGs instantly for free.",
   },
   robots: {

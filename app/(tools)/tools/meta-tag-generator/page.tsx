@@ -5,11 +5,11 @@ import MetaTagGenerator from "@/app/components/MetaTagGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Meta Tag Generator Online",
+  title: "Free Meta Tag Generator for SEO Online",
   description: "Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.",
   alternates: { canonical: "https://www.allformatter.com/tools/meta-tag-generator" },
   openGraph: {
-    title: "Free Meta Tag Generator Online",
+    title: "Free Meta Tag Generator for SEO Online",
     description: "Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.",
     url: "https://www.allformatter.com/tools/meta-tag-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Meta Tag Generator Online",
+    title: "Free Meta Tag Generator for SEO Online",
     description: "Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.",
   },
   robots: {
@@ -29,24 +29,24 @@ export const metadata: Metadata = {
 export default function Page() {
   const relatedTools = [
     {
-        "title": "Hash Generator",
-        "desc": "Generate MD5, SHA-1, SHA-256 hashes.",
-        "href": "/tools/hash-generator",
-        "emoji": "#️⃣"
+      "title": "Hash Generator",
+      "desc": "Generate MD5, SHA-1, SHA-256 hashes.",
+      "href": "/tools/hash-generator",
+      "emoji": "#️⃣"
     },
     {
-        "title": "JWT Decoder",
-        "desc": "Decode JSON Web Tokens instantly.",
-        "href": "/tools/jwt-decoder",
-        "emoji": "🔑"
+      "title": "JWT Decoder",
+      "desc": "Decode JSON Web Tokens instantly.",
+      "href": "/tools/jwt-decoder",
+      "emoji": "🔑"
     },
     {
-        "title": "Base64 Encode/Decode",
-        "desc": "Encode text to Base64 or decode it.",
-        "href": "/tools/base64-encode-decode",
-        "emoji": "🔐"
+      "title": "Base64 Encode/Decode",
+      "desc": "Encode text to Base64 or decode it.",
+      "href": "/tools/base64-encode-decode",
+      "emoji": "🔐"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -66,11 +66,11 @@ export default function Page() {
   return (
     <ToolLayout
       title={<>
-              Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>}
+        Meta Tag <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
+      </>}
       description={<>
-              Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.
-            </>}
+        Generate perfect HTML meta tags, OpenGraph tags, and Twitter Cards for your website instantly with our free online tool.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
     >

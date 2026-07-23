@@ -4,12 +4,12 @@ import ToolLayout from "@/app/components/ToolLayout";
 import ColorPicker from "@/app/components/ColorPicker";
 
 export const metadata: Metadata = {
-  title: "Color Picker & HEX/RGB/HSL Converter | AllFormatter",
+  title: "Color Picker & HEX RGB HSL Converter Online",
   description: "Free online color picker and converter. Pick colors from a palette and instantly convert between HEX, RGB, and HSL formats.",
   keywords: ["color picker", "HEX converter", "RGB converter", "HSL converter", "color code generator"],
   alternates: { canonical: "https://www.allformatter.com/tools/color-picker" },
   openGraph: {
-    title: "Color Picker & HEX/RGB/HSL Converter | AllFormatter",
+    title: "Color Picker & HEX RGB HSL Converter Online",
     description: "Free online color picker and converter. Pick colors from a palette and instantly convert between HEX, RGB, and HSL.",
     url: "https://www.allformatter.com/tools/color-picker",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Color Picker & HEX/RGB/HSL Converter | AllFormatter",
+    title: "Color Picker & HEX RGB HSL Converter Online",
     description: "Free online color picker and converter. Pick colors from a palette and instantly convert between HEX, RGB, and HSL.",
   },
   robots: {

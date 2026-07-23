@@ -5,21 +5,21 @@ import RegexTester from "@/app/components/RegexTester";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Online Regex Tester & Debugger — Test Regular Expressions Instantly",
-  description: "Test and debug regular expressions online with real-time matching, capture group highlighting, and common regex pattern library. 100% client-side, no data stored.",
+  title: "Regex Tester & Debugger Online",
+  description: "Test and debug regular expressions online with real-time matching, capture group highlighting, and common regex patterns. 100% client-side, no data stored.",
   keywords: ["Regex Tester", "Regular Expression Tester", "Online Regex", "Regex Generator", "Debug Regex"],
   alternates: { canonical: "https://www.allformatter.com/tools/regex-tester" },
   openGraph: {
-    title: "Free Online Regex Tester & Debugger",
-    description: "Test and debug regular expressions online with real-time matching, capture group highlighting, and common regex pattern library. 100% client-side, no data stored.",
+    title: "Regex Tester & Debugger Online",
+    description: "Test and debug regular expressions online with real-time matching, capture group highlighting, and common regex patterns. 100% client-side, no data stored.",
     url: "https://www.allformatter.com/tools/regex-tester",
     siteName: "AllFormatter",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Regex Tester & Debugger",
-    description: "Test and debug regular expressions online with real-time matching, capture group highlighting, and common regex pattern library. 100% client-side, no data stored.",
+    title: "Regex Tester & Debugger Online",
+    description: "Test and debug regular expressions online with real-time matching, capture group highlighting, and common regex patterns. 100% client-side, no data stored.",
   },
   robots: {
     index: true,

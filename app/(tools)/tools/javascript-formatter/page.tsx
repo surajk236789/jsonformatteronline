@@ -4,12 +4,12 @@ import ToolLayout from "@/app/components/ToolLayout";
 import JsFormatter from "@/app/components/JsFormatter";
 
 export const metadata: Metadata = {
-  title: "JavaScript Formatter & Minifier | Free Online JS Beautifier",
+  title: "JavaScript Formatter & Beautifier Online",
   description: "Format, beautify, and minify your JavaScript code instantly in your browser. 100% secure and private.",
   keywords: ["JavaScript formatter", "JS beautifier", "JS minifier", "format JS online", "minify JavaScript"],
   alternates: { canonical: "https://www.allformatter.com/tools/javascript-formatter" },
   openGraph: {
-    title: "JavaScript Formatter & Minifier | AllFormatter",
+    title: "JavaScript Formatter & Beautifier Online",
     description: "Format, beautify, and minify your JavaScript code instantly in your browser.",
     url: "https://www.allformatter.com/tools/javascript-formatter",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JavaScript Formatter & Minifier | AllFormatter",
+    title: "JavaScript Formatter & Beautifier Online",
     description: "Format, beautify, and minify your JavaScript code instantly in your browser.",
   },
   robots: {

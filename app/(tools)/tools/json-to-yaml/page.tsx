@@ -6,12 +6,12 @@ import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
   title: "JSON to YAML Converter Online",
-  description: "Convert JSON to YAML online for free. Fast, secure, browser-based JSON to YAML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+  description: "Convert JSON to YAML online for free. Browser-based JSON to YAML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
   keywords: ["JSON to YAML", "Convert JSON to YAML", "JSON YAML Converter", "JSON to YAML Online", "Free YAML Converter"],
   alternates: { canonical: "https://www.allformatter.com/tools/json-to-yaml" },
   openGraph: {
     title: "JSON to YAML Converter Online",
-    description: "Convert JSON to YAML online for free. Fast, secure, browser-based JSON to YAML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
+    description: "Convert JSON to YAML online for free. Browser-based JSON to YAML converter — no data leaves your device. Supports nested objects, arrays, and all JSON types.",
     url: "https://www.allformatter.com/tools/json-to-yaml",
     siteName: "AllFormatter",
     type: "website",

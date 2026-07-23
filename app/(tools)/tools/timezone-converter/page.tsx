@@ -5,11 +5,11 @@ import TimezoneConverter from "@/app/components/TimezoneConverter";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Timezone Converter Online",
+  title: "Timezone Converter Online",
   description: "Visually compare and convert time across multiple timezones instantly. Perfect for scheduling international meetings.",
   alternates: { canonical: "https://www.allformatter.com/tools/timezone-converter" },
   openGraph: {
-    title: "Free Timezone Converter Online",
+    title: "Timezone Converter Online",
     description: "Visually compare and convert time across multiple timezones instantly. Perfect for scheduling international meetings.",
     url: "https://www.allformatter.com/tools/timezone-converter",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Timezone Converter Online",
+    title: "Timezone Converter Online",
     description: "Visually compare and convert time across multiple timezones instantly. Perfect for scheduling international meetings.",
   },
   robots: {

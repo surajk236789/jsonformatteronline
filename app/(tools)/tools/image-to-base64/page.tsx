@@ -5,12 +5,12 @@ import ImageToBase64 from "@/app/components/ImageToBase64";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Image to Base64 Converter Online | Encode Images",
+  title: "Free Image to Base64 Converter Online",
   description: "Convert images (PNG, JPG, GIF, SVG, WEBP) to Base64 encoding instantly. Secure, browser-based converter. Perfect for embedding images in HTML or CSS.",
   keywords: ["Image to Base64", "Convert Image to Base64", "Base64 Image Encoder", "Data URI Generator"],
   alternates: { canonical: "https://www.allformatter.com/tools/image-to-base64" },
   openGraph: {
-    title: "Free Image to Base64 Converter Online | Encode Images",
+    title: "Free Image to Base64 Converter Online",
     description: "Convert images (PNG, JPG, GIF, SVG, WEBP) to Base64 encoding instantly. Secure, browser-based converter. Perfect for embedding images in HTML or CSS.",
     url: "https://www.allformatter.com/tools/image-to-base64",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image to Base64 Converter Online | Encode Images",
+    title: "Free Image to Base64 Converter Online",
     description: "Convert images (PNG, JPG, GIF, SVG, WEBP) to Base64 encoding instantly. Secure, browser-based converter. Perfect for embedding images in HTML or CSS.",
   },
   robots: {

@@ -5,12 +5,12 @@ import UuidGenerator from "@/app/components/UuidGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free UUID / GUID Generator Online | Bulk UUID v4",
+  title: "UUID Generator Online — Bulk v4",
   description: "Generate cryptographically secure v4 UUIDs (Universally Unique Identifiers) instantly. Create single or bulk GUIDs. Fast, secure, and 100% browser-based.",
   keywords: ["UUID Generator", "GUID Generator", "Generate UUID", "Bulk UUID", "UUID v4", "Online GUID"],
   alternates: { canonical: "https://www.allformatter.com/tools/uuid-generator" },
   openGraph: {
-    title: "Free UUID / GUID Generator Online | Bulk UUID v4",
+    title: "UUID Generator Online — Bulk v4",
     description: "Generate cryptographically secure v4 UUIDs (Universally Unique Identifiers) instantly. Create single or bulk GUIDs. Fast, secure, and 100% browser-based.",
     url: "https://www.allformatter.com/tools/uuid-generator",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free UUID / GUID Generator Online | Bulk UUID v4",
+    title: "UUID Generator Online — Bulk v4",
     description: "Generate cryptographically secure v4 UUIDs (Universally Unique Identifiers) instantly. Create single or bulk GUIDs. Fast, secure, and 100% browser-based.",
   },
   robots: {

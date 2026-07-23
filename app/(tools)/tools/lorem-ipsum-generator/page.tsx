@@ -5,12 +5,12 @@ import LoremIpsumGenerator from "@/app/components/LoremIpsumGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Lorem Ipsum Generator Online | Dummy Text",
+  title: "Free Lorem Ipsum Generator Online",
   description: "Generate Lorem Ipsum placeholder text for your designs, mockups, and websites. Customize paragraphs, words, and sentences. Copy plain text or HTML.",
   keywords: ["Lorem Ipsum", "Dummy Text", "Placeholder Text", "Lorem Ipsum Generator", "HTML Lorem Ipsum"],
   alternates: { canonical: "https://www.allformatter.com/tools/lorem-ipsum-generator" },
   openGraph: {
-    title: "Free Lorem Ipsum Generator Online | Dummy Text",
+    title: "Free Lorem Ipsum Generator Online",
     description: "Generate Lorem Ipsum placeholder text for your designs, mockups, and websites. Customize paragraphs, words, and sentences. Copy plain text or HTML.",
     url: "https://www.allformatter.com/tools/lorem-ipsum-generator",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Lorem Ipsum Generator Online | Dummy Text",
+    title: "Free Lorem Ipsum Generator Online",
     description: "Generate Lorem Ipsum placeholder text for your designs, mockups, and websites. Customize paragraphs, words, and sentences. Copy plain text or HTML.",
   },
   robots: {

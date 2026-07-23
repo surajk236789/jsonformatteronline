@@ -68,7 +68,7 @@ export default function CssGradientGeneratorPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "CSS Gradient Generator Online",
+        "name": "CSS Gradient Generator",
         "url": "https://www.allformatter.com/tools/css-gradient-generator",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

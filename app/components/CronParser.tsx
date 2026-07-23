@@ -89,6 +89,13 @@ export default function CronParser() {
               Clear
             </Button>
             <Button 
+              variant="secondary"
+              onClick={() => navigator.clipboard.writeText(`${cron} /path/to/script.sh`)} 
+              title="Copy as Crontab Entry"
+            >
+              Copy as Crontab
+            </Button>
+            <Button 
               variant="primary"
               onClick={() => navigator.clipboard.writeText(cron)} 
             >
@@ -98,7 +105,7 @@ export default function CronParser() {
         </div>
         <input
           type="text"
-          className={`w-full p-4 bg-background border ${isValid ? 'border-panel-border focus:ring-indigo-500' : 'border-red-500 focus:ring-red-500'} rounded-xl text-xl font-mono focus:ring-2 outline-none text-center tracking-widest`}
+          className={`w-full p-4 bg-background border ${isValid ? 'border-panel-border focus:ring-indigo-500' : 'border-red-500 focus:ring-red-500'} rounded-xl text-lg sm:text-xl font-mono focus:ring-2 outline-none text-center tracking-wider sm:tracking-widest min-w-0`}
           value={cron}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setCron(e.target.value)}
         />

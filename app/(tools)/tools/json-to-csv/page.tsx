@@ -44,24 +44,24 @@ const faqs = [
 export default function JsonToCsvPage() {
   const relatedTools = [
     {
-        "title": "JSON Beautifier",
-        "desc": "Format, clean, and beautify your JSON data.",
-        "href": "/",
-        "emoji": "🗂️"
+      "title": "JSON Beautifier",
+      "desc": "Format, clean, and beautify your JSON data.",
+      "href": "/",
+      "emoji": "🗂️"
     },
     {
-        "title": "HTML Beautifier",
-        "desc": "Format and beautify your HTML.",
-        "href": "/tools/html-beautifier",
-        "emoji": "🌐"
+      "title": "HTML Beautifier",
+      "desc": "Format and beautify your HTML.",
+      "href": "/tools/html-beautifier",
+      "emoji": "🌐"
     },
     {
-        "title": "JSON Compare",
-        "desc": "Compare two JSON objects side-by-side.",
-        "href": "/tools/json-compare",
-        "emoji": "⚖️"
+      "title": "JSON Compare",
+      "desc": "Compare two JSON objects side-by-side.",
+      "href": "/tools/json-compare",
+      "emoji": "⚖️"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,11 +96,11 @@ export default function JsonToCsvPage() {
   return (
     <ToolLayout
       title={<>
-              JSON to CSV <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-            </>}
+        JSON to CSV <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
+      </>}
       description={<>
-              Convert JSON arrays to CSV rows instantly — download as a file, open in Excel or Google Sheets, all in your browser.
-            </>}
+        Convert JSON arrays to CSV rows instantly — download as a file, open in Excel or Google Sheets, all in your browser.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
       features={features} featureTitle="Why use our JSON to CSV Converter?" featureColor="teal"

@@ -5,11 +5,11 @@ import SitemapGenerator from "@/app/components/SitemapGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free XML Sitemap Generator Online",
+  title: "XML Sitemap Generator Online",
   description: "Generate valid XML sitemaps instantly from a list of URLs. Configure lastmod, changefreq, and priority tags easily.",
   alternates: { canonical: "https://www.allformatter.com/tools/sitemap-generator" },
   openGraph: {
-    title: "Free XML Sitemap Generator Online",
+    title: "XML Sitemap Generator Online",
     description: "Generate valid XML sitemaps instantly from a list of URLs. Configure lastmod, changefreq, and priority tags easily.",
     url: "https://www.allformatter.com/tools/sitemap-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free XML Sitemap Generator Online",
+    title: "XML Sitemap Generator Online",
     description: "Generate valid XML sitemaps instantly from a list of URLs. Configure lastmod, changefreq, and priority tags easily.",
   },
   robots: {

@@ -5,12 +5,12 @@ import XmlFormatter from "@/app/components/XmlFormatter";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free XML Formatter & Validator Online — Beautify XML Instantly",
+  title: "XML Formatter & Beautifier Online",
   description: "Format, beautify, and validate XML documents online. Auto-indent, syntax check, and error highlighting. 100% client-side processing.",
   keywords: ["XML Formatter", "Beautify XML Online", "XML Validator", "Format XML", "Prettify XML"],
   alternates: { canonical: "https://www.allformatter.com/tools/xml-formatter" },
   openGraph: {
-    title: "Free XML Formatter & Validator Online — Beautify XML Instantly",
+    title: "XML Formatter & Beautifier Online",
     description: "Format, beautify, and validate XML documents online. Auto-indent, syntax check, and error highlighting. 100% client-side processing.",
     url: "https://www.allformatter.com/tools/xml-formatter",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free XML Formatter & Validator Online — Beautify XML Instantly",
+    title: "XML Formatter & Beautifier Online",
     description: "Format, beautify, and validate XML documents online. Auto-indent, syntax check, and error highlighting. 100% client-side processing.",
   },
   robots: {

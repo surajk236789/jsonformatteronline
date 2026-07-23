@@ -5,11 +5,11 @@ import RobotsTxtGenerator from "@/app/components/RobotsTxtGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Robots.txt Generator Online",
+  title: "Robots.txt Generator Online",
   description: "Easily create a valid robots.txt file for your website to control search engine crawlers like Googlebot and Bingbot.",
   alternates: { canonical: "https://www.allformatter.com/tools/robots-txt-generator" },
   openGraph: {
-    title: "Free Robots.txt Generator Online",
+    title: "Robots.txt Generator Online",
     description: "Easily create a valid robots.txt file for your website to control search engine crawlers like Googlebot and Bingbot.",
     url: "https://www.allformatter.com/tools/robots-txt-generator",
     siteName: "AllFormatter",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Robots.txt Generator Online",
+    title: "Robots.txt Generator Online",
     description: "Easily create a valid robots.txt file for your website to control search engine crawlers like Googlebot and Bingbot.",
   },
   robots: {

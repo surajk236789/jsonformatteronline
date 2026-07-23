@@ -5,12 +5,12 @@ import HttpStatusCodes from "@/app/components/HttpStatusCodes";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Online HTTP Status Codes References",
+  title: "HTTP Status Codes Reference Online",
   description: "Complete HTTP status code reference with descriptions and use cases. Look up any 1xx, 2xx, 3xx, 4xx, or 5xx status code instantly.",
   keywords: ["HTTP Status Codes", "HTTP Response Codes", "404 Meaning", "500 Error Code", "HTTP Reference"],
   alternates: { canonical: "https://www.allformatter.com/tools/http-status-codes" },
   openGraph: {
-    title: "Online HTTP Status Codes References",
+    title: "HTTP Status Codes Reference Online",
     description: "Complete HTTP status code reference with descriptions and use cases. Look up any 1xx, 2xx, 3xx, 4xx, or 5xx status code instantly.",
     url: "https://www.allformatter.com/tools/http-status-codes",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online HTTP Status Codes References",
+    title: "HTTP Status Codes Reference Online",
     description: "Complete HTTP status code reference with descriptions and use cases. Look up any 1xx, 2xx, 3xx, 4xx, or 5xx status code instantly.",
   },
   robots: {

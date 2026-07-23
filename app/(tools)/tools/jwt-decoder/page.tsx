@@ -5,7 +5,7 @@ import JwtDecoder from "@/app/components/JwtDecoder";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "JWT Decoder Online",
+  title: "JWT Decoder Online — Decode JWT Token",
   description: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. View header, payload, and claims — no upload, no registration, 100% private.",
   keywords: [
     "JWT decoder",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://www.allformatter.com/tools/jwt-decoder" },
   openGraph: {
-    title: "JWT Decoder Online",
+    title: "JWT Decoder Online — Decode JWT Token",
     description: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. View header, payload, and claims — no upload, no registration, 100% private.",
     url: "https://www.allformatter.com/tools/jwt-decoder",
     siteName: "AllFormatter",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JWT Decoder Online",
+    title: "JWT Decoder Online — Decode JWT Token",
     description: "Decode and inspect JSON Web Tokens (JWT) instantly in your browser. View header, payload, and claims — no upload, no registration, 100% private.",
   },
   robots: {
@@ -48,24 +48,24 @@ const features = [
 export default function JwtDecoderPage() {
   const relatedTools = [
     {
-        "title": "JSON Beautifier",
-        "desc": "Format, clean, and beautify your JSON data.",
-        "href": "/",
-        "emoji": "🗂️"
+      "title": "JSON Beautifier",
+      "desc": "Format, clean, and beautify your JSON data.",
+      "href": "/",
+      "emoji": "🗂️"
     },
     {
-        "title": "HTML Beautifier",
-        "desc": "Format and beautify your HTML.",
-        "href": "/tools/html-beautifier",
-        "emoji": "🌐"
+      "title": "HTML Beautifier",
+      "desc": "Format and beautify your HTML.",
+      "href": "/tools/html-beautifier",
+      "emoji": "🌐"
     },
     {
-        "title": "JSON Schema Validator",
-        "desc": "Validate JSON against a Schema.",
-        "href": "/tools/json-schema-validator",
-        "emoji": "✅"
+      "title": "JSON Schema Validator",
+      "desc": "Validate JSON against a Schema.",
+      "href": "/tools/json-schema-validator",
+      "emoji": "✅"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -89,11 +89,11 @@ export default function JwtDecoderPage() {
   return (
     <ToolLayout
       title={<>
-              JWT <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
-            </>}
+        JWT <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Decoder</span>
+      </>}
       description={<>
-              Decode JSON Web Tokens instantly and securely — entirely in your browser.
-            </>}
+        Decode JSON Web Tokens instantly and securely — entirely in your browser.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
       features={features} featureTitle="Why use our JWT Decoder?" featureColor="purple"

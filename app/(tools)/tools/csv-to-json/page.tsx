@@ -44,24 +44,24 @@ const faqs = [
 export default function CsvToJsonPage() {
   const relatedTools = [
     {
-        "title": "JSON Schema Validator",
-        "desc": "Validate JSON against a Schema.",
-        "href": "/tools/json-schema-validator",
-        "emoji": "✅"
+      "title": "JSON Schema Validator",
+      "desc": "Validate JSON against a Schema.",
+      "href": "/tools/json-schema-validator",
+      "emoji": "✅"
     },
     {
-        "title": "HTML Beautifier",
-        "desc": "Format and beautify your HTML.",
-        "href": "/tools/html-beautifier",
-        "emoji": "🌐"
+      "title": "HTML Beautifier",
+      "desc": "Format and beautify your HTML.",
+      "href": "/tools/html-beautifier",
+      "emoji": "🌐"
     },
     {
-        "title": "JSON to XML",
-        "desc": "Convert JSON to well-formed XML.",
-        "href": "/tools/json-to-xml",
-        "emoji": "🔄"
+      "title": "JSON to XML",
+      "desc": "Convert JSON to well-formed XML.",
+      "href": "/tools/json-to-xml",
+      "emoji": "🔄"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,11 +96,11 @@ export default function CsvToJsonPage() {
   return (
     <ToolLayout
       title={<>
-              CSV to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
-            </>}
+        CSV to JSON <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Converter</span>
+      </>}
       description={<>
-              Import CSV data as structured JSON instantly — auto-detects headers, fully private, no uploads.
-            </>}
+        Import CSV data as structured JSON instantly — auto-detects headers, fully private, no uploads.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
       features={features} featureTitle="Why use our CSV to JSON Converter?" featureColor="teal"

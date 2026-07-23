@@ -70,14 +70,31 @@ const faqs = [
 export default function JsonBeautifierPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "AllFormatter",
-    "url": "https://www.allformatter.com/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.allformatter.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "AllFormatter",
+        "url": "https://www.allformatter.com/",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.allformatter.com/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "name": "JSON Formatter & Beautifier",
+        "url": "https://www.allformatter.com/",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Any",
+        "description": "Free JSON Formatter and Beautifier on AllFormatter. Instantly format, validate, minify, and pretty-print JSON data in your browser.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
   };
 
   return (
@@ -147,7 +164,7 @@ export default function JsonBeautifierPage() {
       <section className="mt-16 max-w-3xl mx-auto rounded-2xl border border-panel-border bg-panel p-8" aria-label="About AllFormatter JSON Tools">
         <h2 className="text-lg font-bold text-primary mb-3">About AllFormatter&apos;s JSON Formatter</h2>
         <p className="text-sm text-secondary leading-relaxed">
-          <strong className="text-primary">AllFormatter</strong> is a free online toolkit for developers at <strong className="text-primary">allformatter.com</strong>. Our JSON Formatter and Beautifier is the fastest way to pretty-print, validate, and minify JSON data directly in your browser. Whether you need a <strong className="text-primary">JSON parser</strong>, a <strong className="text-primary">JSON validator</strong>, or a quick <strong className="text-primary">JSON minifier</strong>, AllFormatter handles it all — with no server uploads and no data retention. Beyond JSON, AllFormatter provides tools for YAML conversion, JWT decoding, HTML beautification, CSS minification, Base64 encoding, hash generation, and more.
+          <strong className="text-primary">AllFormatter</strong> is a free online toolkit for developers at <strong className="text-primary">allformatter.com</strong>. Our JSON Formatter and Beautifier is the fastest way to pretty-print, validate, and minify JSON data directly in your browser. Whether you need a <strong className="text-primary">JSON parser</strong>, a <a href="/tools/json-schema-validator" className="text-indigo-500 hover:underline font-semibold">JSON validator</a>, or a quick <a href="/tools/json-minifier" className="text-indigo-500 hover:underline font-semibold">JSON minifier</a>, AllFormatter handles it all — with no server uploads and no data retention. Beyond JSON, AllFormatter provides tools for <a href="/tools/yaml-to-json" className="text-indigo-500 hover:underline font-semibold">YAML conversion</a>, JWT decoding, HTML beautification, CSS minification, Base64 encoding, hash generation, and more.
         </p>
       </section>
     </>

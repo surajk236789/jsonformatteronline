@@ -5,12 +5,12 @@ import HashGenerator from "@/app/components/HashGenerator";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Hash Generator Online",
+  title: "Hash Generator — MD5, SHA-256 Online",
   description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
   keywords: ["Hash Generator", "MD5 Generator", "SHA256 Online", "SHA-1 Hash", "Cryptographic Hash Tool"],
   alternates: { canonical: "https://www.allformatter.com/tools/hash-generator" },
   openGraph: {
-    title: "Hash Generator Online",
+    title: "Hash Generator — MD5, SHA-256 Online",
     description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
     url: "https://www.allformatter.com/tools/hash-generator",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hash Generator Online",
+    title: "Hash Generator — MD5, SHA-256 Online",
     description: "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from any text instantly. Free, browser-based cryptographic hash generator — no data uploaded.",
   },
   robots: {
@@ -44,24 +44,24 @@ const faqs = [
 export default function HashGeneratorPage() {
   const relatedTools = [
     {
-        "title": "JSON Beautifier",
-        "desc": "Format, clean, and beautify your JSON data.",
-        "href": "/",
-        "emoji": "🗂️"
+      "title": "JSON Beautifier",
+      "desc": "Format, clean, and beautify your JSON data.",
+      "href": "/",
+      "emoji": "🗂️"
     },
     {
-        "title": "Password Generator",
-        "desc": "Generate strong, secure passwords.",
-        "href": "/tools/password-generator",
-        "emoji": "🛡️"
+      "title": "Password Generator",
+      "desc": "Generate strong, secure passwords.",
+      "href": "/tools/password-generator",
+      "emoji": "🛡️"
     },
     {
-        "title": "JWT Decoder",
-        "desc": "Decode JSON Web Tokens instantly.",
-        "href": "/tools/jwt-decoder",
-        "emoji": "🔑"
+      "title": "JWT Decoder",
+      "desc": "Decode JSON Web Tokens instantly.",
+      "href": "/tools/jwt-decoder",
+      "emoji": "🔑"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,11 +96,11 @@ export default function HashGeneratorPage() {
   return (
     <ToolLayout
       title={<>
-              Hash <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
-            </>}
+        Hash <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Generator</span>
+      </>}
       description={<>
-              Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text — instantly and privately in your browser.
-            </>}
+        Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text — instantly and privately in your browser.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
       features={features} featureTitle="Why use our Hash Generator?" featureColor="slate"

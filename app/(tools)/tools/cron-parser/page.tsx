@@ -5,12 +5,12 @@ import CronParser from "@/app/components/CronParser";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Online Cron Parser & Generator",
+  title: "Cron Expression Parser & Generator Online",
   description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times. Free, browser-based cron parser.",
   keywords: ["Cron Parser", "Cron Expression", "Cron Generator", "Cron Schedule", "Parse Cron Online", "Cron Job Tester", "crontab"],
   alternates: { canonical: "https://www.allformatter.com/tools/cron-parser" },
   openGraph: {
-    title: "Online Cron Parser & Generator",
+    title: "Cron Expression Parser & Generator Online",
     description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times.",
     url: "https://www.allformatter.com/tools/cron-parser",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online Cron Parser & Generator",
+    title: "Cron Expression Parser & Generator Online",
     description: "Parse and explain cron expressions in plain English. Generate cron schedules visually and see the next run times.",
   },
   robots: {
@@ -43,6 +43,8 @@ const faqs = [
   { q: "What does * mean in a cron expression?", a: "An asterisk (*) means 'every' for that field. '* * * * *' means 'every minute of every hour of every day'." },
   { q: "How do I run a job every 15 minutes?", a: "Use '*/15 * * * *'. The */ syntax means 'every N units'. Similarly, '*/5 * * * *' runs every 5 minutes." },
   { q: "What's the difference between 5-field and 6-field cron?", a: "Standard Unix cron uses 5 fields (minute through day-of-week). Some tools like AWS and Kubernetes add a 6th field for seconds at the start, or a year field at the end." },
+  { q: "Why is my cron job not running?", a: "Common reasons include: the cron daemon is not running, incorrect file permissions on your script (needs to be executable), environment variables not being set (cron runs in a limited environment), or specifying a user that doesn't exist. Always use absolute paths in your cron scripts." },
+  { q: "How to check cron logs in Ubuntu?", a: "You can check the syslog for cron executions using the command: `grep CRON /var/log/syslog`. If you want to enable a dedicated cron log, uncomment the `#cron.* /var/log/cron.log` line in `/etc/rsyslog.d/50-default.conf` and restart rsyslog." },
 ];
 
 export default function CronParserPage() {
@@ -72,7 +74,7 @@ export default function CronParserPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "Cron Expression Parser & Generator",
+        "name": "Cron Expression Parser & Generator Online",
         "url": "https://www.allformatter.com/tools/cron-parser",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

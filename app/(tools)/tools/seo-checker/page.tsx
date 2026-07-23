@@ -5,12 +5,12 @@ import ToolLayout from "@/app/components/ToolLayout";
 import SeoChecker from "@/app/components/SeoChecker";
 
 export const metadata: Metadata = {
-  title: "Free SEO Checker & Website Analyzer",
+  title: "Free SEO Checker & Website Analyzer Online",
   description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
   keywords: ["SEO Checker", "SEO Analyzer", "Website SEO Test", "On-page SEO Checker", "Check Meta Tags"],
   alternates: { canonical: "https://www.allformatter.com/tools/seo-checker" },
   openGraph: {
-    title: "Free SEO Checker & Website Analyzer",
+    title: "Free SEO Checker & Website Analyzer Online",
     description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
     url: "https://www.allformatter.com/tools/seo-checker",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free SEO Checker & Website Analyzer",
+    title: "Free SEO Checker & Website Analyzer Online",
     description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
   },
   robots: {
@@ -44,24 +44,24 @@ const faqs = [
 export default function SeoCheckerPage() {
   const relatedTools = [
     {
-        "title": "JSON Compare",
-        "desc": "Compare two JSON objects side-by-side.",
-        "href": "/tools/json-compare",
-        "emoji": "⚖️"
+      "title": "JSON Compare",
+      "desc": "Compare two JSON objects side-by-side.",
+      "href": "/tools/json-compare",
+      "emoji": "⚖️"
     },
     {
-        "title": "YAML to JSON",
-        "desc": "Convert YAML to JSON format.",
-        "href": "/tools/yaml-to-json",
-        "emoji": "📝"
+      "title": "YAML to JSON",
+      "desc": "Convert YAML to JSON format.",
+      "href": "/tools/yaml-to-json",
+      "emoji": "📝"
     },
     {
-        "title": "JSON Beautifier",
-        "desc": "Format, clean, and beautify your JSON data.",
-        "href": "/",
-        "emoji": "🗂️"
+      "title": "JSON Beautifier",
+      "desc": "Format, clean, and beautify your JSON data.",
+      "href": "/",
+      "emoji": "🗂️"
     }
-];
+  ];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -96,11 +96,11 @@ export default function SeoCheckerPage() {
   return (
     <ToolLayout
       title={<>
-              Free SEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Checker</span>
-            </>}
+        Free SEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Checker</span>
+      </>}
       description={<>
-              Enter a URL below to instantly analyze on-page SEO factors, meta tags, and content structure.
-            </>}
+        Enter a URL below to instantly analyze on-page SEO factors, meta tags, and content structure.
+      </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}
       features={features} featureTitle="Why use our SEO Analyzer?" featureColor="indigo"

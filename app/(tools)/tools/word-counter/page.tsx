@@ -5,12 +5,12 @@ import WordCounter from "@/app/components/WordCounter";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Free Word & Character Counter Online | Instant Stats",
+  title: "Word & Character Counter Online",
   description: "Count words, characters, sentences, and paragraphs in real-time. Free online word counter with reading time estimation. Perfect for essays and SEO.",
   keywords: ["Word Counter", "Character Counter", "Count Words Online", "Letter Counter", "Paragraph Counter"],
   alternates: { canonical: "https://www.allformatter.com/tools/word-counter" },
   openGraph: {
-    title: "Free Word & Character Counter Online | Instant Stats",
+    title: "Word & Character Counter Online",
     description: "Count words, characters, sentences, and paragraphs in real-time. Free online word counter with reading time estimation. Perfect for essays and SEO.",
     url: "https://www.allformatter.com/tools/word-counter",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Word & Character Counter Online | Instant Stats",
+    title: "Word & Character Counter Online",
     description: "Count words, characters, sentences, and paragraphs in real-time. Free online word counter with reading time estimation. Perfect for essays and SEO.",
   },
   robots: {

@@ -5,12 +5,12 @@ import TextDiff from "@/app/components/TextDiff";
 import ToolLayout from "@/app/components/ToolLayout";
 
 export const metadata: Metadata = {
-  title: "Text Diff & Compare Tool Online | Find String Differences",
+  title: "Text Diff & Compare Tool Online",
   description: "Compare two text blocks side-by-side and find differences instantly. Supports line diff and word diff. 100% secure client-side comparison tool.",
   keywords: ["Text Diff", "String Compare", "Compare Text Online", "Diff Checker", "Diff Tool"],
   alternates: { canonical: "https://www.allformatter.com/tools/text-diff" },
   openGraph: {
-    title: "Text Diff & Compare Tool Online | Find String Differences",
+    title: "Text Diff & Compare Tool Online",
     description: "Compare two text blocks side-by-side and find differences instantly. Supports line diff and word diff. 100% secure client-side comparison tool.",
     url: "https://www.allformatter.com/tools/text-diff",
     siteName: "AllFormatter",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Text Diff & Compare Tool Online | Find String Differences",
+    title: "Text Diff & Compare Tool Online",
     description: "Compare two text blocks side-by-side and find differences instantly. Supports line diff and word diff. 100% secure client-side comparison tool.",
   },
   robots: {

@@ -68,7 +68,7 @@ export default function HtmlToJsxPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "HTML to JSX Converter Online",
+        "name": "HTML to JSX Converter",
         "url": "https://www.allformatter.com/tools/html-to-jsx",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",

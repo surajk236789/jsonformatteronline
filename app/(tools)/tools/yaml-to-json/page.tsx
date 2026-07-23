@@ -80,7 +80,7 @@ export default function YamlToJsonPage() {
     "@graph": [
       {
         "@type": "WebApplication",
-        "name": "YAML to JSON Converter Online",
+        "name": "YAML to JSON Converter",
         "url": "https://www.allformatter.com/tools/yaml-to-json",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Any",
