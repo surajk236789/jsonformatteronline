@@ -5,21 +5,26 @@ import ToolLayout from "@/app/components/ToolLayout";
 import SeoChecker from "@/app/components/SeoChecker";
 
 export const metadata: Metadata = {
-  title: "Free SEO Checker & Website Analyzer Online",
-  description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
-  keywords: ["SEO Checker", "SEO Analyzer", "Website SEO Test", "On-page SEO Checker", "Check Meta Tags"],
+  title: "Free SEO Checker & SEO Score Analyzer",
+  description: "Free website SEO checker and analyzer. Check your SEO score instantly. A perfect small seo tools alternative. (DA PA Checker & Plagiarism Checker coming soon!)",
+  keywords: [
+    "seo checker free", "website seo checker", "da checker", "da pa checker",
+    "plagiarism checker", "seo score checker", "plagiarism checker small seo tools",
+    "google seo checker", "small seo tools plagiarism checker", "small seo tools",
+    "SEO Analyzer", "Website SEO Test"
+  ],
   alternates: { canonical: "https://www.allformatter.com/tools/seo-checker" },
   openGraph: {
-    title: "Free SEO Checker & Website Analyzer Online",
-    description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
+    title: "Free SEO Checker & SEO Score Analyzer",
+    description: "Free website SEO checker and analyzer. Check your SEO score instantly",
     url: "https://www.allformatter.com/tools/seo-checker",
     siteName: "AllFormatter",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free SEO Checker & Website Analyzer Online",
-    description: "Analyze any website's on-page SEO. Check title tags, meta descriptions, headings, image alts, and OpenGraph social tags instantly in your browser.",
+    title: "Website SEO Checker Free & SEO Score Analyzer",
+    description: "Free website SEO checker and analyzer. Check your SEO score instantly. A perfect small seo tools alternative. (DA PA Checker & Plagiarism Checker coming soon!)",
   },
   robots: {
     index: true,
@@ -44,12 +49,12 @@ const faqs = [
 
 const contentBlocks = [
   {
-    title: "What is On-Page SEO?",
-    body: "On-page SEO involves optimizing individual web pages to rank higher and earn more relevant traffic in search engines. This includes optimizing title tags, meta descriptions, heading structures, and ensuring the presence of social graph tags."
+    title: "What is the Website SEO Checker Free Tool?",
+    body: "Our website SEO checker is a fast, comprehensive alternative to small seo tools. It acts as an advanced google seo checker that analyzes your on-page SEO elements to generate a clear SEO score. This includes optimizing title tags, meta descriptions, heading structures, and ensuring the presence of social graph tags."
   },
   {
-    title: "How to Analyze a Website",
-    body: "Enter the full URL of any public website into the search bar. The tool will fetch the page and analyze its HTML structure, providing a comprehensive report on all critical on-page SEO metrics and missing tags."
+    title: "How to Analyze a Website & Upcoming Features",
+    body: "Enter the full URL of any public website into the search bar. The tool will fetch the page and analyze its HTML structure, providing a comprehensive SEO score checker report. We are also actively developing advanced integrations including a DA PA checker (Domain Authority) and a plagiarism checker to compete with small seo tools plagiarism checker."
   }
 ];
 
@@ -108,10 +113,10 @@ export default function SeoCheckerPage() {
   return (
     <ToolLayout contentBlocks={contentBlocks}
       title={<>
-        Free SEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Checker</span>
+        Website SEO <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">Checker</span>
       </>}
       description={<>
-        Enter a URL below to instantly analyze on-page SEO factors, meta tags, and content structure.
+        Enter a URL below for our free Google SEO checker to analyze your on-page SEO factors and generate an SEO Score. DA Checker & Plagiarism Checker coming soon.
       </>}
       jsonLd={jsonLd}
       relatedTools={relatedTools}

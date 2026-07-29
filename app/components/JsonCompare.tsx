@@ -144,7 +144,7 @@ export default function JsonCompare() {
         <div>
           <h2 className="text-2xl font-bold text-primary flex items-center gap-2">
             <span className="w-2.5 h-6 bg-indigo-500 rounded-full inline-block"></span>
-            JSON Compare Tool
+            JSON Compare
           </h2>
           <p className="text-xs text-secondary mt-1">
             Paste your JSON below. Edit directly in the panes to see live, VSCode-style comparison.

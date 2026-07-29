@@ -65,7 +65,7 @@ export default function SeoChecker() {
         const errData = await mainRes.json().catch(() => ({}));
         throw new Error(errData.error || `Failed to fetch URL (${mainRes.status})`);
       }
-      
+
       const htmlText = await mainRes.text();
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlText, "text/html");
@@ -134,9 +134,9 @@ export default function SeoChecker() {
       const missingAlt = imgEls.filter(img => !img.hasAttribute("alt") || img.getAttribute("alt")?.trim() === "").length;
       let imgStatus: "good" | "warning" | "error" = "good";
       let imgMsg = imgEls.length === 0 ? "No images found." : "All images have alt attributes.";
-      
+
       if (imgEls.length === 0) {
-        totalScore += 10; 
+        totalScore += 10;
       } else if (missingAlt === 0) {
         totalScore += 10;
       } else {
@@ -314,22 +314,20 @@ export default function SeoChecker() {
       {/* Results */}
       {result && result.score && (
         <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 flex flex-col gap-8">
-          
+
           {/* Overall Score */}
           <div className="bg-panel border border-panel-border rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 justify-center shadow-lg shadow-slate-100/50 dark:shadow-none">
-            <div className={`relative flex items-center justify-center w-32 h-32 rounded-full border-[8px] ${
-              result.score.color === "green" ? "border-emerald-500 text-emerald-500 bg-emerald-50 dark:bg-emerald-900/10" : 
-              result.score.color === "yellow" ? "border-amber-400 text-amber-500 bg-amber-50 dark:bg-amber-900/10" : 
-              "border-rose-500 text-rose-500 bg-rose-50 dark:bg-rose-900/10"
-            }`}>
+            <div className={`relative flex items-center justify-center w-32 h-32 rounded-full border-[8px] ${result.score.color === "green" ? "border-emerald-500 text-emerald-500 bg-emerald-50 dark:bg-emerald-900/10" :
+              result.score.color === "yellow" ? "border-amber-400 text-amber-500 bg-amber-50 dark:bg-amber-900/10" :
+                "border-rose-500 text-rose-500 bg-rose-50 dark:bg-rose-900/10"
+              }`}>
               <span className="text-4xl font-black">{result.score.value}</span>
             </div>
             <div className="text-center md:text-left">
               <h2 className="text-2xl font-black text-primary mb-2">Overall SEO Score</h2>
-              <p className={`text-lg font-bold ${
-                result.score.color === "green" ? "text-emerald-500" : 
+              <p className={`text-lg font-bold ${result.score.color === "green" ? "text-emerald-500" :
                 result.score.color === "yellow" ? "text-amber-500" : "text-rose-500"
-              }`}>
+                }`}>
                 {result.score.msg}
               </p>
               <p className="text-sm text-secondary mt-2 max-w-sm">
@@ -340,7 +338,7 @@ export default function SeoChecker() {
 
           {/* Grid Metrics */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
+
             {/* Title */}
             <div className="bg-panel border border-panel-border rounded-2xl p-6">
               <div className="flex items-start justify-between mb-4">
@@ -410,7 +408,7 @@ export default function SeoChecker() {
                 <StatusIcon status={result.h1.status} />
               </div>
               <p className="text-sm text-secondary mb-4">{result.h1.msg}</p>
-              
+
               {result.h1.texts.length > 0 && (
                 <div className="mb-4">
                   <p className="text-xs font-bold text-secondary uppercase tracking-wider mb-2">H1 Tags Used:</p>
@@ -442,7 +440,7 @@ export default function SeoChecker() {
                 </h3>
                 <StatusIcon status={result.images.status} />
               </div>
-              
+
               <div className="flex items-center justify-between p-4 bg-background border border-slate-100 dark:border-slate-800 rounded-xl mb-3">
                 <div className="text-center">
                   <div className="text-2xl font-black text-primary">{result.images.total}</div>
@@ -467,7 +465,7 @@ export default function SeoChecker() {
                 </h3>
                 <StatusIcon status={result.links.status} />
               </div>
-              
+
               <div className="flex items-center justify-between p-4 bg-background border border-slate-100 dark:border-slate-800 rounded-xl mb-3">
                 <div className="text-center">
                   <div className="text-xl font-black text-primary">{result.links.internal}</div>
@@ -498,7 +496,7 @@ export default function SeoChecker() {
                 <StatusIcon status={result.openGraph.status} />
               </div>
               <p className="text-sm text-secondary mb-4">{result.openGraph.msg}</p>
-              
+
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-2 rounded bg-background border border-slate-100 dark:border-slate-800">
                   <span className="text-sm text-primary font-medium">og:title</span>
@@ -523,7 +521,7 @@ export default function SeoChecker() {
                 </h3>
                 <StatusIcon status={result.wordCount.status} />
               </div>
-              
+
               <div className="flex items-center justify-center p-6 bg-background border border-slate-100 dark:border-slate-800 rounded-xl mb-3">
                 <div className="text-center">
                   <div className="text-4xl font-black text-indigo-600 dark:text-indigo-400 mb-1">{result.wordCount.count}</div>
@@ -539,7 +537,7 @@ export default function SeoChecker() {
                 <h3 className="text-lg font-bold text-primary flex items-center gap-2 mb-4">
                   <span className="text-2xl">🤖</span> Crawlability & Indexing
                 </h3>
-                
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col p-4 bg-background border border-slate-100 dark:border-slate-800 rounded-xl">
                     <div className="flex items-center justify-between mb-2">
