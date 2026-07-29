@@ -7,7 +7,10 @@ import ToolLayout from "@/app/components/ToolLayout";
 export const metadata: Metadata = {
   title: "Free QR Code Generator Online",
   description: "Create custom QR codes for URLs, text, and data online. Customize colors and error correction levels. Download high-resolution PNGs instantly for free.",
-  keywords: ["QR Code Generator", "Create QR Code", "QR Code Maker", "Custom QR Code", "Free QR Code"],
+  keywords: [
+    "QR Code Generator", "Create QR Code", "QR Code Maker", "Custom QR Code", "Free QR Code", "multiple qr code generator",
+    "static qr code generator free"
+  ],
   alternates: { canonical: "https://www.allformatter.com/tools/qr-code-generator" },
   openGraph: {
     title: "Free QR Code Generator Online",
@@ -44,11 +47,11 @@ const faqs = [
 const contentBlocks = [
   {
     title: "What is a QR Code?",
-    body: "A QR (Quick Response) code is a two-dimensional barcode that can store various types of information, such as URLs, plain text, or contact information. It is designed to be easily read by digital imaging devices like smartphones."
+    body: "A QR (Quick Response) code is a two-dimensional barcode that can store various types of information, such as URLs, plain text, or contact information. It is designed to be easily read by digital imaging devices like smartphones or an online qr code scanner."
   },
   {
-    title: "How to Generate a QR Code",
-    body: "Enter your URL or text into the input field. Customize the visual appearance by selecting a foreground color, background color, and error correction level. The QR code will update instantly and can be downloaded as a high-resolution PNG."
+    title: "Static QR Code Generator Free",
+    body: "Our tool acts as a static qr code generator free of charge. Whether you need a phonepe qr code generator for payments, a multiple qr code generator for bulk links, or a reliable alternative to a qr code generator by tec-it or qr code generator anc agri, our customizable tool generates permanent, non-expiring codes instantly."
   }
 ];
 

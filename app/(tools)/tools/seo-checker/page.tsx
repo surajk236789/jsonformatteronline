@@ -6,11 +6,10 @@ import SeoChecker from "@/app/components/SeoChecker";
 
 export const metadata: Metadata = {
   title: "Free SEO Checker & SEO Score Analyzer",
-  description: "Free website SEO checker and analyzer. Check your SEO score instantly. A perfect small seo tools alternative. (DA PA Checker & Plagiarism Checker coming soon!)",
+  description: "Free website SEO checker and analyzer. Check your SEO score instantly. A perfect small seo tools alternative.",
   keywords: [
-    "seo checker free", "website seo checker", "da checker", "da pa checker",
-    "plagiarism checker", "seo score checker", "plagiarism checker small seo tools",
-    "google seo checker", "small seo tools plagiarism checker", "small seo tools",
+    "seo checker free", "website seo checker",
+    "seo score checker", "google seo checker", "small seo tools",
     "SEO Analyzer", "Website SEO Test"
   ],
   alternates: { canonical: "https://www.allformatter.com/tools/seo-checker" },
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Website SEO Checker Free & SEO Score Analyzer",
-    description: "Free website SEO checker and analyzer. Check your SEO score instantly. A perfect small seo tools alternative. (DA PA Checker & Plagiarism Checker coming soon!)",
+    description: "Free website SEO checker and analyzer. Check your SEO score instantly. A perfect small seo tools alternative.",
   },
   robots: {
     index: true,
@@ -53,8 +52,8 @@ const contentBlocks = [
     body: "Our website SEO checker is a fast, comprehensive alternative to small seo tools. It acts as an advanced google seo checker that analyzes your on-page SEO elements to generate a clear SEO score. This includes optimizing title tags, meta descriptions, heading structures, and ensuring the presence of social graph tags."
   },
   {
-    title: "How to Analyze a Website & Upcoming Features",
-    body: "Enter the full URL of any public website into the search bar. The tool will fetch the page and analyze its HTML structure, providing a comprehensive SEO score checker report. We are also actively developing advanced integrations including a DA PA checker (Domain Authority) and a plagiarism checker to compete with small seo tools plagiarism checker."
+    title: "How to Analyze a Website",
+    body: "Enter the full URL of any public website into the search bar. The tool will fetch the page and analyze its HTML structure, providing a comprehensive SEO score checker report."
   }
 ];
 
