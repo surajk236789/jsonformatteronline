@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     default: "AllFormatter — Free Online JSON Formatter, YAML, JWT, HTML & CSS Tools",
     template: "%s | AllFormatter",
   },
-  description: "AllFormatter offers free online developer tools: JSON Formatter & Beautifier, YAML to JSON converter, JWT Decoder, HTML Beautifier, CSS Minifier, Base64 encoder, Hash Generator, and more. Fast, secure, and 100% browser-based.",
+  description: "AllFormatter offers free online utilities: JSON Formatter & Beautifier, YAML to JSON converter, JWT Decoder, HTML Beautifier, CSS Minifier, Base64 encoder, Hash Generator, and more. Fast, secure, and 100% browser-based.",
   keywords: [
     // Brand
     "AllFormatter",
     "allformatter.com",
-    // JSON
+    // JSON & YAML
     "JSON Formatter",
     "JSON Beautifier",
     "JSON Parser Online",
@@ -41,30 +41,49 @@ export const metadata: Metadata = {
     "JSON to CSV",
     "CSV to JSON",
     "JSON Schema Validator",
-    // YAML
     "YAML to JSON",
     "YAML converter online",
-    // JWT
+    // JWT & Security
     "JWT Decoder",
     "decode JWT online",
     "JSON Web Token inspector",
-    // HTML / CSS
+    // Web / Code Editors
     "HTML Beautifier",
     "HTML Formatter",
     "CSS Minifier",
     "CSS Gradient Generator",
     "HTML to JSX",
+    "JavaScript Formatter",
+    "SQL Formatter",
+    "Markdown to HTML",
     // Encode / Decode
     "Base64 to PDF",
     "Base64 Encode Decode",
     "URL Encode Decode",
     "Hash Generator",
     "MD5 SHA256 online",
-    // Utilities
+    "HTML Entity Encoder",
+    // Utilities & Generators
+    "QR Code Generator",
+    "Lorem Ipsum Generator",
+    "Image to Base64",
+    "Word Counter",
+    "Color Picker",
     "Cron Parser",
     "Password Generator",
     "Git Command Generator",
     "HTTP Status Codes",
+    "Regex Tester",
+    "UUID Generator",
+    "Unix Timestamp Converter",
+    "Timezone Converter",
+    "Text Diff",
+    "Resume Builder",
+    // SEO
+    "SEO Checker",
+    "Meta Tag Generator",
+    "Robots.txt Generator",
+    "XML Sitemap Generator",
     // General
     "online developer tools",
     "free developer utilities",
@@ -142,9 +161,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </Script>
 
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="devtools-theme">
-            {children}
-            <CookieBanner />
-          </ThemeProvider>
+          {children}
+          <CookieBanner />
+        </ThemeProvider>
       </body>
     </html>
   );
