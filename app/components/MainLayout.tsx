@@ -216,6 +216,9 @@ export default function MainLayout({ children, variant = "tool" }: MainLayoutPro
                 <Link href="/terms" className="text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors">
                   Terms of Service
                 </Link>
+                <Link href="/contact" className="text-sm font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors">
+                  Contact Us
+                </Link>
               </div>
             </div>
 

@@ -11,17 +11,28 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
   const { personalInfo, experience, education, skills, projects = [], certifications = [], languages = [] } = resumeData;
   const theme = themeColorMap[(context.themeColor || "blue") as ThemeColorName];
 
+  const validExperience = experience.filter(exp => exp.position || exp.company || exp.description);
+  const validEducation = education.filter(edu => edu.degree || edu.institution);
+  const validSkills = skills.filter(s => s.name);
+  const validProjects = projects.filter(p => p.name || p.description);
+  const validCertifications = certifications.filter(c => c.name || c.issuer);
+  const validLanguages = languages.filter(l => l.name);
+
   return (
     <div className="bg-white text-slate-800 font-sans max-w-[21cm] w-full mx-auto shadow-sm min-h-[29.7cm] box-border flex">
       {/* Left Column - Sidebar */}
       <div className="w-1/3 bg-slate-100 p-8 flex flex-col gap-8 border-r border-slate-200">
         <div className="break-words">
-          <h1 className="text-3xl font-extrabold text-slate-900 leading-tight mb-2">
-            {personalInfo.fullName || "Your Name"}
-          </h1>
-          <p className="text-lg font-medium mb-6" style={{ color: theme.primary }}>
-            {personalInfo.jobTitle || "Job Title"}
-          </p>
+          {personalInfo.fullName && (
+            <h1 className="text-3xl font-extrabold text-slate-900 leading-tight mb-2">
+              {personalInfo.fullName}
+            </h1>
+          )}
+          {personalInfo.jobTitle && (
+            <p className="text-lg font-medium mb-6" style={{ color: theme.primary }}>
+              {personalInfo.jobTitle}
+            </p>
+          )}
           
           <div className="space-y-3 text-sm text-slate-600 font-medium">
             {personalInfo.email && <div className="break-all">{personalInfo.email}</div>}
@@ -31,11 +42,11 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
           </div>
         </div>
 
-        {skills.length > 0 && (
+        {validSkills.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-slate-900 mb-4 tracking-wide uppercase">Skills</h2>
             <div className="flex flex-wrap gap-2">
-              {skills.map((s) => (
+              {validSkills.map((s) => (
                 <span key={s.id} className="bg-white border border-slate-200 px-3 py-1 rounded-md text-sm font-semibold shadow-sm">
                   {s.name}
                 </span>
@@ -44,11 +55,11 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
           </div>
         )}
         
-        {education.length > 0 && (
+        {validEducation.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-slate-900 mb-4 tracking-wide uppercase">Education</h2>
             <div className="space-y-4">
-              {education.map((edu) => (
+              {validEducation.map((edu) => (
                 <div key={edu.id}>
                   <h3 className="font-bold text-slate-800 text-sm">{edu.degree}</h3>
                   <div className="text-slate-600 text-sm mt-0.5">{edu.institution}</div>
@@ -61,11 +72,11 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
           </div>
         )}
         
-        {certifications && certifications.length > 0 && (
+        {validCertifications && validCertifications.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-slate-900 mb-4 tracking-wide uppercase">Certifications</h2>
             <div className="space-y-4">
-              {certifications.map((cert) => (
+              {validCertifications.map((cert) => (
                 <div key={cert.id}>
                   <h3 className="font-bold text-slate-800 text-sm">{cert.name}</h3>
                   <div className="text-slate-600 text-sm mt-0.5">{cert.issuer}</div>
@@ -78,11 +89,11 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
           </div>
         )}
 
-        {languages && languages.length > 0 && (
+        {validLanguages && validLanguages.length > 0 && (
           <div>
             <h2 className="text-lg font-bold text-slate-900 mb-4 tracking-wide uppercase">Languages</h2>
             <div className="space-y-3">
-              {languages.map((lang) => (
+              {validLanguages.map((lang) => (
                 <div key={lang.id} className="flex justify-between items-center text-sm">
                   <span className="font-bold text-slate-800">{lang.name}</span>
                   <span className="text-slate-500 font-medium">{lang.proficiency}</span>
@@ -107,14 +118,14 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
           </section>
         )}
 
-        {experience.length > 0 && (
+        {validExperience.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
               <span className="w-8 h-1 inline-block rounded-full" style={{ backgroundColor: theme.primary }}></span>
               Experience
             </h2>
             <div className="space-y-6">
-              {experience.map((exp) => (
+              {validExperience.map((exp) => (
                 <div key={exp.id} className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:ring-4"
                      style={{ "--tw-ring-color": theme.light } as React.CSSProperties}>
                   <div className="absolute left-0 top-2 w-2 h-2 rounded-full" style={{ backgroundColor: theme.primary }}></div>
@@ -139,14 +150,14 @@ export function ModernTemplate({ previewData }: { previewData?: ResumeData }) {
           </section>
         )}
 
-        {projects && projects.length > 0 && (
+        {validProjects && validProjects.length > 0 && (
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
               <span className="w-8 h-1 inline-block rounded-full" style={{ backgroundColor: theme.primary }}></span>
               Projects
             </h2>
             <div className="space-y-6">
-              {projects.map((project) => (
+              {validProjects.map((project) => (
                 <div key={project.id} className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 before:h-2 before:rounded-full before:ring-4"
                      style={{ "--tw-ring-color": theme.light } as React.CSSProperties}>
                   <div className="absolute left-0 top-2 w-2 h-2 rounded-full" style={{ backgroundColor: theme.primary }}></div>

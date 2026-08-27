@@ -160,12 +160,58 @@ export default function JsonBeautifierPage() {
         </div>
       </section>
 
-      {/* Static SEO paragraph */}
-      <section className="mt-16 max-w-3xl mx-auto rounded-2xl border border-panel-border bg-panel p-8" aria-label="About AllFormatter JSON Tools">
-        <h2 className="text-lg font-bold text-primary mb-3">About AllFormatter&apos;s JSON Formatter</h2>
-        <p className="text-sm text-secondary leading-relaxed">
-          <strong className="text-primary">AllFormatter</strong> is a free online toolkit for developers at <strong className="text-primary">allformatter.com</strong>. Our JSON Formatter and Beautifier is the fastest way to pretty-print, validate, and minify JSON data directly in your browser. Whether you need a <strong className="text-primary">JSON parser</strong>, a <a href="/tools/json-schema-validator" className="text-indigo-500 hover:underline font-semibold">JSON validator</a>, or a quick <a href="/tools/json-minifier" className="text-indigo-500 hover:underline font-semibold">JSON minifier</a>, AllFormatter handles it all — with no server uploads and no data retention. Beyond JSON, AllFormatter provides tools for <a href="/tools/yaml-to-json" className="text-indigo-500 hover:underline font-semibold">YAML conversion</a>, JWT decoding, HTML beautification, CSS minification, Base64 encoding, hash generation, and more.
-        </p>
+      {/* Enhanced Static SEO & Hub Section */}
+      <section className="mt-20 max-w-5xl mx-auto rounded-2xl border border-panel-border bg-panel p-8 md:p-12 mb-10" aria-label="About AllFormatter Developer Tools">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-black text-primary mb-4">The Ultimate Developer Toolkit</h2>
+          <p className="text-lg text-secondary max-w-2xl mx-auto leading-relaxed">
+            AllFormatter is more than just a JSON Formatter. We provide a comprehensive suite of free, secure, browser-based utilities designed to streamline your daily development workflow.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div>
+            <h3 className="text-xl font-bold text-indigo-500 mb-3 flex items-center gap-2">
+              <span>🗂️</span> Data Formatting & Validation
+            </h3>
+            <p className="text-sm text-secondary leading-relaxed mb-4">
+              Dealing with messy payloads is a thing of the past. Beyond our flagship JSON Beautifier, we offer a <a href="/tools/json-minifier" className="font-semibold text-indigo-500 hover:underline">JSON Minifier</a> for payload compression, a strict <a href="/tools/json-schema-validator" className="font-semibold text-indigo-500 hover:underline">JSON Schema Validator</a>, and seamless converters like <a href="/tools/json-to-xml" className="font-semibold text-indigo-500 hover:underline">JSON to XML</a> and <a href="/tools/yaml-to-json" className="font-semibold text-indigo-500 hover:underline">YAML to JSON</a>. Whether you are building REST APIs or configuring CI/CD pipelines, our tools ensure your data structures are perfectly formatted.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold text-purple-500 mb-3 flex items-center gap-2">
+              <span>🔐</span> Security & Encoding
+            </h3>
+            <p className="text-sm text-secondary leading-relaxed mb-4">
+              Security tasks shouldn't require sending sensitive data to remote servers. Generate cryptographically secure passwords locally with our <a href="/tools/password-generator" className="font-semibold text-purple-500 hover:underline">Password Generator</a>, safely inspect authentication tokens using the <a href="/tools/jwt-decoder" className="font-semibold text-purple-500 hover:underline">JWT Decoder</a>, or transport binary data using our <a href="/tools/base64-encode-decode" className="font-semibold text-purple-500 hover:underline">Base64 Encoder</a>. All cryptographic operations run securely in your browser's memory.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold text-blue-500 mb-3 flex items-center gap-2">
+              <span>🎨</span> Frontend & UI Utilities
+            </h3>
+            <p className="text-sm text-secondary leading-relaxed mb-4">
+              Streamline your frontend development with our UI tools. Clean up legacy markup with the <a href="/tools/html-beautifier" className="font-semibold text-blue-500 hover:underline">HTML Beautifier</a>, optimize your stylesheets for production using the <a href="/tools/css-minifier" className="font-semibold text-blue-500 hover:underline">CSS Minifier</a>, or rapidly prototype components by converting <a href="/tools/html-to-jsx" className="font-semibold text-blue-500 hover:underline">HTML to React JSX</a>.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold text-emerald-500 mb-3 flex items-center gap-2">
+              <span>📈</span> SEO & Webmaster Tools
+            </h3>
+            <p className="text-sm text-secondary leading-relaxed mb-4">
+              Technical SEO is critical for modern web applications. Generate flawless meta tags, create valid <a href="/tools/robots-txt-generator" className="font-semibold text-emerald-500 hover:underline">robots.txt</a> files, and build comprehensive <a href="/tools/sitemap-generator" className="font-semibold text-emerald-500 hover:underline">XML Sitemaps</a> to ensure search engines can properly crawl and index your sites.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-panel-border text-center">
+          <p className="text-sm text-secondary font-medium">
+            Read our <a href="/blogs" className="text-indigo-500 hover:underline">Developer Blog</a> for deep dives, tutorials, and best practices on web development, API design, and data structures.
+          </p>
+        </div>
       </section>
     </>
   );

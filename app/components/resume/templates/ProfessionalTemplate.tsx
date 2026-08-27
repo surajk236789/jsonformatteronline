@@ -11,12 +11,23 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
   const { personalInfo, experience, education, skills, projects = [], certifications = [], languages = [] } = resumeData;
   const theme = themeColorMap[(context.themeColor || "blue") as ThemeColorName];
 
+  const validExperience = experience.filter(exp => exp.position || exp.company || exp.description);
+  const validEducation = education.filter(edu => edu.degree || edu.institution);
+  const validSkills = skills.filter(s => s.name);
+  const validProjects = projects.filter(p => p.name || p.description);
+  const validCertifications = certifications.filter(c => c.name || c.issuer);
+  const validLanguages = languages.filter(l => l.name);
+
   return (
     <div className="bg-white text-gray-900 font-serif p-8 max-w-[21cm] w-full mx-auto shadow-sm min-h-[29.7cm] box-border">
       {/* Header */}
       <header className="text-center mb-8 border-b-2 pb-6" style={{ borderColor: theme.primary }}>
-        <h1 className="text-4xl font-serif font-bold text-gray-900 mb-2 uppercase tracking-wide">{personalInfo.fullName || "Your Name"}</h1>
-        <p className="text-lg text-gray-700 mb-2">{personalInfo.jobTitle || "Job Title"}</p>
+        {personalInfo.fullName && (
+          <h1 className="text-4xl font-serif font-bold text-gray-900 mb-2 uppercase tracking-wide">{personalInfo.fullName}</h1>
+        )}
+        {personalInfo.jobTitle && (
+          <p className="text-lg text-gray-700 mb-2">{personalInfo.jobTitle}</p>
+        )}
         <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-gray-600">
           {personalInfo.email && <span>{personalInfo.email}</span>}
           {personalInfo.phone && <span>• {personalInfo.phone}</span>}
@@ -34,11 +45,11 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
       )}
 
       {/* Experience */}
-      {experience.length > 0 && (
+      {validExperience.length > 0 && (
         <section className="mb-6">
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-widest border-b mb-3" style={{ borderColor: theme.light, color: theme.dark }}>Professional Experience</h2>
           <div className="space-y-4">
-            {experience.map((exp) => (
+            {validExperience.map((exp) => (
               <div key={exp.id}>
                 <div className="flex justify-between items-baseline mb-1">
                   <h3 className="font-bold text-base">{exp.position}</h3>
@@ -61,11 +72,11 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
       )}
 
       {/* Projects */}
-      {projects && projects.length > 0 && (
+      {validProjects && validProjects.length > 0 && (
         <section className="mb-6">
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-widest border-b mb-4" style={{ borderColor: theme.light, color: theme.dark }}>Projects</h2>
           <div className="space-y-4">
-            {projects.map((project) => (
+            {validProjects.map((project) => (
               <div key={project.id}>
                 <div className="flex justify-between items-baseline mb-1">
                   <h3 className="font-bold text-base">{project.name}</h3>
@@ -89,11 +100,11 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
       )}
 
       {/* Education */}
-      {education.length > 0 && (
+      {validEducation.length > 0 && (
         <section className="mb-6">
           <h2 className="text-lg font-bold uppercase tracking-wider border-b border-gray-300 pb-1 mb-3">Education</h2>
           <div className="space-y-3">
-            {education.map((edu) => (
+            {validEducation.map((edu) => (
               <div key={edu.id} className="flex justify-between items-baseline">
                 <div>
                   <h3 className="font-bold text-base">{edu.degree}</h3>
@@ -109,11 +120,11 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
       )}
 
       {/* Certifications */}
-      {certifications && certifications.length > 0 && (
+      {validCertifications && validCertifications.length > 0 && (
         <section className="mb-6">
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-widest border-b mb-4" style={{ borderColor: theme.light, color: theme.dark }}>Certifications</h2>
           <div className="space-y-3">
-            {certifications.map((cert) => (
+            {validCertifications.map((cert) => (
               <div key={cert.id} className="flex justify-between items-baseline">
                 <div>
                   <h3 className="font-bold text-base">{cert.name}</h3>
@@ -129,11 +140,11 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
       )}
 
       {/* Languages */}
-      {languages && languages.length > 0 && (
+      {validLanguages && validLanguages.length > 0 && (
         <section className="mb-6">
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-widest border-b mb-4" style={{ borderColor: theme.light, color: theme.dark }}>Languages</h2>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-800">
-            {languages.map((lang) => (
+            {validLanguages.map((lang) => (
               <div key={lang.id} className="flex justify-between items-center border-b border-gray-100 pb-1 last:border-0">
                 <span className="font-bold">{lang.name}</span>
                 <span className="text-gray-600 font-medium italic">{lang.proficiency}</span>
@@ -144,11 +155,11 @@ export function ProfessionalTemplate({ previewData }: { previewData?: ResumeData
       )}
 
       {/* Skills */}
-      {skills.length > 0 && (
+      {validSkills.length > 0 && (
         <section>
           <h2 className="text-lg font-bold text-gray-900 uppercase tracking-widest border-b mb-4" style={{ borderColor: theme.light, color: theme.dark }}>Skills</h2>
           <div className="text-sm text-gray-800 leading-relaxed">
-            {skills.map((s) => s.name).join(" • ")}
+            {validSkills.map((s) => s.name).join(" • ")}
           </div>
         </section>
       )}
